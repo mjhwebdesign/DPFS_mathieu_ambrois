@@ -1,19 +1,17 @@
 var express = require("express");
+let usersController = require("../controllers/usersController");
 var router = express.Router();
 
 /* GET user list */
-router.get("/", function (req, res, next) {
- res.render("users/userList");
-});
+router.get("/", usersController.index);
 
 /* GET Create user */
-router.get("/create", function (req, res, next) {
- res.render("users/userCreate");
-});
+router.get("/create", usersController.create);
 
 /* GET Edit user */
-router.get("/edit", function (req, res, next) {
- res.render("users/userEdit");
-});
+router.get("/edit", usersController.edit);
+
+/* GET Detail of a user*/
+router.get("/:id", usersController.show);
 
 module.exports = router;

@@ -1,17 +1,12 @@
 var express = require("express");
+let productsController = require("../controllers/productsController");
 var router = express.Router();
 
 // Create a product page
-router.get("/create", function (req, res, next) {
- res.render("products/productCreate");
-});
+router.get("/create", productsController.create);
 // Edit a product page
-router.get("/edit", function (req, res, next) {
- res.render("products/productEdit");
-});
+router.get("/edit", productsController.edit);
 //Detail of a product Page
-router.get("/:id", function (req, res, next) {
- res.render("products/productDetail");
-});
+router.get("/:id", productsController.show);
 
 module.exports = router;
