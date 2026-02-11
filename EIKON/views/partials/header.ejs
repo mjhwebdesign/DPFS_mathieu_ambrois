@@ -12,14 +12,15 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-label="Eikon - Bienvenidos" href="/">Home</a>
+                        <a class="nav-link <%= currentPath === '/' ? 'active' : '' %>" aria-label="Eikon - Bienvenidos"
+                            href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-label="Eikon - Productos" href="#products">Productos</a>
+                        <a class="nav-link" aria-label="Eikon - Productos" href="/#products">Productos</a>
                     </li>
                 </ul>
-                <a href="/cart" class="nav-link cart mb-3 mb-lg-0 d-flex" aria-label="Eikon - Carrito"><span
-                        class="d-lg-none me-2">Mis compras </span>
+                <a href="/cart" class="nav-link cart mb-3 mb-lg-0 d-flex <%= currentPath === '/cart' ? 'active' : '' %>"
+                    aria-label="Eikon - Carrito"><span class="d-lg-none me-2">Mis compras </span>
                     <i class="fa-solid fa-bag-shopping cart-icon"></i>
                     <span class="position-absolute top-0 start-100 badge">
                         3
