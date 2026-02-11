@@ -108,15 +108,19 @@ h6 {
   background-color: var(--bg-dark__transparent);
  }
 }
-
-#main-nav.navbar.is-sticky {
+header {
+ z-index: 1020;
+}
+header.is-sticky {
  position: sticky;
  top: 0;
+}
+header.is-sticky #main-nav.navbar {
  background-color: var(--bg-dark);
  padding: 0;
 }
 
-#main-nav.navbar.is-sticky form .eikon-btn {
+header.is-sticky #main-nav.navbar form .eikon-btn {
  font-size: 10px;
 }
 
@@ -142,11 +146,11 @@ h6 {
  text-shadow: var(--text-shadow__white);
 }
 
-#main-nav.navbar.is-sticky .navbar-brand.logo-eikon {
+header.is-sticky #main-nav.navbar .navbar-brand.logo-eikon {
  font-size: 18px;
 }
 
-#main-nav.navbar.is-sticky .navbar-brand img {
+header.is-sticky #main-nav.navbar .navbar-brand img {
  width: 75px;
 }
 
@@ -218,7 +222,7 @@ footer ul li:first-child a {
  transition: var(--transition);
 }
 
-#main-nav.navbar.is-sticky .dropdown > .dropdown-menu {
+header.is-sticky #main-nav.navbar .dropdown > .dropdown-menu {
  padding: 0;
 }
 
@@ -229,7 +233,7 @@ footer ul li:first-child a {
  transition: var(--transition);
 }
 
-#main-nav.navbar.is-sticky .dropdown > .dropdown-menu .row {
+header.is-sticky #main-nav.navbar .dropdown > .dropdown-menu .row {
  background: var(--bg-dark);
  margin-top: 0px;
 }

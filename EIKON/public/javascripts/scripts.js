@@ -18,9 +18,9 @@ if (buttonReveal) {
 }
 
 /*======================================================================
-// ADD STICKY CLASS TO MAIN NAV ON SCROLL
+// ADD STICKY CLASS TO HEADER ON SCROLL
 ======================================================================*/
-const element = document.querySelector("#main-nav");
+const element = document.querySelector("header");
 const scrollHandler = () => {
  if (window.scrollY > 1) {
   element.classList.add("is-sticky");
