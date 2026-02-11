@@ -1,0 +1,44 @@
+<header>
+    <nav id="main-nav" class="navbar navbar-expand-lg justify-content-center">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-eikon" href="/" aria-label="Eikon - Homepage">
+                EIK<span class="iso">[Ө]</span>N
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-label="Eikon - Bienvenidos" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-label="Eikon - Productos" href="#products">Productos</a>
+                    </li>
+                </ul>
+                <a href="/cart" class="nav-link cart mb-3 mb-lg-0 d-flex" aria-label="Eikon - Carrito"><span
+                        class="d-lg-none me-2">Mis compras </span>
+                    <i class="fa-solid fa-bag-shopping cart-icon"></i>
+                    <span class="position-absolute top-0 start-100 badge">
+                        3
+                        <span class="visually-hidden">items in cart</span>
+                    </span>
+                </a>
+                <form id="nav-login" class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0">
+                    <a href="/login" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
+                        Log-In / Register
+                    </a>
+                </form>
+                <form id="nav-login-on"
+                    class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0  d-none align-items-lg-center flex-column flex-lg-row">
+                    <a class="nav-link me-2 mb-3 mb-lg-0" aria-label="Eikon - Mi Perfil" href="users/{id}">John Doe</a>
+                    <a href="/logout" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
+                        Logout
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+</header>
