@@ -16,7 +16,7 @@
     <!-- Responsive navbar-->
     <nav id="main-nav" class="navbar navbar-expand-lg justify-content-center">
         <div class="container-fluid">
-            <a class="navbar-brand logo-eikon" href="index.html" aria-label="Eikon - Homepage">
+            <a class="navbar-brand logo-eikon" href="/" aria-label="Eikon - Homepage">
                 EIK<span class="iso">[Ө]</span>N
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -27,13 +27,13 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-label="Eikon - Homepage" href="index.html">Home</a>
+                        <a class="nav-link" aria-label="Eikon - Homepage" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html#products">Productos</a>
+                        <a class="nav-link active" aria-current="page" href="/#products">Productos</a>
                     </li>
                 </ul>
-                <a href="productCart.html" class="nav-link cart mb-3 mb-lg-0" aria-label="Eikon - Carrito">
+                <a href="/cart" class="nav-link cart mb-3 mb-lg-0" aria-label="Eikon - Carrito">
                     <i class="fa-solid fa-bag-shopping cart-icon"></i>
                     <span class="position-absolute top-0 start-100 badge">
                         3
@@ -41,17 +41,16 @@
                     </span>
                 </a>
                 <form id="nav-login" class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0 d-none">
-                    <button aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn" name="nav-login-button">
+                    <a href="/login" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
                         Log-In / Register
-                    </button>
+                    </a>
                 </form>
                 <form id="nav-login-on"
                     class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0 d-flex align-items-lg-center flex-column flex-lg-row">
-                    <a class="nav-link me-2 mb-3 mb-lg-0" aria-label="Eikon - Mi Perfil" href="#">John Doe</a>
-
-                    <button aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn" name="nav-logout-button">
+                    <a class="nav-link me-2 mb-3 mb-lg-0" aria-label="Eikon - Mi Perfil" href="/profile">John Doe</a>
+                    <a href="/logout" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
                         Logout
-                    </button>
+                    </a>
                 </form>
             </div>
         </div>
@@ -165,7 +164,7 @@
                                 Agregar al Carrito <span>$</span><span>Total Price</span>
                             </button>
                             <div id="back-to-shop" class="text-center">
-                                <a href="index.html#products">
+                                <a href="/">
                                     Seguir comprando
                                 </a>
                             </div>
@@ -178,7 +177,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-md-6 col-xl-6 text-center text-md-start mb-3 mb-xl-0">
-                    <a class="navbar-brand" href="index.html"><img src="../../images/logos/eikon-logo-reverse.svg"
+                    <a class="navbar-brand" href="/"><img src="../../images/logos/eikon-logo-reverse.svg"
                             alt="Eikon - Image maniac"></a>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">

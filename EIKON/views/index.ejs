@@ -17,7 +17,7 @@
   <!-- Responsive navbar-->
   <nav id="main-nav" class="navbar navbar-expand-lg justify-content-center">
     <div class="container-fluid">
-      <a class="navbar-brand logo-eikon" href="index.html" aria-label="Eikon - Homepage">
+      <a class="navbar-brand logo-eikon" href="/" aria-label="Eikon - Homepage">
         EIK<span class="iso">[Ө]</span>N
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -27,13 +27,13 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-label="Eikon - Productos" href="#products">Productos</a>
           </li>
         </ul>
-        <a href="productCart.html" class="nav-link cart mb-3 mb-lg-0 d-flex" aria-label="Eikon - Carrito"><span
+        <a href="/cart" class="nav-link cart mb-3 mb-lg-0 d-flex" aria-label="Eikon - Carrito"><span
             class="d-lg-none me-2">Mis compras </span>
           <i class="fa-solid fa-bag-shopping cart-icon"></i>
           <span class="position-absolute top-0 start-100 badge">
@@ -42,14 +42,14 @@
           </span>
         </a>
         <form id="nav-login" class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0">
-          <a href="login-registro.html" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
+          <a href="/login" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
             Log-In / Register
           </a>
         </form>
         <form id="nav-login-on"
           class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0  d-none align-items-lg-center flex-column flex-lg-row">
-          <a class="nav-link me-2 mb-3 mb-lg-0" aria-label="Eikon - Mi Perfil" href="#">John Doe</a>
-          <a href="login-registro.html" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
+          <a class="nav-link me-2 mb-3 mb-lg-0" aria-label="Eikon - Mi Perfil" href="/profile">John Doe</a>
+          <a href="/logout" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
             Logout
           </a>
         </form>
@@ -200,8 +200,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product photo office architecture">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/photo-6-photo-slide.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/photo-6-photo-slide.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -212,8 +212,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office blueprints">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/blueprints-typing-machine-afiche-blueprint-slide.webp"
+                <a href="products/{id}">
+                  <img src=" ../images/products/blueprints-typing-machine-afiche-blueprint-slide.webp"
                     class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
@@ -225,8 +225,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product poster museum home">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/limited-ilustration-slide-3.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/limited-ilustration-slide-3.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -237,8 +237,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product photo retail animals">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/animal-2-photo-animal-slide.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/animal-2-photo-animal-slide.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -249,8 +249,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office maps">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/maps-mapamundis-2-afiche-maps-slide.webp" class="product-img"
+                <a href="products/{id}">
+                  <img src=" ../images/products/maps-mapamundis-2-afiche-maps-slide.webp" class="product-img"
                     alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
@@ -262,8 +262,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product poster home vintage">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/vintage-2-afiche-vintaget-slide.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/vintage-2-afiche-vintaget-slide.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -274,8 +274,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product photo home">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/photo-4-photo-slide.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/photo-4-photo-slide.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -286,8 +286,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product photo home architecture">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/archi-3-photo-slide.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/archi-3-photo-slide.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -298,8 +298,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product photo museum home">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/limited-photo-slide-1.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/limited-photo-slide-1.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -310,8 +310,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product postcard home">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/postcards-5--postcard-slide.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/postcards-5--postcard-slide.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -322,9 +322,9 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product poster home">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/blueprints-steam-machine-afiche-blueprint-slide.webp" class="product-img"
-                    alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/blueprints-steam-machine-afiche-blueprint-slide.webp"
+                    class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -335,8 +335,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office blueprints">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/blueprints-spoon-afiche-blueprint-slide.webp" class="product-img"
+                <a href="products/{id}">
+                  <img src=" ../images/products/blueprints-spoon-afiche-blueprint-slide.webp" class="product-img"
                     alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
@@ -348,8 +348,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office profesionals bauhaus">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/bauhaus-4-afiche-bauhaus-slide.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/bauhaus-4-afiche-bauhaus-slide.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -360,8 +360,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product photo home">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/archi-8-photo-slide.webp" class="product-img" alt="title">
+                <a href="products/{id}">
+                  <img src=" ../images/products/archi-8-photo-slide.webp" class="product-img" alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
                     <span class="category">Categoría</span>
@@ -372,8 +372,8 @@
             </div>
             <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office maps">
               <div id="item-id" class="card">
-                <a href="productDetail.html">
-                  <img src="../images/products/maps-mapamundis-3-afiche-maps-slide.webp" class="product-img"
+                <a href="products/{id}">
+                  <img src=" ../images/products/maps-mapamundis-3-afiche-maps-slide.webp" class="product-img"
                     alt="title">
                   <div class="product-info">
                     <span class="title">Lor</span>
@@ -392,7 +392,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 col-md-6 col-xl-6 text-center text-md-start mb-3 mb-xl-0">
-          <a class="navbar-brand" href="index.html"><img src="../images/logos/eikon-logo-reverse.svg"
+          <a class="navbar-brand" href="/"><img src="../images/logos/eikon-logo-reverse.svg"
               alt="Eikon - Image maniac"></a>
         </div>
         <div class="col-12 col-md-6 col-xl-6">
