@@ -1,12 +1,12 @@
 const productsController = {
  create: function (req, res, next) {
-  res.render("products/productCreate");
+  return res.render("products/productCreate");
  },
  edit: function (req, res, next) {
-  res.render("products/productEdit");
+  return res.render("products/productEdit");
  },
  show: function (req, res, next) {
-  res.render("products/productDetail");
+  return res.render("products/productDetail");
  },
 };
 

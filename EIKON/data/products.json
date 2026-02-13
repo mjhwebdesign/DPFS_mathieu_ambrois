@@ -5,7 +5,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/animal-1-photo-animal-slide.webp",
   "secundaryImage": "../public/img/products/animals-elephant-1-lamina-animal.webp"
@@ -16,7 +16,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/animal-1-photo-animal-slide.webp",
   "secundaryImage": "../public/img/products/animals-peacock-lamina-animal.webp"
@@ -27,7 +27,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/animal-2-photo-animal-slide.webp",
   "secundaryImage": "../public/img/products/animals-rhino-lamina-animal.webp"
@@ -38,7 +38,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/animal-2-photo-animal-slide.webp",
   "secundaryImage": "../public/img/products/animals-elephant-2-lamina-animal.webp"
@@ -49,7 +49,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/animals-crane-2-photo-animal-slide.webp",
   "secundaryImage": "../public/img/products/animals-crane-2-lamina-animal.webp"
@@ -60,7 +60,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/animals-crane-photo-animal-slide.webp",
   "secundaryImage": "../public/img/products/animals-crane-lamina-animal.webp"
@@ -71,7 +71,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/animals-peacock-2-photo-animal-slide.webp",
   "secundaryImage": "../public/img/products/animals-peacock-2-lamina-animal.webp"
@@ -82,7 +82,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/animals-whale.shark-photo-animal-slide.webp",
   "secundaryImage": "../public/img/products/animals-whale-shark-lamina-animal.webp"
@@ -93,7 +93,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/animals-zebra-photo-animal-slide.webp",
   "secundaryImage": "../public/img/products/animals-zebra-lamina-animal.webp"
@@ -104,7 +104,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["architecture"],
   "coverImage": "../public/img/products/archi-1-photo-slide.webp",
   "secundaryImage": "../public/img/products/archi-1-lamina-photo.webp"
@@ -115,7 +115,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["architecture"],
   "coverImage": "../public/img/products/products/archi-2-photo-slide.webp",
   "secundaryImage": "../public/img/archi-2-lamina-photo.webp"
@@ -126,7 +126,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["architecture"],
   "coverImage": "../public/img/products/archi-3-photo-slide.webp",
   "secundaryImage": "../public/img/products/archi-3-lamina-photo.webp"
@@ -137,7 +137,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["architecture"],
   "coverImage": "../public/img/products/archi-4-photo-slide.webp",
   "secundaryImage": "../public/img/products/archi-4-lamina-photo.webp"
@@ -148,7 +148,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["architecture"],
   "coverImage": "../public/img/products/archi-5-photo-slide.webp",
   "secundaryImage": "../public/img/products/archi-5-lamina-photo.webp"
@@ -159,7 +159,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["architecture"],
   "coverImage": "../public/img/products/archi-6-photo-slide.webp",
   "secundaryImage": "../public/img/products/archi-6-lamina-photo.webp"
@@ -170,7 +170,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["architecture"],
   "coverImage": "../public/img/products/archi-7-photo-slide.webp",
   "secundaryImage": "../public/img/products/archi-7-lamina-photo.webp"
@@ -181,7 +181,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["bauhaus"],
   "coverImage": "../public/img/products/bauhaus-1-afiche-bauhaus-slide.webp",
   "secundaryImage": "../public/img/products/bauhaus-1-lamina-bauhaus.webp"
@@ -192,7 +192,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["bauhaus"],
   "coverImage": "../public/img/products/bauhaus-2-afiche-bauhaus-slide.webp",
   "secundaryImage": "../public/img/products/bauhaus-2-lamina-bauhaus.webp"
@@ -203,7 +203,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["bauhaus"],
   "coverImage": "../public/img/products/bauhaus-3-afiche-bauhaus-slide.webp",
   "secundaryImage": "../public/img/products/bauhaus-3-lamina-bauhaus.webp"
@@ -214,7 +214,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["bauhaus"],
   "coverImage": "../public/img/products/bauhaus-4-afiche-bauhaus-slide.webp",
   "secundaryImage": "../public/img/products/bauhaus-4-lamina-bauhaus.webp"
@@ -225,7 +225,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["bauhaus"],
   "coverImage": "../public/img/products/bauhaus-4-afiche-bauhaus-slide.webp",
   "secundaryImage": "../public/img/products/bauhaus-5-lamina-bauhaus.webp"
@@ -236,7 +236,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["bauhaus"],
   "coverImage": "../public/img/products/bauhaus-6-afiche-bauhaus-slide.webp",
   "secundaryImage": "../public/img/products/bauhaus-6-lamina-bauhaus.webp"
@@ -247,7 +247,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["bauhaus"],
   "coverImage": "../public/img/products/bauhaus-7-afiche-bauhaus-slide.webp",
   "secundaryImage": "../public/img/products/bauhaus-7-lamina-bauhaus.webp"
@@ -258,7 +258,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-alambic-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-alambic-lamina-blueprint.webp"
@@ -269,7 +269,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-camera-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-camera-lamina-blueprint.webp"
@@ -280,7 +280,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-paper-clip-machine-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-paper-clip-machine-lamina-blueprint.webp"
@@ -291,7 +291,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-piano-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-piano-lamina-blueprint.webp"
@@ -302,7 +302,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-space-needle-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-space-needle-lamina-blueprint.webp"
@@ -313,7 +313,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-spoon-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-spoon-lamina-blueprint.webp"
@@ -324,7 +324,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-steam-machine-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-steam-machine-lamina-blueprint.webp"
@@ -335,7 +335,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-tape-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-tape-lamina-blueprint.webp"
@@ -346,7 +346,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-typing-machine-2-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-typing-machine-2-lamina-blueprint.webp"
@@ -357,7 +357,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["blueprints"],
   "coverImage": "../public/img/products/blueprints-typing-machine-afiche-blueprint-slide.webp",
   "secundaryImage": "../public/img/products/blueprints-typing-machine-lamina-blueprint.webp"
@@ -368,7 +368,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/living_montreux.webp",
   "secundaryImage": "../public/img/products/lamina_montreux.webp"
@@ -379,7 +379,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage, maps"],
   "coverImage": "../public/img/products/maps-argentina-afiche-maps-slide.webp",
   "secundaryImage": "../public/img/products/maps-argentina-lamina-maps.webp"
@@ -390,7 +390,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage, maps"],
   "coverImage": "../public/img/products/maps-mapamundis-1-afiche-maps-slide.webp",
   "secundaryImage": "../public/img/products/maps-mapamundis-1-lamina-maps.webp"
@@ -401,7 +401,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage, maps"],
   "coverImage": "../public/img/products/maps-mapamundis-2-afiche-maps-slide.webp",
   "secundaryImage": "../public/img/products/maps-mapamundis-2-lamina-maps.webp"
@@ -412,7 +412,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage, maps"],
   "coverImage": "../public/img/products/maps-mapamundis-3-afiche-maps-slide.webp",
   "secundaryImage": "../public/img/products/maps-mapamundis-3-lamina-maps.webp"
@@ -423,7 +423,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["animal"],
   "coverImage": "../public/img/products/photo-1-photo-slide.webp",
   "secundaryImage": "../public/img/products/photo-1-lamina-photo.webp"
@@ -434,7 +434,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/photo-2-photo-slide.webp",
   "secundaryImage": "../public/img/products/photo-2-lamina-photo.webp"
@@ -445,7 +445,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/photo-3-photo.webp",
   "secundaryImage": "../public/img/products/photo-3-lamina-photo-slide.webp"
@@ -456,7 +456,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/photo-4-photo-slide.webp",
   "secundaryImage": "../public/img/products/photo-4-lamina-photo-slide.webp"
@@ -467,7 +467,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/photo-5-photo-slide.webp",
   "secundaryImage": "../public/img/products/photo-5-lamina-photo.webp"
@@ -478,7 +478,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "photo",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/photo-6-photo-slide.webp",
   "secundaryImage": "../public/img/products/photo-6-lamina-photo.webp"
@@ -489,7 +489,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "postcard",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/postcards-1--postcard-slide.webp",
   "secundaryImage": "../public/img/products/postcards-1-lamina-postcard.webp"
@@ -500,7 +500,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "postcard",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/postcards-2--postcard-slide.webp",
   "secundaryImage": "../public/img/products/postcards-2-lamina-postcard.webp"
@@ -511,7 +511,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "postcard",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/postcards-3--postcard-slide.webp",
   "secundaryImage": "../public/img/products/postcards-3-lamina-postcard.webp"
@@ -522,7 +522,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "postcard",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/postcards-4--postcard-slide.webp",
   "secundaryImage": "../public/img/products/postcards-4-lamina-postcard.webp"
@@ -533,7 +533,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "postcard",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/postcards-5--postcard-slide.webp",
   "secundaryImage": "../public/img/products/postcards-5-lamina-postcard.webp"
@@ -544,7 +544,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "postcard",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/postcards-6--postcard-slide.webp",
   "secundaryImage": "../public/img/products/postcards-6-lamina-postcard.webp"
@@ -555,7 +555,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "postcard",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/postcards-7--postcard-slide.webp",
   "secundaryImage": "../public/img/products/postcards-7-lamina-postcard.webp"
@@ -566,7 +566,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "postcard",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/postcards-8--postcard-slide.webp",
   "secundaryImage": "../public/img/products/postcards-8-lamina-postcard.webp"
@@ -577,7 +577,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/vintage-1-afiche-vintage-slide.webp",
   "secundaryImage": "../public/img/products/vintage-1-lamina-vintage.webp"
@@ -588,7 +588,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/vintage-2-afiche-vintage-slide.webp",
   "secundaryImage": "../public/img/products/vintage-2-lamina-vintage.webp"
@@ -599,7 +599,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/vintage-3-afiche-vintage-slide.webp",
   "secundaryImage": "../public/img/products/vintage-3-lamina-vintage.webp"
@@ -610,7 +610,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/vintage-4-afiche-vintage-slide.webp",
   "secundaryImage": "../public/img/products/vintage-4-lamina-vintage.webp"
@@ -621,7 +621,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/vintage-5-afiche-vintage-slide.webp",
   "secundaryImage": "../public/img/products/vintage-5-lamina-vintage.webp"
@@ -632,7 +632,7 @@
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
   "category": "poster",
-  "space": ["home, offices"],
+  "space": ["home", "offices"],
   "theme": ["vintage"],
   "coverImage": "../public/img/products/vintage-6-afiche-vintage-slide.webp",
   "secundaryImage": "../public/img/products/vintage-6-lamina-vintage.webp"
