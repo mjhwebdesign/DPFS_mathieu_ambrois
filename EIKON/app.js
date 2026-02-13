@@ -23,6 +23,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+// Make currentPath available to all views and define activeSection
+
+app.use((req, res, next) => {
+ res.locals.currentPath = req.path;
+ if (req.path.startsWith("/products")) {
+  res.locals.activeSection = "products";
+ } else if (req.path.startsWith("/users")) {
+  res.locals.activeSection = "users";
+ } else if (req.path === "/") {
+  res.locals.activeSection = "home";
+ } else {
+  res.locals.activeSection = "";
+ }
+ next();
+});
+
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);

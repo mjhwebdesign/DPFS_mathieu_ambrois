@@ -16,7 +16,8 @@
                             href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-label="Eikon - Productos" href="/#products">Productos</a>
+                        <a class="nav-link <%= activeSection === 'products' ? 'active' : '' %>"
+                            aria-label="Eikon - Productos" href="/#products">Productos</a>
                     </li>
                 </ul>
                 <a href="/cart" class="nav-link cart mb-3 mb-lg-0 d-flex <%= currentPath === '/cart' ? 'active' : '' %>"
@@ -33,8 +34,9 @@
                     </a>
                 </form>
                 <form id="nav-login-on"
-                    class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0  d-none align-items-lg-center flex-column flex-lg-row">
-                    <a class="nav-link me-2 mb-3 mb-lg-0" aria-label="Eikon - Mi Perfil" href="users/{id}">John Doe</a>
+                    class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0  d-flex align-items-lg-center flex-column flex-lg-row">
+                    <a class="nav-link me-2 mb-3 mb-lg-0 <%= activeSection === 'users' ? 'active' : '' %>"
+                        aria-label="Eikon - Mi Perfil" href="/users/{id}">John Doe</a>
                     <a href="/logout" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
                         Logout
                     </a>
