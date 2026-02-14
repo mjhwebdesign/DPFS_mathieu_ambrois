@@ -35,6 +35,7 @@ const productModel = {
 
   return productToSave;
  },
+
  // Update an existing product
  update: function (id, updatedData) {
   const products = this.getAll();
@@ -51,6 +52,18 @@ const productModel = {
   });
 
   fs.writeFileSync(productsFilePath, JSON.stringify(updatedProducts, null, 2));
+ },
+
+ // Delete an existing product
+ delete: function (id) {
+  // Load clean product list
+  const products = this.getAll();
+  //Keep in filteredProducts all products except the one selected by id
+  const filteredProducts = products.filter((product) => product.id != id);
+  // Overwrite json with filteredProducts
+  fs.writeFileSync(productsFilePath, JSON.stringify(filteredProducts, null, 2));
+
+  return true;
  },
 };
 

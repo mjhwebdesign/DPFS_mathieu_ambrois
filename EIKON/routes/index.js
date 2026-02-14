@@ -5,6 +5,9 @@ var router = express.Router();
 /* GET home page and product list. */
 router.get("/", indexController.index);
 
+/* GET home page and product list. */
+router.get("/products", indexController.index);
+
 /*Get cart page*/
 router.get("/cart", indexController.cart);
 

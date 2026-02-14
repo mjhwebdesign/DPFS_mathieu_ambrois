@@ -1034,27 +1034,5 @@
     ],
     "coverImage": "images/products/limited-photo-slide-6.webp",
     "secundaryImage": "images/limited-photo-lamina-6.webp"
-  },
-  {
-    "id": 65,
-    "title": [
-      "Festival de Canne 2005"
-    ],
-    "description": [
-      "Lorem Ipsum"
-    ],
-    "price": 200,
-    "category": [
-      "poster"
-    ],
-    "space": [
-      "office",
-      "home"
-    ],
-    "theme": [
-      "vintage"
-    ],
-    "coverImage": "/images/products/za4tzg2thjuhgxjtrd3as5nto.webp",
-    "secundaryImage": "/images/products/cu1ufbs99a63mma9wdozct1vv.webp"
   }
 ]

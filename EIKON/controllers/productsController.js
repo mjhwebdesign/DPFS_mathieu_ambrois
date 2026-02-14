@@ -196,6 +196,48 @@ Update METHODE
    res.redirect("/products/" + id);
   });
  },
+
+ /*===============
+DESTROY METHODE
+===============*/
+
+ destroy: function (req, res) {
+  const id = req.params.id;
+
+  const product = productModel.findById(id);
+
+  if (!product) {
+   return res.status(404).send("Producto no encontrado");
+  }
+
+  //  Delete cover image
+  if (product.coverImage) {
+   const coverPath = path.join(__dirname, "../public", product.coverImage);
+
+   if (fs.existsSync(coverPath)) {
+    fs.unlinkSync(coverPath);
+   }
+  }
+
+  //  Delete secondary Image
+  if (product.secundaryImage) {
+   const secundaryPath = path.join(
+    __dirname,
+    "../public",
+    product.secundaryImage,
+   );
+
+   if (fs.existsSync(secundaryPath)) {
+    fs.unlinkSync(secundaryPath);
+   }
+  }
+
+  // Delete product from json
+  productModel.delete(id);
+  //Redirect
+  res.redirect("/products");
+ },
+
  /*===============
 SHOW METHODE
 ===============*/
