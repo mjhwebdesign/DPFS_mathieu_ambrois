@@ -16,128 +16,164 @@
                     </div>
                     <div class="row justify-content-center align-content-center">
                         <div class="col-12 col-md-6" id="product-create">
-                            <form id="create-product">
+                            <form action="/products/edit/<%= product.id %>" method="POST" enctype="multipart/form-data">
+
                                 <div class="row create-product-form">
+
+                                    <!-- TITRE -->
                                     <div class="col-sm-12 form-group">
                                         <input type="text" class="form-control" name="product-title" id="product-title"
-                                            placeholder="Titulo de la obra" required>
+                                            placeholder="Titulo de la obra" value="<%= product.title %>" required>
                                     </div>
+
+                                    <!-- DESCRIPTION -->
                                     <div class="col-sm-12 form-group">
                                         <textarea class="form-control" name="product-description"
-                                            id="product-description" rows="3"
-                                            placeholder="Descripción de la obra"></textarea>
+                                            id="product-description" rows="3" placeholder="Descripción de la obra"
+                                            required><%= product.description %></textarea>
                                     </div>
+
+                                    <!-- PRICE -->
                                     <div class="col-sm-12 form-group">
                                         <input type="number" min="0" name="product-price" class="form-control"
-                                            id="product-price" placeholder="Precio ARS $" required>
+                                            id="product-price" placeholder="Precio ARS $" value="<%= product.price %>"
+                                            required>
                                     </div>
+
+                                    <!-- CATEGORY -->
                                     <div class="col-sm-12 form-group">
-                                        <select id="product-category">
-                                            <button>
-                                                <selectedcontent></selectedcontent>
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                                </svg>
-                                            </button>
-                                            <option disabled selected>
-                                                <div class="text">
-                                                    <h3>Categoría</h3>
-                                                </div>
+                                        <select id="product-category" name="product-category" required>
+
+                                            <option disabled> Categoría </option>
+
+                                            <option value="poster" <%=product.category==="poster" ? "selected" : "" %>>
+                                                Poster
                                             </option>
-                                            <option value="poster">
-                                                <div class="text">
-                                                    <h3>Poster</h3>
-                                                </div>
+
+                                            <option value="photo" <%=product.category==="photo" ? "selected" : "" %>>
+                                                Photo
                                             </option>
-                                            <option value="photo">
-                                                <div class="text">
-                                                    <h3>Photo</h3>
-                                                </div>
+
+                                            <option value="postcard" <%=product.category==="postcard" ? "selected" : ""
+                                                %>>
+                                                Postcard
                                             </option>
-                                            <option value="postcard">
-                                                <div class="text">
-                                                    <h3>Postcard</h3>
-                                                </div>
-                                            </option>
+
                                         </select>
                                     </div>
-                                    <!---->
+
+                                    <!-- ESPACIO -->
                                     <div class="col-sm-12 product-form-switch">
                                         <p>Espacio:</p>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="office" name="office">
-                                            <label class="form-check-label" for="office">Aesthetics
-                                                offices</label>
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="home" name="home">
-                                            <label class="form-check-label" for="home">Home Sweet Home</label>
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="profesionals"
-                                                name="profesionals">
-                                            <label class="form-check-label" for="profesionals">Interioristas: Nuestra
-                                                selección</label>
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="museum" name="museum">
-                                            <label class="form-check-label" for="museum">Serie Limitada</label>
-                                        </div>
+
+                                        <% const spaces=product.space || []; %>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="office"
+                                                    name="office" <%=spaces.includes("office") ? "checked" : "" %>>
+                                                <label class="form-check-label" for="office">Aesthetics offices</label>
+                                            </div>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="home" name="home"
+                                                    <%=spaces.includes("home") ? "checked" : "" %>>
+                                                <label class="form-check-label" for="home">Home Sweet Home</label>
+                                            </div>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="profesionals"
+                                                    name="profesionals" <%=spaces.includes("profesionals") ? "checked"
+                                                    : "" %>>
+                                                <label class="form-check-label" for="profesionals">Interioristas</label>
+                                            </div>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="museum"
+                                                    name="museum" <%=spaces.includes("museum") ? "checked" : "" %>>
+                                                <label class="form-check-label" for="museum">Serie Limitada</label>
+                                            </div>
                                     </div>
-                                    <!---->
-                                    <!---->
+
+                                    <!-- TEMA -->
                                     <div class="col-sm-12 product-form-switch">
                                         <p>Tema:</p>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="architecture"
-                                                name="architecture">
-                                            <label class="form-check-label" for="architecture">Architecture</label>
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="animals" name="animals">
-                                            <label class="form-check-label" for="animals">Animals</label>
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="vintage" name="vintage">
-                                            <label class="form-check-label" for="vintage">Vintage</label>
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="bauhaus" name="bauhaus">
-                                            <label class="form-check-label" for="bauhaus">Bauhaus</label>
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="maps" name="maps">
-                                            <label class="form-check-label" for="maps">Mapas</label>
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="blueprints"
-                                                name="blueprints">
-                                            <label class="form-check-label" for="blueprints">Blueprints</label>
-                                        </div>
+
+                                        <% const themes=product.theme || []; %>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="architecture"
+                                                    name="architecture" <%=themes.includes("architecture") ? "checked"
+                                                    : "" %>>
+                                                <label class="form-check-label">Architecture</label>
+                                            </div>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="animals"
+                                                    name="animals" <%=themes.includes("animals") ? "checked" : "" %>>
+                                                <label class="form-check-label">Animals</label>
+                                            </div>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="vintage"
+                                                    name="vintage" <%=themes.includes("vintage") ? "checked" : "" %>>
+                                                <label class="form-check-label">Vintage</label>
+                                            </div>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="bauhaus"
+                                                    name="bauhaus" <%=themes.includes("bauhaus") ? "checked" : "" %>>
+                                                <label class="form-check-label">Bauhaus</label>
+                                            </div>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="maps" name="maps"
+                                                    <%=themes.includes("maps") ? "checked" : "" %>>
+                                                <label class="form-check-label">Mapas</label>
+                                            </div>
+
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="blueprints"
+                                                    name="blueprints" <%=themes.includes("blueprints") ? "checked" : ""
+                                                    %>>
+                                                <label class="form-check-label">Blueprints</label>
+                                            </div>
                                     </div>
-                                    <!---->
+
+                                    <!-- IMAGE PORTADA -->
                                     <div class="col-sm-12 form-group">
-                                        <label for="portada" class="form-label custom-file-upload">Imagen de portada de
-                                            producto:</label>
+                                        <label class="form-label">Portada Actual:</label><br>
+                                        <img src="../../<%= product.coverImage %>" width="120" class="mb-2">
+
+
+                                        <label for="portada" class="form-label custom-file-upload">Cambiar Imagen de
+                                            portada:</label>
                                         <span id="portada-file-name">Ningúna imagen seleccionada</span>
                                         <input class="form-control product-images" type="file"
-                                            accept="image/png, image/jpeg, , image/webp" id="portada" name="portada">
+                                            accept="image/png, image/jpeg, image/webp" id="portada" name="portada">
+
+
+
                                     </div>
+
+                                    <!-- IMAGE LAMINA -->
                                     <div class="col-sm-12 form-group">
-                                        <label for="lamina" class="form-label custom-file-upload">Imagen de lamina del
-                                            producto:</label>
+                                        <label class="form-label">Actual Lamina:</label><br>
+                                        <img src="../../<%= product.secundaryImage %>" width="120" class="mb-2">
+
+                                        <label for="lamina" class="form-label custom-file-upload">Cambiar
+                                            Lamina:</label>
                                         <span id="lamina-file-name">Ningúna imagen seleccionada</span>
                                         <input class="form-control product-images" type="file"
-                                            accept="image/png, image/jpeg, , image/webp" id="lamina" name="lamina">
+                                            accept="image/png, image/jpeg, image/webp" id="lamina" name="lamina">
                                     </div>
+
+                                    <!-- SUBMIT -->
                                     <div class="col-sm-12 form-group">
-                                        <button type="submit" aria-label="Eikon - Cargar producto"
-                                            class="w-100 btn btn-sm eikon-btn" name="submit-create-product">
-                                            CARGAR PRODUCTO
+                                        <button type="submit" class="w-100 btn btn-sm eikon-btn">
+                                            ACTUALIZAR PRODUCTO
                                         </button>
                                     </div>
+
                                 </div>
                             </form>
                         </div>

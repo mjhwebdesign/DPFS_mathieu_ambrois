@@ -145,35 +145,53 @@
   },
   {
     "id": 10,
-    "title": "Into the sky",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
-    "price": 9,
-    "category": "photo",
+    "title": [
+      "Into the sky"
+    ],
+    "description": [
+      "Lorem test ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+    ],
+    "price": 197,
+    "category": [
+      "poster"
+    ],
     "space": [
+      "office",
       "home",
-      "offices"
+      "profesionals",
+      "museum"
     ],
     "theme": [
-      "architecture"
+      "architecture",
+      "animals",
+      "vintage",
+      "bauhaus",
+      "maps",
+      "blueprints"
     ],
     "coverImage": "images/products/archi-1-photo-slide.webp",
     "secundaryImage": "images/products/archi-1-lamina-photo.webp"
   },
   {
     "id": 11,
-    "title": "Blurry",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
-    "price": 9,
-    "category": "photo",
+    "title": [
+      "Blurry"
+    ],
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+    ],
+    "price": 57,
+    "category": [
+      "poster"
+    ],
     "space": [
-      "home",
-      "offices"
+      "home"
     ],
     "theme": [
       "architecture"
     ],
-    "coverImage": "images/products/archi-2-photo-slide.webp",
-    "secundaryImage": "images/products/archi-2-lamina-photo.webp"
+    "coverImage": "/images/products/h4ylt5vgmuj0rgs4elh5kleon.webp",
+    "secundaryImage": "/images/products/mdyssay4r1l9sayzk49dbosb7.webp"
   },
   {
     "id": 12,
