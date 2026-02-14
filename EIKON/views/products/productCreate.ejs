@@ -17,23 +17,27 @@
                     </div>
                     <div class="row justify-content-center align-content-center">
                         <div class="col-12 col-md-6" id="product-create">
-                            <form id="create-product" action="/products/create" method="POST">
+
+                            <form id="create-product" action="/products/create" method="POST"
+                                enctype="multipart/form-data">
                                 <div class="row create-product-form">
                                     <div class="col-sm-12 form-group">
                                         <input type="text" class="form-control" name="product-title" id="product-title"
                                             placeholder="Titulo de la obra" required>
                                     </div>
+
+
                                     <div class="col-sm-12 form-group">
                                         <textarea class="form-control" name="product-description"
-                                            id="product-description" rows="3"
-                                            placeholder="Descripción de la obra"></textarea>
+                                            id="product-description" rows="3" placeholder="Descripción de la obra"
+                                            required></textarea>
                                     </div>
                                     <div class="col-sm-12 form-group">
                                         <input type="number" min="0" name="product-price" class="form-control"
                                             id="product-price" placeholder="Precio ARS $" required>
                                     </div>
                                     <div class="col-sm-12 form-group">
-                                        <select id="product-category">
+                                        <select id="product-category" name="product-category" required>
                                             <button>
                                                 <selectedcontent></selectedcontent>
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -124,14 +128,16 @@
                                             producto:</label>
                                         <span id="portada-file-name">Ningúna imagen seleccionada</span>
                                         <input class="form-control product-images" type="file"
-                                            accept="image/png, image/jpeg, , image/webp" id="portada" name="portada">
+                                            accept="image/png, image/jpeg, image/webp" id="portada" name="portada"
+                                            required>
                                     </div>
                                     <div class="col-sm-12 form-group">
                                         <label for="lamina" class="form-label custom-file-upload">Imagen de lamina del
                                             producto:</label>
                                         <span id="lamina-file-name">Ningúna imagen seleccionada</span>
                                         <input class="form-control product-images" type="file"
-                                            accept="image/png, image/jpeg, , image/webp" id="lamina" name="lamina">
+                                            accept="image/png, image/jpeg, image/webp" id="lamina" name="lamina"
+                                            required>
                                     </div>
                                     <div class="col-sm-12 form-group">
                                         <button type="submit" aria-label="Eikon - Cargar producto"

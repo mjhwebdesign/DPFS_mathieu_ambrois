@@ -1,12 +1,20 @@
 const productModel = require("../models/productModel");
 
 const indexController = {
+ /*===============
+INDEX METHOD
+===============*/
  index: function (req, res, next) {
-  // Retrieve All products using the method in the Model previously created
+  // Retrieve products
   const products = productModel.getAll();
-  // Send the products to the view using literal object { products: products }
+
+  // Send  products to the view
   return res.render("index", { products });
  },
+
+ /*===============
+CART METHOD
+===============*/
  cart: function (req, res, next) {
   return res.render("products/productCart");
  },
