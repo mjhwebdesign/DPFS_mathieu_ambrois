@@ -148,191 +148,213 @@
               <div id="shop-page-items" class="row">
                 <div id="no-results" class="col-12">No hay resultado usando esta combinacion de filtros
                 </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product photo office architecture">
-                  <div id="item-id" class="card">
-                    <a href="products/78">
-                      <img src="/images/products/photo-6-photo-slide.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
-                      </div>
-                    </a>
+                <% products.forEach(product=> { %>
+                  <div
+                    class="col-md-12 col-lg-6 mb-4 text-center product <%= product.category %> <%= product.space.join(' ') %> <%= product.theme.join(' ') %>">
+                    <div id="<%= product.id %>" class="card">
+                      <a href="/products/<%= product.id %>">
+                        <img src="<%= product.coverImage %>" class="product-img" alt="<%= product.title %>">
+                        <div class="product-info">
+                          <span class="title">
+                            <%= product.title %>
+                          </span>
+                          <span class="category">
+                            <%= product.category %>
+                          </span>
+                          <span class="price">$ <%= product.price %></span>
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office blueprints">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/blueprints-typing-machine-afiche-blueprint-slide.webp"
-                        class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                  <% }) %>
+
+                    <!-- <div class="col-md-12 col-lg-6 mb-4 text-center product photo office architecture">
+                      <div id="item-id" class="card">
+                        <a href="products/78">
+                          <img src="/images/products/photo-6-photo-slide.webp" class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product poster museum home">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/limited-ilustration-slide-3.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office blueprints">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/blueprints-typing-machine-afiche-blueprint-slide.webp"
+                            class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product photo retail animals">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/animal-2-photo-animal-slide.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product poster museum home">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/limited-ilustration-slide-3.webp" class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office maps">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/maps-mapamundis-2-afiche-maps-slide.webp" class="product-img"
-                        alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product photo retail animals">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/animal-2-photo-animal-slide.webp" class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product poster home vintage">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/vintage-2-afiche-vintaget-slide.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office maps">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/maps-mapamundis-2-afiche-maps-slide.webp" class="product-img"
+                            alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product photo home">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/photo-4-photo-slide.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product poster home vintage">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/vintage-2-afiche-vintaget-slide.webp" class="product-img"
+                            alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product photo home architecture">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/archi-3-photo-slide.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product photo home">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/photo-4-photo-slide.webp" class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product photo museum home">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/limited-photo-slide-1.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product photo home architecture">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/archi-3-photo-slide.webp" class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product postcard home">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/postcards-5--postcard-slide.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product photo museum home">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/limited-photo-slide-1.webp" class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product poster home">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/blueprints-steam-machine-afiche-blueprint-slide.webp"
-                        class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product postcard home">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/postcards-5--postcard-slide.webp" class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office blueprints">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/blueprints-spoon-afiche-blueprint-slide.webp" class="product-img"
-                        alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product poster home">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/blueprints-steam-machine-afiche-blueprint-slide.webp"
+                            class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office profesionals bauhaus">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/bauhaus-4-afiche-bauhaus-slide.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office blueprints">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/blueprints-spoon-afiche-blueprint-slide.webp" class="product-img"
+                            alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product photo home">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/archi-8-photo-slide.webp" class="product-img" alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office profesionals bauhaus">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/bauhaus-4-afiche-bauhaus-slide.webp" class="product-img"
+                            alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office maps">
-                  <div id="item-id" class="card">
-                    <a href="products/{id}">
-                      <img src="/images/products/maps-mapamundis-3-afiche-maps-slide.webp" class="product-img"
-                        alt="title">
-                      <div class="product-info">
-                        <span class="title">Lor</span>
-                        <span class="category">Categoría</span>
-                        <span class="price">$ 89</span>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product photo home">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/archi-8-photo-slide.webp" class="product-img" alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
                       </div>
-                    </a>
-                  </div>
-                </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6 mb-4 text-center product poster home office maps">
+                      <div id="item-id" class="card">
+                        <a href="products/{id}">
+                          <img src="/images/products/maps-mapamundis-3-afiche-maps-slide.webp" class="product-img"
+                            alt="title">
+                          <div class="product-info">
+                            <span class="title">Lor</span>
+                            <span class="category">Categoría</span>
+                            <span class="price">$ 89</span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>-->
               </div>
             </div>
           </div>

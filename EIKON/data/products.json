@@ -7,8 +7,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/animal-1-photo-animal-slide.webp",
-  "secundaryImage": "../public/img/products/animals-elephant-1-lamina-animal.webp"
+  "coverImage": "images/products/animal-1-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-elephant-1-lamina-animal.webp"
  },
  {
   "id": 2,
@@ -18,8 +18,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/animal-1-photo-animal-slide.webp",
-  "secundaryImage": "../public/img/products/animals-peacock-lamina-animal.webp"
+  "coverImage": "images/products/animal-1-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-peacock-lamina-animal.webp"
  },
  {
   "id": 3,
@@ -29,8 +29,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/animal-2-photo-animal-slide.webp",
-  "secundaryImage": "../public/img/products/animals-rhino-lamina-animal.webp"
+  "coverImage": "images/products/animal-2-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-rhino-lamina-animal.webp"
  },
  {
   "id": 4,
@@ -40,8 +40,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/animal-2-photo-animal-slide.webp",
-  "secundaryImage": "../public/img/products/animals-elephant-2-lamina-animal.webp"
+  "coverImage": "images/products/animal-2-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-elephant-2-lamina-animal.webp"
  },
  {
   "id": 5,
@@ -51,8 +51,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/animals-crane-2-photo-animal-slide.webp",
-  "secundaryImage": "../public/img/products/animals-crane-2-lamina-animal.webp"
+  "coverImage": "images/products/animals-crane-2-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-crane-2-lamina-animal.webp"
  },
  {
   "id": 6,
@@ -62,8 +62,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/animals-crane-photo-animal-slide.webp",
-  "secundaryImage": "../public/img/products/animals-crane-lamina-animal.webp"
+  "coverImage": "images/products/animals-crane-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-crane-lamina-animal.webp"
  },
  {
   "id": 7,
@@ -73,8 +73,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/animals-peacock-2-photo-animal-slide.webp",
-  "secundaryImage": "../public/img/products/animals-peacock-2-lamina-animal.webp"
+  "coverImage": "images/products/animals-peacock-2-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-peacock-2-lamina-animal.webp"
  },
  {
   "id": 8,
@@ -84,8 +84,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/animals-whale.shark-photo-animal-slide.webp",
-  "secundaryImage": "../public/img/products/animals-whale-shark-lamina-animal.webp"
+  "coverImage": "images/products/animals-whale.shark-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-whale-shark-lamina-animal.webp"
  },
  {
   "id": 9,
@@ -95,8 +95,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/animals-zebra-photo-animal-slide.webp",
-  "secundaryImage": "../public/img/products/animals-zebra-lamina-animal.webp"
+  "coverImage": "images/products/animals-zebra-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-zebra-lamina-animal.webp"
  },
  {
   "id": 10,
@@ -106,8 +106,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/archi-1-photo-slide.webp",
-  "secundaryImage": "../public/img/products/archi-1-lamina-photo.webp"
+  "coverImage": "images/products/archi-1-photo-slide.webp",
+  "secundaryImage": "images/products/archi-1-lamina-photo.webp"
  },
  {
   "id": 11,
@@ -117,8 +117,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/products/archi-2-photo-slide.webp",
-  "secundaryImage": "../public/img/archi-2-lamina-photo.webp"
+  "coverImage": "images/products/products/archi-2-photo-slide.webp",
+  "secundaryImage": "images/archi-2-lamina-photo.webp"
  },
  {
   "id": 12,
@@ -128,8 +128,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/archi-3-photo-slide.webp",
-  "secundaryImage": "../public/img/products/archi-3-lamina-photo.webp"
+  "coverImage": "images/products/archi-3-photo-slide.webp",
+  "secundaryImage": "images/products/archi-3-lamina-photo.webp"
  },
  {
   "id": 13,
@@ -139,8 +139,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/archi-4-photo-slide.webp",
-  "secundaryImage": "../public/img/products/archi-4-lamina-photo.webp"
+  "coverImage": "images/products/archi-4-photo-slide.webp",
+  "secundaryImage": "images/products/archi-4-lamina-photo.webp"
  },
  {
   "id": 14,
@@ -150,8 +150,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/archi-5-photo-slide.webp",
-  "secundaryImage": "../public/img/products/archi-5-lamina-photo.webp"
+  "coverImage": "images/products/archi-5-photo-slide.webp",
+  "secundaryImage": "images/products/archi-5-lamina-photo.webp"
  },
  {
   "id": 15,
@@ -161,8 +161,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/archi-6-photo-slide.webp",
-  "secundaryImage": "../public/img/products/archi-6-lamina-photo.webp"
+  "coverImage": "images/products/archi-6-photo-slide.webp",
+  "secundaryImage": "images/products/archi-6-lamina-photo.webp"
  },
  {
   "id": 16,
@@ -172,8 +172,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/archi-7-photo-slide.webp",
-  "secundaryImage": "../public/img/products/archi-7-lamina-photo.webp"
+  "coverImage": "images/products/archi-7-photo-slide.webp",
+  "secundaryImage": "images/products/archi-7-lamina-photo.webp"
  },
  {
   "id": 17,
@@ -183,8 +183,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["bauhaus"],
-  "coverImage": "../public/img/products/bauhaus-1-afiche-bauhaus-slide.webp",
-  "secundaryImage": "../public/img/products/bauhaus-1-lamina-bauhaus.webp"
+  "coverImage": "images/products/bauhaus-1-afiche-bauhaus-slide.webp",
+  "secundaryImage": "images/products/bauhaus-1-lamina-bauhaus.webp"
  },
  {
   "id": 18,
@@ -194,8 +194,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["bauhaus"],
-  "coverImage": "../public/img/products/bauhaus-2-afiche-bauhaus-slide.webp",
-  "secundaryImage": "../public/img/products/bauhaus-2-lamina-bauhaus.webp"
+  "coverImage": "images/products/bauhaus-2-afiche-bauhaus-slide.webp",
+  "secundaryImage": "images/products/bauhaus-2-lamina-bauhaus.webp"
  },
  {
   "id": 19,
@@ -205,8 +205,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["bauhaus"],
-  "coverImage": "../public/img/products/bauhaus-3-afiche-bauhaus-slide.webp",
-  "secundaryImage": "../public/img/products/bauhaus-3-lamina-bauhaus.webp"
+  "coverImage": "images/products/bauhaus-3-afiche-bauhaus-slide.webp",
+  "secundaryImage": "images/products/bauhaus-3-lamina-bauhaus.webp"
  },
  {
   "id": 20,
@@ -216,8 +216,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["bauhaus"],
-  "coverImage": "../public/img/products/bauhaus-4-afiche-bauhaus-slide.webp",
-  "secundaryImage": "../public/img/products/bauhaus-4-lamina-bauhaus.webp"
+  "coverImage": "images/products/bauhaus-4-afiche-bauhaus-slide.webp",
+  "secundaryImage": "images/products/bauhaus-4-lamina-bauhaus.webp"
  },
  {
   "id": 21,
@@ -227,8 +227,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["bauhaus"],
-  "coverImage": "../public/img/products/bauhaus-4-afiche-bauhaus-slide.webp",
-  "secundaryImage": "../public/img/products/bauhaus-5-lamina-bauhaus.webp"
+  "coverImage": "images/products/bauhaus-4-afiche-bauhaus-slide.webp",
+  "secundaryImage": "images/products/bauhaus-5-lamina-bauhaus.webp"
  },
  {
   "id": 22,
@@ -238,8 +238,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["bauhaus"],
-  "coverImage": "../public/img/products/bauhaus-6-afiche-bauhaus-slide.webp",
-  "secundaryImage": "../public/img/products/bauhaus-6-lamina-bauhaus.webp"
+  "coverImage": "images/products/bauhaus-6-afiche-bauhaus-slide.webp",
+  "secundaryImage": "images/products/bauhaus-6-lamina-bauhaus.webp"
  },
  {
   "id": 23,
@@ -249,8 +249,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["bauhaus"],
-  "coverImage": "../public/img/products/bauhaus-7-afiche-bauhaus-slide.webp",
-  "secundaryImage": "../public/img/products/bauhaus-7-lamina-bauhaus.webp"
+  "coverImage": "images/products/bauhaus-7-afiche-bauhaus-slide.webp",
+  "secundaryImage": "images/products/bauhaus-7-lamina-bauhaus.webp"
  },
  {
   "id": 24,
@@ -260,8 +260,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-alambic-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-alambic-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-alambic-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-alambic-lamina-blueprint.webp"
  },
  {
   "id": 25,
@@ -271,8 +271,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-camera-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-camera-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-camera-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-camera-lamina-blueprint.webp"
  },
  {
   "id": 26,
@@ -282,8 +282,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-paper-clip-machine-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-paper-clip-machine-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-paper-clip-machine-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-paper-clip-machine-lamina-blueprint.webp"
  },
  {
   "id": 27,
@@ -293,8 +293,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-piano-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-piano-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-piano-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-piano-lamina-blueprint.webp"
  },
  {
   "id": 28,
@@ -304,8 +304,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-space-needle-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-space-needle-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-space-needle-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-space-needle-lamina-blueprint.webp"
  },
  {
   "id": 29,
@@ -315,8 +315,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-spoon-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-spoon-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-spoon-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-spoon-lamina-blueprint.webp"
  },
  {
   "id": 30,
@@ -326,8 +326,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-steam-machine-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-steam-machine-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-steam-machine-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-steam-machine-lamina-blueprint.webp"
  },
  {
   "id": 31,
@@ -337,8 +337,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-tape-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-tape-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-tape-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-tape-lamina-blueprint.webp"
  },
  {
   "id": 32,
@@ -348,8 +348,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-typing-machine-2-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-typing-machine-2-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-typing-machine-2-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-typing-machine-2-lamina-blueprint.webp"
  },
  {
   "id": 33,
@@ -359,8 +359,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["blueprints"],
-  "coverImage": "../public/img/products/blueprints-typing-machine-afiche-blueprint-slide.webp",
-  "secundaryImage": "../public/img/products/blueprints-typing-machine-lamina-blueprint.webp"
+  "coverImage": "images/products/blueprints-typing-machine-afiche-blueprint-slide.webp",
+  "secundaryImage": "images/products/blueprints-typing-machine-lamina-blueprint.webp"
  },
  {
   "id": 34,
@@ -370,8 +370,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/living_montreux.webp",
-  "secundaryImage": "../public/img/products/lamina_montreux.webp"
+  "coverImage": "images/products/living_montreux.webp",
+  "secundaryImage": "images/products/lamina_montreux.webp"
  },
  {
   "id": 35,
@@ -381,8 +381,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage, maps"],
-  "coverImage": "../public/img/products/maps-argentina-afiche-maps-slide.webp",
-  "secundaryImage": "../public/img/products/maps-argentina-lamina-maps.webp"
+  "coverImage": "images/products/maps-argentina-afiche-maps-slide.webp",
+  "secundaryImage": "images/products/maps-argentina-lamina-maps.webp"
  },
  {
   "id": 36,
@@ -392,8 +392,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage, maps"],
-  "coverImage": "../public/img/products/maps-mapamundis-1-afiche-maps-slide.webp",
-  "secundaryImage": "../public/img/products/maps-mapamundis-1-lamina-maps.webp"
+  "coverImage": "images/products/maps-mapamundis-1-afiche-maps-slide.webp",
+  "secundaryImage": "images/products/maps-mapamundis-1-lamina-maps.webp"
  },
  {
   "id": 37,
@@ -403,8 +403,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage, maps"],
-  "coverImage": "../public/img/products/maps-mapamundis-2-afiche-maps-slide.webp",
-  "secundaryImage": "../public/img/products/maps-mapamundis-2-lamina-maps.webp"
+  "coverImage": "images/products/maps-mapamundis-2-afiche-maps-slide.webp",
+  "secundaryImage": "images/products/maps-mapamundis-2-lamina-maps.webp"
  },
  {
   "id": 38,
@@ -414,8 +414,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage, maps"],
-  "coverImage": "../public/img/products/maps-mapamundis-3-afiche-maps-slide.webp",
-  "secundaryImage": "../public/img/products/maps-mapamundis-3-lamina-maps.webp"
+  "coverImage": "images/products/maps-mapamundis-3-afiche-maps-slide.webp",
+  "secundaryImage": "images/products/maps-mapamundis-3-lamina-maps.webp"
  },
  {
   "id": 39,
@@ -425,8 +425,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/photo-1-photo-slide.webp",
-  "secundaryImage": "../public/img/products/photo-1-lamina-photo.webp"
+  "coverImage": "images/products/photo-1-photo-slide.webp",
+  "secundaryImage": "images/products/photo-1-lamina-photo.webp"
  },
  {
   "id": 40,
@@ -436,8 +436,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/photo-2-photo-slide.webp",
-  "secundaryImage": "../public/img/products/photo-2-lamina-photo.webp"
+  "coverImage": "images/products/photo-2-photo-slide.webp",
+  "secundaryImage": "images/products/photo-2-lamina-photo.webp"
  },
  {
   "id": 41,
@@ -447,8 +447,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/photo-3-photo.webp",
-  "secundaryImage": "../public/img/products/photo-3-lamina-photo-slide.webp"
+  "coverImage": "images/products/photo-3-photo.webp",
+  "secundaryImage": "images/products/photo-3-lamina-photo-slide.webp"
  },
  {
   "id": 42,
@@ -458,8 +458,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/photo-4-photo-slide.webp",
-  "secundaryImage": "../public/img/products/photo-4-lamina-photo-slide.webp"
+  "coverImage": "images/products/photo-4-photo-slide.webp",
+  "secundaryImage": "images/products/photo-4-lamina-photo-slide.webp"
  },
  {
   "id": 43,
@@ -469,8 +469,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/photo-5-photo-slide.webp",
-  "secundaryImage": "../public/img/products/photo-5-lamina-photo.webp"
+  "coverImage": "images/products/photo-5-photo-slide.webp",
+  "secundaryImage": "images/products/photo-5-lamina-photo.webp"
  },
  {
   "id": 44,
@@ -480,8 +480,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/photo-6-photo-slide.webp",
-  "secundaryImage": "../public/img/products/photo-6-lamina-photo.webp"
+  "coverImage": "images/products/photo-6-photo-slide.webp",
+  "secundaryImage": "images/products/photo-6-lamina-photo.webp"
  },
  {
   "id": 45,
@@ -491,8 +491,8 @@
   "category": "postcard",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/postcards-1--postcard-slide.webp",
-  "secundaryImage": "../public/img/products/postcards-1-lamina-postcard.webp"
+  "coverImage": "images/products/postcards-1--postcard-slide.webp",
+  "secundaryImage": "images/products/postcards-1-lamina-postcard.webp"
  },
  {
   "id": 46,
@@ -502,8 +502,8 @@
   "category": "postcard",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/postcards-2--postcard-slide.webp",
-  "secundaryImage": "../public/img/products/postcards-2-lamina-postcard.webp"
+  "coverImage": "images/products/postcards-2--postcard-slide.webp",
+  "secundaryImage": "images/products/postcards-2-lamina-postcard.webp"
  },
  {
   "id": 47,
@@ -513,8 +513,8 @@
   "category": "postcard",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/postcards-3--postcard-slide.webp",
-  "secundaryImage": "../public/img/products/postcards-3-lamina-postcard.webp"
+  "coverImage": "images/products/postcards-3--postcard-slide.webp",
+  "secundaryImage": "images/products/postcards-3-lamina-postcard.webp"
  },
  {
   "id": 48,
@@ -524,8 +524,8 @@
   "category": "postcard",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/postcards-4--postcard-slide.webp",
-  "secundaryImage": "../public/img/products/postcards-4-lamina-postcard.webp"
+  "coverImage": "images/products/postcards-4--postcard-slide.webp",
+  "secundaryImage": "images/products/postcards-4-lamina-postcard.webp"
  },
  {
   "id": 49,
@@ -535,8 +535,8 @@
   "category": "postcard",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/postcards-5--postcard-slide.webp",
-  "secundaryImage": "../public/img/products/postcards-5-lamina-postcard.webp"
+  "coverImage": "images/products/postcards-5--postcard-slide.webp",
+  "secundaryImage": "images/products/postcards-5-lamina-postcard.webp"
  },
  {
   "id": 50,
@@ -546,8 +546,8 @@
   "category": "postcard",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/postcards-6--postcard-slide.webp",
-  "secundaryImage": "../public/img/products/postcards-6-lamina-postcard.webp"
+  "coverImage": "images/products/postcards-6--postcard-slide.webp",
+  "secundaryImage": "images/products/postcards-6-lamina-postcard.webp"
  },
  {
   "id": 51,
@@ -557,8 +557,8 @@
   "category": "postcard",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/postcards-7--postcard-slide.webp",
-  "secundaryImage": "../public/img/products/postcards-7-lamina-postcard.webp"
+  "coverImage": "images/products/postcards-7--postcard-slide.webp",
+  "secundaryImage": "images/products/postcards-7-lamina-postcard.webp"
  },
  {
   "id": 52,
@@ -568,8 +568,8 @@
   "category": "postcard",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/postcards-8--postcard-slide.webp",
-  "secundaryImage": "../public/img/products/postcards-8-lamina-postcard.webp"
+  "coverImage": "images/products/postcards-8--postcard-slide.webp",
+  "secundaryImage": "images/products/postcards-8-lamina-postcard.webp"
  },
  {
   "id": 53,
@@ -579,8 +579,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/vintage-1-afiche-vintage-slide.webp",
-  "secundaryImage": "../public/img/products/vintage-1-lamina-vintage.webp"
+  "coverImage": "images/products/vintage-1-afiche-vintage-slide.webp",
+  "secundaryImage": "images/products/vintage-1-lamina-vintage.webp"
  },
  {
   "id": 54,
@@ -590,8 +590,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/vintage-2-afiche-vintage-slide.webp",
-  "secundaryImage": "../public/img/products/vintage-2-lamina-vintage.webp"
+  "coverImage": "images/products/vintage-2-afiche-vintage-slide.webp",
+  "secundaryImage": "images/products/vintage-2-lamina-vintage.webp"
  },
  {
   "id": 55,
@@ -601,8 +601,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/vintage-3-afiche-vintage-slide.webp",
-  "secundaryImage": "../public/img/products/vintage-3-lamina-vintage.webp"
+  "coverImage": "images/products/vintage-3-afiche-vintage-slide.webp",
+  "secundaryImage": "images/products/vintage-3-lamina-vintage.webp"
  },
  {
   "id": 56,
@@ -612,8 +612,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/vintage-4-afiche-vintage-slide.webp",
-  "secundaryImage": "../public/img/products/vintage-4-lamina-vintage.webp"
+  "coverImage": "images/products/vintage-4-afiche-vintage-slide.webp",
+  "secundaryImage": "images/products/vintage-4-lamina-vintage.webp"
  },
  {
   "id": 57,
@@ -623,8 +623,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/vintage-5-afiche-vintage-slide.webp",
-  "secundaryImage": "../public/img/products/vintage-5-lamina-vintage.webp"
+  "coverImage": "images/products/vintage-5-afiche-vintage-slide.webp",
+  "secundaryImage": "images/products/vintage-5-lamina-vintage.webp"
  },
  {
   "id": 58,
@@ -634,8 +634,8 @@
   "category": "poster",
   "space": ["home", "offices"],
   "theme": ["vintage"],
-  "coverImage": "../public/img/products/vintage-6-afiche-vintage-slide.webp",
-  "secundaryImage": "../public/img/products/vintage-6-lamina-vintage.webp"
+  "coverImage": "images/products/vintage-6-afiche-vintage-slide.webp",
+  "secundaryImage": "images/products/vintage-6-lamina-vintage.webp"
  },
  {
   "id": 59,
@@ -645,8 +645,8 @@
   "category": "poster",
   "space": ["home, office, museum"],
   "theme": ["animal"],
-  "coverImage": "../public/img/products/limited-ilustration-slide-3.webp",
-  "secundaryImage": "../public/img/products/limited-ilustration-lamina-3.webp"
+  "coverImage": "images/products/limited-ilustration-slide-3.webp",
+  "secundaryImage": "images/products/limited-ilustration-lamina-3.webp"
  },
  {
   "id": 60,
@@ -656,8 +656,8 @@
   "category": "photo",
   "space": ["home, office, museum"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/limited-photo-slide-1.webp",
-  "secundaryImage": "../public/img/limited-photo-lamina-1.webp"
+  "coverImage": "images/products/limited-photo-slide-1.webp",
+  "secundaryImage": "images/limited-photo-lamina-1.webp"
  },
  {
   "id": 61,
@@ -667,8 +667,8 @@
   "category": "photo",
   "space": ["home, office, museum"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/limited-photo-slide-2.webp",
-  "secundaryImage": "../public/img/limited-photo-lamina-2.webp"
+  "coverImage": "images/products/limited-photo-slide-2.webp",
+  "secundaryImage": "images/limited-photo-lamina-2.webp"
  },
  {
   "id": 62,
@@ -678,8 +678,8 @@
   "category": "photo",
   "space": ["home, office, museum"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/limited-photo-slide-4.webp",
-  "secundaryImage": "../public/img/limited-photo-lamina-4.webp"
+  "coverImage": "images/products/limited-photo-slide-4.webp",
+  "secundaryImage": "images/limited-photo-lamina-4.webp"
  },
  {
   "id": 63,
@@ -689,8 +689,8 @@
   "category": "photo",
   "space": ["home, office, museum"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/limited-photo-slide-5.webp",
-  "secundaryImage": "../public/img/limited-photo-lamina-5.webp"
+  "coverImage": "images/products/limited-photo-slide-5.webp",
+  "secundaryImage": "images/limited-photo-lamina-5.webp"
  },
  {
   "id": 64,
@@ -700,7 +700,7 @@
   "category": "photo",
   "space": ["home, office, museum"],
   "theme": ["architecture"],
-  "coverImage": "../public/img/products/limited-photo-slide-6.webp",
-  "secundaryImage": "../public/img/limited-photo-lamina-6.webp"
+  "coverImage": "images/products/limited-photo-slide-6.webp",
+  "secundaryImage": "images/limited-photo-lamina-6.webp"
  }
 ]
