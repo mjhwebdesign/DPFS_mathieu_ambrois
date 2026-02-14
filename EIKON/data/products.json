@@ -12,14 +12,14 @@
  },
  {
   "id": 2,
-  "title": "Peacock 1",
+  "title": "Bauhaus 7",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
-  "category": "photo",
+  "category": "poster",
   "space": ["home", "offices"],
-  "theme": ["animal"],
-  "coverImage": "images/products/animal-1-photo-animal-slide.webp",
-  "secundaryImage": "images/products/animals-peacock-lamina-animal.webp"
+  "theme": ["bauhaus"],
+  "coverImage": "images/products/bauhaus-7-afiche-bauhaus-slide.webp",
+  "secundaryImage": "images/products/bauhaus-7-lamina-bauhaus.webp"
  },
  {
   "id": 3,
@@ -34,14 +34,14 @@
  },
  {
   "id": 4,
-  "title": "Elephant 2",
+  "title": "Copernico Mapamundi",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
-  "category": "photo",
+  "category": "poster",
   "space": ["home", "offices"],
-  "theme": ["animal"],
-  "coverImage": "images/products/animal-2-photo-animal-slide.webp",
-  "secundaryImage": "images/products/animals-elephant-2-lamina-animal.webp"
+  "theme": ["vintage, maps"],
+  "coverImage": "images/products/maps-mapamundis-1-afiche-maps-slide.webp",
+  "secundaryImage": "images/products/maps-mapamundis-1-lamina-maps.webp"
  },
  {
   "id": 5,
@@ -117,8 +117,8 @@
   "category": "photo",
   "space": ["home", "offices"],
   "theme": ["architecture"],
-  "coverImage": "images/products/products/archi-2-photo-slide.webp",
-  "secundaryImage": "images/archi-2-lamina-photo.webp"
+  "coverImage": "images/products/archi-2-photo-slide.webp",
+  "secundaryImage": "images/products/archi-2-lamina-photo.webp"
  },
  {
   "id": 12,
@@ -243,14 +243,14 @@
  },
  {
   "id": 23,
-  "title": "Bauhaus 7",
+  "title": "Peacock 1",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
-  "category": "poster",
+  "category": "photo",
   "space": ["home", "offices"],
-  "theme": ["bauhaus"],
-  "coverImage": "images/products/bauhaus-7-afiche-bauhaus-slide.webp",
-  "secundaryImage": "images/products/bauhaus-7-lamina-bauhaus.webp"
+  "theme": ["animal"],
+  "coverImage": "images/products/animal-1-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-peacock-lamina-animal.webp"
  },
  {
   "id": 24,
@@ -386,14 +386,14 @@
  },
  {
   "id": 36,
-  "title": "Copernico Mapamundi",
+  "title": "Elephant 2",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
   "price": 9,
-  "category": "poster",
+  "category": "photo",
   "space": ["home", "offices"],
-  "theme": ["vintage, maps"],
-  "coverImage": "images/products/maps-mapamundis-1-afiche-maps-slide.webp",
-  "secundaryImage": "images/products/maps-mapamundis-1-lamina-maps.webp"
+  "theme": ["animal"],
+  "coverImage": "images/products/animal-2-photo-animal-slide.webp",
+  "secundaryImage": "images/products/animals-elephant-2-lamina-animal.webp"
  },
  {
   "id": 37,

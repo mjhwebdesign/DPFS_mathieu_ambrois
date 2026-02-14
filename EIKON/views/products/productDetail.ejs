@@ -16,15 +16,15 @@
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <div class="image-wrapper">
-                                            <img src="/images/products/archi-2-photo-slide.webp"
-                                                class="product-detail-image d-block w-100" alt="..."
+                                            <img src="../<%= product.coverImage %>"
+                                                class="product-detail-image d-block w-100" alt="<%= product.title %>"
                                                 data-bs-toggle="modal" data-bs-target="#product-detail-image-modal">
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <div class="image-wrapper">
-                                            <img src="/images/products/archi-2-lamina-photo.webp"
-                                                class="product-detail-image d-block w-100" alt="..."
+                                            <img src="../<%= product.secundaryImage %>"
+                                                class="product-detail-image d-block w-100" alt="<%= product.title %>"
                                                 data-bs-toggle="modal" data-bs-target="#product-detail-image-modal">
                                         </div>
                                     </div>
@@ -32,24 +32,25 @@
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#product-detail-carousel" data-bs-slide-to="0"
                                         class="active thumbnail" aria-current="true" aria-label="Slide 1">
-                                        <img src="/images/products/archi-2-photo-slide.webp" class="thu" alt="...">
+                                        <img src="../<%= product.coverImage %>" class="thu" alt="<%= product.title %>">
                                     </button>
                                     <button type="button" data-bs-target="#product-detail-carousel" data-bs-slide-to="1"
                                         class="thumbnail" aria-label="Slide 2">
-                                        <img src="/images/products/archi-2-lamina-photo.webp" class="thu" alt="...">
+                                        <img src="../<%= product.secundaryImage %>" class="thu"
+                                            alt="<%= product.title %>">
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div id="product-detail-desc" class="col-12 col-md-6">
-                            <h3 class="title">Titulo</h3>
-                            <h4 class="price">{price} $</h4>
-                            <p class="desc">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                                doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-                                inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                                fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-                                sequi nesciunt.
+                            <h3 class="title">
+                                <%= product.title %>
+                            </h3>
+                            <h4 class="price">
+                                <%= product.price %> $
+                            </h4>
+                            <p class="desc">
+                                <%= product.description %>
                             </p>
                             <div class="row">
                                 <div class="row align-items-center mb-3">
@@ -131,11 +132,11 @@
                 <!-- Modal -->
                 <div class="modal fade" id="product-detail-image-modal" tabindex="-1"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <img src="/images/products/archi-2-lamina-photo.webp" alt="Product title">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
+                                <img src="../<%= product.coverImage %>" alt="<%= product.title %>">
                             </div>
                         </div>
                     </div>

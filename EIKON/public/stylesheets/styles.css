@@ -254,6 +254,17 @@ header.is-sticky #main-nav.navbar .dropdown > .dropdown-menu .row {
  background-color: #000000e6;
 }
 
+.modal-body {
+ display: flex;
+ justify-content: center;
+}
+
+@media (min-width: 576px) {
+ .modal-dialog {
+  max-width: 90vw;
+ }
+}
+
 .modal.show .modal-dialog .modal-content {
  background: none;
 }
@@ -265,8 +276,9 @@ header.is-sticky #main-nav.navbar .dropdown > .dropdown-menu .row {
 
 .modal.show .modal-dialog .modal-content .modal-body img {
  max-width: 100%;
- width: auto;
- height: 85vh;
+ height: auto;
+ max-height: 80vh;
+ margin: 0 auto;
 }
 
 /* HOME CAROUSEL*/
