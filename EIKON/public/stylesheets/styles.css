@@ -1645,3 +1645,13 @@ input[type="file"] {
   }
  }
 }
+
+/*==== ADMIN =====*/
+
+.admin-product:nth-child(odd) {
+ background-color: #555353;
+}
+
+.admin-product div {
+ align-content: center;
+}

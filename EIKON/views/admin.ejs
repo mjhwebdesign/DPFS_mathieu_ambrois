@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head', { pageTitle: "Eikon | Temporary Admin Page" }) %>
+
+  <body>
+    <!-- HEADER-->
+    <%- include('partials/header') %>
+      <!-- SLIDER-->
+
+      <section id="products">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 mb-5">
+              <form action="/products/create" method="GET" class="text-end">
+                <button type="submit" class="btn btn-success">
+                  CREAR UN NUEVO PRODUCTO
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <% products.forEach(product=> { %>
+            <div class="admin-product row">
+              <div class="col-1">
+                <%= product.id %>
+              </div>
+              <div class="col-1 pt-2 pb-2"><img src="<%= product.secundaryImage %>" class="img-fluid"
+                  alt="<%= product.title %>">
+              </div>
+              <div class="col-7">
+                <%= product.title %>
+              </div>
+              <div class="col-1">
+                <form action="/products/<%= product.id %>" method="GET" class="text-end">
+                  <button type="submit" class="btn btn-info">
+                    VER
+                  </button>
+                </form>
+              </div>
+              <div class="col-1">
+                <form action="/products/edit/<%= product.id %> %>" method="GET" class="text-end">
+                  <button type="submit" class="btn btn-info">
+                    EDIT
+                  </button>
+                </form>
+              </div>
+              <div class="col-1">
+                <form action="/products/delete/<%= product.id %>" method="POST"
+                  onsubmit="return confirm('¿Seguro que deseas eliminar este producto?')" class="text-end">
+                  <button type="submit" class="btn btn-danger">
+                    BORRAR
+                  </button>
+                </form>
+              </div>
+            </div>
+            <% }) %>
+
+
+        </div>
+        </div>
+      </section>
+      <!-- FOOTER -->
+      <%- include('partials/footer') %>
+        <!-- SCRIPTS -->
+        <%- include('partials/scripts') %>
+  </body>
+
+</html>

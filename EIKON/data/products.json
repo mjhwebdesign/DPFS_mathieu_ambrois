@@ -1,21 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Elefant 1",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
-    "price": 9,
-    "category": "photo",
-    "space": [
-      "home",
-      "offices"
-    ],
-    "theme": [
-      "animal"
-    ],
-    "coverImage": "images/products/animal-1-photo-animal-slide.webp",
-    "secundaryImage": "images/products/animals-elephant-1-lamina-animal.webp"
-  },
-  {
     "id": 2,
     "title": "Bauhaus 7",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
@@ -403,13 +387,18 @@
   },
   {
     "id": 25,
-    "title": "Alambic",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+    "title": [
+      "Camera"
+    ],
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+    ],
     "price": 9,
-    "category": "poster",
+    "category": [
+      "poster"
+    ],
     "space": [
-      "home",
-      "offices"
+      "home"
     ],
     "theme": [
       "blueprints"
@@ -627,17 +616,20 @@
   },
   {
     "id": 39,
-    "title": "Mapamundi",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+    "title": [
+      "L´ envol"
+    ],
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+    ],
     "price": 9,
-    "category": "photo",
+    "category": [
+      "photo"
+    ],
     "space": [
-      "home",
-      "offices"
+      "home"
     ],
-    "theme": [
-      "animal"
-    ],
+    "theme": [],
     "coverImage": "images/products/photo-1-photo-slide.webp",
     "secundaryImage": "images/products/photo-1-lamina-photo.webp"
   },
@@ -719,7 +711,7 @@
       "vintage"
     ],
     "coverImage": "images/products/photo-6-photo-slide.webp",
-    "secundaryImage": "images/products/photo-6-lamina-photo.webp"
+    "secundaryImage": "images/products/photo-6-lamina.webp"
   },
   {
     "id": 45,
@@ -973,7 +965,7 @@
       "architecture"
     ],
     "coverImage": "images/products/limited-photo-slide-1.webp",
-    "secundaryImage": "images/limited-photo-lamina-1.webp"
+    "secundaryImage": "images/products/limited-photo-lamina-1.webp"
   },
   {
     "id": 61,
@@ -988,7 +980,7 @@
       "architecture"
     ],
     "coverImage": "images/products/limited-photo-slide-2.webp",
-    "secundaryImage": "images/limited-photo-lamina-2.webp"
+    "secundaryImage": "images/products/limited-photo-lamina-2.webp"
   },
   {
     "id": 62,
@@ -1003,7 +995,7 @@
       "architecture"
     ],
     "coverImage": "images/products/limited-photo-slide-4.webp",
-    "secundaryImage": "images/limited-photo-lamina-4.webp"
+    "secundaryImage": "images/products/limited-photo-lamina-4.webp"
   },
   {
     "id": 63,
@@ -1018,21 +1010,6 @@
       "architecture"
     ],
     "coverImage": "images/products/limited-photo-slide-5.webp",
-    "secundaryImage": "images/limited-photo-lamina-5.webp"
-  },
-  {
-    "id": 64,
-    "title": "Santiano",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
-    "price": 9,
-    "category": "photo",
-    "space": [
-      "home, office, museum"
-    ],
-    "theme": [
-      "architecture"
-    ],
-    "coverImage": "images/products/limited-photo-slide-6.webp",
-    "secundaryImage": "images/limited-photo-lamina-6.webp"
+    "secundaryImage": "images/products/limited-photo-lamina-5.webp"
   }
 ]

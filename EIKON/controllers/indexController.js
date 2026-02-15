@@ -13,6 +13,28 @@ INDEX METHOD
  },
 
  /*===============
+INDEX METHOD
+===============*/
+ index: function (req, res, next) {
+  // Retrieve products
+  const products = productModel.getAll();
+
+  // Send  products to the view
+  return res.render("index", { products });
+ },
+
+ /*===============
+ADMIN temporary METHOD
+===============*/
+ admin: function (req, res, next) {
+  // Retrieve products
+  const products = productModel.getAll();
+
+  // Send  products to the view
+  return res.render("admin", { products });
+ },
+
+ /*===============
 CART METHOD
 ===============*/
  cart: function (req, res, next) {
