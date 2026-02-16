@@ -1009,17 +1009,48 @@
   },
   {
     "id": 63,
-    "title": "How long was now?",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
-    "price": 9,
-    "category": "photo",
+    "title": [
+      "How long was now?"
+    ],
+    "description": [
+      "Lorem ipsum"
+    ],
+    "price": 59,
+    "category": [
+      "photo"
+    ],
     "space": [
-      "home, office, museum"
+      "office",
+      "home",
+      "profesionals",
+      "museum"
     ],
     "theme": [
       "architecture"
     ],
-    "coverImage": "images/products/limited-photo-slide-5.webp",
-    "secundaryImage": "images/products/limited-photo-lamina-5.webp"
+    "coverImage": "/images/products/or8hbtumqvk7ofhqpnlmxtwzi.webp",
+    "secundaryImage": "/images/products/xlw9393vcwewyrmbmohze9zrv.webp"
+  },
+  {
+    "id": 64,
+    "title": [
+      "Santiano"
+    ],
+    "description": [
+      "Lorem"
+    ],
+    "price": 127,
+    "category": [
+      "photo"
+    ],
+    "space": [
+      "office",
+      "home",
+      "profesionals",
+      "museum"
+    ],
+    "theme": [],
+    "coverImage": "/images/products/nygoejolxfmos1muyjxaj8p1i.webp",
+    "secundaryImage": "/images/products/ltg3uah8sjc687jobsjsdkzei.webp"
   }
 ]

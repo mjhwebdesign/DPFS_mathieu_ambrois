@@ -47,7 +47,7 @@
                 </form>
               </div>
               <div class="col-1">
-                <form action="/products/delete/<%= product.id %>" method="POST"
+                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"
                   onsubmit="return confirm('¿Seguro que deseas eliminar este producto?')" class="text-end">
                   <button type="submit" class="btn btn-danger">
                     BORRAR
