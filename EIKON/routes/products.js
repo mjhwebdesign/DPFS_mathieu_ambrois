@@ -10,8 +10,8 @@ router.get("/edit/:id", productsController.edit);
 router.get("/:id", productsController.show);
 //POST a new product
 router.post("/create", productsController.store);
-// POST Existing Prodcut update
-router.post("/edit/:id", productsController.update);
+// PUT Existing Prodcut update
+router.put("/edit/:id", productsController.update);
 // POST to Delete an Existing Product
 router.post("/delete/:id", productsController.destroy);
 

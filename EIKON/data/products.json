@@ -195,13 +195,18 @@
   },
   {
     "id": 13,
-    "title": "Vortex",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+    "title": [
+      "Vortex"
+    ],
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ko"
+    ],
     "price": 9,
-    "category": "photo",
+    "category": [
+      "poster"
+    ],
     "space": [
-      "home",
-      "offices"
+      "home"
     ],
     "theme": [
       "architecture"
@@ -536,13 +541,18 @@
   },
   {
     "id": 34,
-    "title": "Jazz a Montreux",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+    "title": [
+      "Jazz a Montreux!!"
+    ],
+    "description": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+    ],
     "price": 9,
-    "category": "poster",
+    "category": [
+      "poster"
+    ],
     "space": [
-      "home",
-      "offices"
+      "home"
     ],
     "theme": [
       "vintage"
