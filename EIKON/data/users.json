@@ -61,5 +61,23 @@
     "role": "client",
     "password": "$2b$10$yBJ/uS6Bbzkq4OmbLamPauz8/KPlyorSx3aptKM.6e8rXxU3J5MVG",
     "avatar": "/images/users/tyawdw6iwia5x26aqii7h9l6i.png"
+  },
+  {
+    "id": 8,
+    "firstName": "this ",
+    "lastName": "me ",
+    "email": "alice@alice.com",
+    "role": "client",
+    "password": "$2b$10$2qxLMx.LmzltSrEi8IhaLu6ZuiUaFoNyUUOaS/kVxbmPevCUO11Em",
+    "avatar": "/images/users/jeylm8br8t3nx2lm03w1lg19i.png"
+  },
+  {
+    "id": 9,
+    "firstName": "qsqw",
+    "lastName": "wqd",
+    "email": "alice@alice.com",
+    "role": "client",
+    "password": "$2b$10$ZQa1Kr.xx5XRxFBa4y/1DOcNEzjQ3k0cT48nrMiPMWhu7IJDF.5uy",
+    "avatar": "/images/users/jhfb1irl9k6axliry0zut5cxv.png"
   }
 ]

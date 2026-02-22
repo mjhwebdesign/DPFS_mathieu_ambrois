@@ -49,6 +49,9 @@ STORE METHODE
     avatar,
    };
 
+   if (userModel.findByEmail(fields["email-register"][0])) {
+    return res.send("Email already exists");
+   }
    userModel.create(newUser);
 
    // Redirect after creation

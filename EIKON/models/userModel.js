@@ -16,6 +16,11 @@ const userModel = {
   return users.find((user) => user.id == id);
  },
 
+ findByEmail: function (email) {
+  const users = this.getAll();
+  return users.find((user) => user.email === email);
+ },
+
  // Create a new user
  create: function (newUser) {
   const users = this.getAll();
