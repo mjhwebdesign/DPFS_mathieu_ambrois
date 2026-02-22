@@ -90,7 +90,7 @@
               </div>
               <div class="col-7">
                 <%= user.firstName %>
-                  <%= user.lastName %>. Role: <%= user.role %>
+                  <%= user.lastName %> | Role: <%= user.role %> | Pass: <%= user.password %>
               </div>
               <div class="col-1">
                 <form action="/users/<%= user.id %>" method="GET" class="text-end">

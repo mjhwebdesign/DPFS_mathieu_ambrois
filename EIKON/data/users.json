@@ -34,5 +34,32 @@
     "role": "client",
     "password": "hjk",
     "avatar": "/images/users/a3sbrk17lns329ghpxhgzjg5y.jpeg"
+  },
+  {
+    "id": 5,
+    "firstName": "tesing",
+    "lastName": "testing",
+    "email": "testing@test.com",
+    "role": "client",
+    "password": "qwerty",
+    "avatar": "/images/users/yf6lqn08wwdna5a0xfc1u4b52.png"
+  },
+  {
+    "id": 6,
+    "firstName": "Alicia",
+    "lastName": "Wonderland",
+    "email": "alice@alice.com",
+    "role": "client",
+    "password": "$2b$10$7wNr8t.yi7oK3Q1uvdn6Fu2JGOnJqFelIOdhZco0M8VsDkzCKEkBq",
+    "avatar": "/images/users/hemf5dpeghmd1oau1typi10yq.png"
+  },
+  {
+    "id": 7,
+    "firstName": "Alicia2",
+    "lastName": "al",
+    "email": "alice2@alice.com",
+    "role": "client",
+    "password": "$2b$10$yBJ/uS6Bbzkq4OmbLamPauz8/KPlyorSx3aptKM.6e8rXxU3J5MVG",
+    "avatar": "/images/users/tyawdw6iwia5x26aqii7h9l6i.png"
   }
 ]

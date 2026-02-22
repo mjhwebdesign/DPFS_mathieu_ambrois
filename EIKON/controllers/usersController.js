@@ -1,4 +1,5 @@
 const { IncomingForm } = require("formidable");
+const bcrypt = require("bcrypt");
 //const fs = require("fs");
 const path = require("path");
 const userModel = require("../models/userModel");
@@ -21,7 +22,7 @@ STORE METHODE
   const form = new IncomingForm({
    uploadDir: path.join(__dirname, "../public/images/users"),
    keepExtensions: true,
-   multiples: false,
+   multiples: true,
   });
 
   // Formidabel parse the form
@@ -37,12 +38,14 @@ STORE METHODE
     ? "/images/users/" + path.basename(files.avatar[0].filepath)
     : "";
 
+   const encryptPassword = bcrypt.hashSync(fields["passwordRegister"][0], 10);
+
    const newUser = {
     firstName: fields["firstName"][0],
     lastName: fields["lastName"][0],
-    email: fields["email"][0],
+    email: fields["email-register"][0],
     role: "client",
-    password: fields["password"][0],
+    password: encryptPassword,
     avatar,
    };
 
