@@ -590,15 +590,14 @@ section {
 
 .image-wrapper {
  display: flex;
- height: 100%;
+ height: 450px;
  align-items: flex-start;
  justify-content: center;
 }
 
 .product-detail-image {
- height: 70vh;
- max-height: 600px;
- object-fit: cover;
+ height: 450px;
+ object-fit: contain;
  object-position: top;
 
  &:hover {

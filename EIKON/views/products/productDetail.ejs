@@ -11,21 +11,20 @@
             <section id="product-detail">
                 <div class="container">
                     <div class="row justify-content-between">
-                        <div id="product-detail-image" class="col-12 col-md-4">
+                        <div id="product-detail-image" class="col-12 col-lg-6 col-xl-5">
                             <div id="product-detail-carousel" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
                                         <div class="image-wrapper">
-                                            <img src="../<%= product.coverImage %>"
-                                                class="product-detail-image d-block w-100" alt="<%= product.title %>"
-                                                data-bs-toggle="modal" data-bs-target="#product-detail-image-modal">
+                                            <img src="../<%= product.coverImage %>" class="product-detail-image d-block"
+                                                alt="<%= product.title %>" data-src="../<%= product.coverImage %>">
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <div class="image-wrapper">
                                             <img src="../<%= product.secundaryImage %>"
                                                 class="product-detail-image d-block w-100" alt="<%= product.title %>"
-                                                data-bs-toggle="modal" data-bs-target="#product-detail-image-modal">
+                                                data-src="../<%= product.secundaryImage %>">
                                         </div>
                                     </div>
                                 </div>
@@ -42,7 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="product-detail-desc" class="col-12 col-md-6">
+                        <div id="product-detail-desc" class="col-12 col-lg-6">
                             <h3 class="title">
                                 <%= product.title %>
                             </h3>
@@ -130,13 +129,14 @@
             <%- include('../partials/footer') %>
 
                 <!-- Modal -->
+
                 <div class="modal fade" id="product-detail-image-modal" tabindex="-1"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">X</button>
-                                <img src="../<%= product.coverImage %>" alt="<%= product.title %>">
+                                <img id="product-modal-image" src="" alt="<%= product.title %>">
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,16 @@ const year = document.getElementById("year");
 if (year) {
  year.textContent = new Date().getFullYear();
 }
+
+document.querySelectorAll(".product-detail-image").forEach((img) => {
+ img.addEventListener("click", function () {
+  document.getElementById("product-modal-image").src = this.dataset.src;
+  new bootstrap.Modal(
+   document.getElementById("product-detail-image-modal"),
+  ).show();
+ });
+});
+
 /*======================================================================
 // SHOW HIDE FILTERS ASIDE ON MOBILE
 ======================================================================*/
