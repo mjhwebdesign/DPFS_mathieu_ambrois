@@ -12,7 +12,10 @@
 
         <div class="container">
           <div class="row">
-            <div class="col-12 mb-5">
+            <div class="col-6 mb-5">
+              <h1>PRODUCTOS</h1>
+            </div>
+            <div class="col-6 mb-5">
               <form action="/products/create" method="GET" class="text-end">
                 <button type="submit" class="btn btn-success">
                   CREAR UN NUEVO PRODUCTO
@@ -49,6 +52,63 @@
               <div class="col-1">
                 <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"
                   onsubmit="return confirm('¿Seguro que deseas eliminar este producto?')" class="text-end">
+                  <button type="submit" class="btn btn-danger">
+                    BORRAR
+                  </button>
+                </form>
+              </div>
+            </div>
+            <% }) %>
+
+
+        </div>
+        </div>
+      </section>
+
+      <section id="users">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-6 mb-5">
+              <h1>USUARIOS</h1>
+            </div>
+            <div class="col-6 mb-5">
+              <form action="/users/create" method="GET" class="text-end">
+                <button type="submit" class="btn btn-success">
+                  CREAR UN NUEVO USUARIO
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <% users.forEach(user=> { %>
+            <div class="admin-user row">
+              <div class="col-1">
+                <%= user.id %>
+              </div>
+              <div class="col-1 pt-2 pb-2"><img src="<%= user.avatar %>" class="img-fluid" alt="<%= user.firstName %>">
+              </div>
+              <div class="col-7">
+                <%= user.firstName %>
+                  <%= user.lastName %>. Role: <%= user.role %>
+              </div>
+              <div class="col-1">
+                <form action="/users/<%= user.id %>" method="GET" class="text-end">
+                  <button type="submit" class="btn btn-info">
+                    VER
+                  </button>
+                </form>
+              </div>
+              <div class="col-1">
+                <form action="/users/edit/<%= user.id %> %>" method="GET" class="text-end">
+                  <button type="submit" class="btn btn-info">
+                    EDIT
+                  </button>
+                </form>
+              </div>
+              <div class="col-1">
+                <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST"
+                  onsubmit="return confirm('¿Seguro que deseas eliminar este Usuario?')" class="text-end">
                   <button type="submit" class="btn btn-danger">
                     BORRAR
                   </button>

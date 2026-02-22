@@ -105,6 +105,7 @@ if (value) {
 ======================================================================*/
 const portada = document.getElementById("portada");
 const lamina = document.getElementById("lamina");
+const avatar = document.getElementById("avatar");
 if (portada) {
  portada.addEventListener("change", function () {
   const fileName = this.files[0]
@@ -119,6 +120,14 @@ if (lamina) {
    ? this.files[0].name
    : "Ningún archivo seleccionado";
   document.getElementById("lamina-file-name").textContent = fileName;
+ });
+}
+if (avatar) {
+ avatar.addEventListener("change", function () {
+  const fileName = this.files[0]
+   ? this.files[0].name
+   : "Ningún archivo seleccionado";
+  document.getElementById("avatar-file-name").textContent = fileName;
  });
 }
 

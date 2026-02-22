@@ -1,4 +1,5 @@
 const productModel = require("../models/productModel");
+const userModel = require("../models/userModel");
 
 const indexController = {
  /*===============
@@ -7,18 +8,6 @@ INDEX METHOD
  index: function (req, res, next) {
   // Retrieve products
   const products = productModel.getAll();
-
-  // Send  products to the view
-  return res.render("index", { products });
- },
-
- /*===============
-INDEX METHOD
-===============*/
- index: function (req, res, next) {
-  // Retrieve products
-  const products = productModel.getAll();
-
   // Send  products to the view
   return res.render("index", { products });
  },
@@ -29,9 +18,10 @@ ADMIN temporary METHOD
  admin: function (req, res, next) {
   // Retrieve products
   const products = productModel.getAll();
+  const users = userModel.getAll();
 
-  // Send  products to the view
-  return res.render("admin", { products });
+  // Send  products & Users to the view
+  return res.render("admin", { products, users });
  },
 
  /*===============

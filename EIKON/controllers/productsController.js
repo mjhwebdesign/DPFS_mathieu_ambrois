@@ -18,7 +18,7 @@ STORE METHODE
   form.parse(req, (err, fields, files) => {
    if (err) {
     console.error(err);
-    return res.status(500).send("Error upload");
+    return res.status(500).send("Error de Carga");
    }
 
    // Checkboxes
@@ -61,10 +61,10 @@ STORE METHODE
    // newProduct Construction
 
    const newProduct = {
-    title: fields["product-title"],
-    description: fields["product-description"],
+    title: fields["product-title"][0],
+    description: fields["product-description"][0],
     price: parseFloat(fields["product-price"]),
-    category: fields["product-category"],
+    category: fields["product-category"][0],
     space: spaces,
     theme: themes,
     coverImage,

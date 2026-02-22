@@ -1426,7 +1426,8 @@ footer ul li:first-child a {
 .log-in-content .form-group input::placeholder,
 .create-product-form .form-group input::placeholder,
 .create-product-form .form-group textarea::placeholder,
-.create-product-form {
+.create-product-form,
+#avatar-file-name {
  color: #ccc;
  font-style: italic;
  font-size: 12px;
@@ -1647,10 +1648,12 @@ input[type="file"] {
 
 /*==== ADMIN =====*/
 
-.admin-product:nth-child(odd) {
+.admin-product:nth-child(odd),
+.admin-user:nth-child(odd) {
  background-color: #555353;
 }
 
-.admin-product div {
+.admin-product div,
+.admin-user div {
  align-content: center;
 }

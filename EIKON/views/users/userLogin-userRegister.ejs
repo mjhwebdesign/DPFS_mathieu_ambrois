@@ -52,26 +52,37 @@
                     </div>
                     <!-- -->
                     <div class="col-md-5 text-center text-md-end">
-                        <form id="register">
+
+                        <form id="register" action="/users/create" method="POST" enctype="multipart/form-data">
                             <div class="row log-in-content">
-                                <div class="col-sm-12 form-group will_animate to-right">
-                                    <input type="text" class="form-control" name="fname" id="name-f"
-                                        placeholder="Enter your name." required>
+                                <div class="col-sm-6 form-group will_animate to-right">
+                                    <input type="text" class="form-control" name="firstName" id="name-f"
+                                        placeholder="Apellido." required>
+                                </div>
+                                <div class="col-sm-6 form-group will_animate to-right">
+                                    <input type="text" class="form-control" name="lastName" id="name-l"
+                                        placeholder="Nombre." required>
                                 </div>
                                 <div class="col-sm-12 form-group will_animate to-right">
                                     <input type="email" name="email" class="form-control" id="email"
-                                        placeholder="Enter your Email." required>
+                                        placeholder="Correo Electronico." required>
                                 </div>
-                                <div class="col-sm-12 form-group will_animate to-right">
+                                <div class="col-sm-6 form-group will_animate to-right">
                                     <input type="Password" name="password" class="form-control" id="pass"
-                                        placeholder="Enter your password." required>
+                                        placeholder="Clave." required>
                                 </div>
-                                <div class="col-sm-12 form-group will_animate to-right">
+                                <div class="col-sm-6 form-group will_animate to-right">
                                     <input type="Password" name="cnf-password" class="form-control" id="pass2"
-                                        placeholder="Re-enter your password." required>
+                                        placeholder="Confirmar la clave." required>
                                 </div>
                                 <div class="col-sm-12 form-group invalid-feedback d-block will_animate to-right">
                                     * Las contraseñas no corresponden
+                                </div>
+                                <div class="col-sm-12 form-group will_animate to-right">
+                                    <label for="avatar" class="form-label custom-file-upload">Avatar:</label>
+                                    <span id="avatar-file-name">Ningúna imagen seleccionada</span>
+                                    <input class="form-control product-images" type="file"
+                                        accept="image/png, image/jpeg, image/webp" id="avatar" name="avatar" required>
                                 </div>
                                 <div class="col-sm-12 form-group mb-0 will_animate to-right">
                                     <button id="submit-sign-in" class="btn btn-primary float-right"
