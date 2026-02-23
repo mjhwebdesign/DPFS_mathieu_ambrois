@@ -1,6 +1,7 @@
 var express = require("express");
 let usersController = require("../controllers/usersController");
 var router = express.Router();
+const authMiddleware = require("../middlewares/authMiddleware");
 
 /* GET user list */
 //router.get("/", usersController.index);
@@ -18,7 +19,7 @@ router.post("/login", usersController.login);
 router.get("/logout", usersController.logout);
 
 //GET Detail of a user
-router.get("/:id", usersController.show);
+router.get("/:id", authMiddleware, usersController.show);
 
 /* GET Edit user */
 //router.get("/edit", usersController.edit);
