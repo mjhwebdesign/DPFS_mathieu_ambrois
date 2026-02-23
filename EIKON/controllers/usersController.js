@@ -1,6 +1,6 @@
 const { IncomingForm } = require("formidable");
 const bcrypt = require("bcrypt");
-//const fs = require("fs");
+const fs = require("fs");
 const path = require("path");
 const userModel = require("../models/userModel");
 const crypto = require("crypto");
@@ -141,6 +141,98 @@ SHOW METHODE
   }
   // Send specific product to the view
   return res.render("users/userDetail", { user });
+ },
+
+ /*===============
+EDIT METHODE
+===============*/
+ edit: function (req, res) {
+  const id = req.params.id;
+  const user = userModel.findById(id);
+  // Load Pre filled Form
+  res.render("users/userEdit", { user });
+ },
+
+ /*===============
+Update METHODE
+===============*/
+ update: function (req, res) {
+  const id = req.params.id;
+  const existingUser = userModel.findById(id);
+
+  const form = new IncomingForm({
+   uploadDir: path.join(__dirname, "../public/images/users"),
+   keepExtensions: true,
+   allowEmptyFiles: true,
+   minFileSize: 0, // in case the images doesn´t change
+  });
+
+  form.parse(req, (err, fields, files) => {
+   if (err) {
+    console.error(err);
+    return res.status(500).send("Error al Cargar");
+   }
+
+   //  IMAGES
+
+   let avatar = existingUser.avatar;
+
+   // If new avatar image is load
+   if (files.avatar) {
+    const file = Array.isArray(files.avatar) ? files.avatar[0] : files.avatar;
+
+    if (file.size > 0) {
+     // Delete old image
+     if (existingUser.avatar) {
+      const oldPath = path.join(__dirname, "../public", existingUser.avatar);
+      if (fs.existsSync(oldPath)) fs.unlinkSync(oldPath);
+     }
+
+     avatar = "/images/users/" + path.basename(file.filepath);
+    }
+   }
+
+   // FINAL USER
+
+   const updatedData = {
+    firstName: fields["firstName"][0],
+    lastName: fields["lastName"][0],
+    email: fields["email-register"][0],
+    avatar,
+   };
+
+   userModel.update(id, updatedData);
+   //Redirect to upadted product
+   res.redirect("/users/" + id);
+  });
+ },
+
+ /*===============
+DESTROY METHODE
+===============*/
+
+ destroy: function (req, res) {
+  const id = req.params.id;
+
+  const user = userModel.findById(id);
+
+  if (!user) {
+   return res.status(404).send("Usuario no encontrado");
+  }
+
+  //  Delete Avatar
+  if (user.avatar) {
+   const avatarPath = path.join(__dirname, "../public", user.avatar);
+
+   if (fs.existsSync(avatarPath)) {
+    fs.unlinkSync(avatarPath);
+   }
+  }
+
+  // Delete user from json
+  userModel.delete(id);
+  //Redirect
+  res.redirect("/admin");
  },
 };
 

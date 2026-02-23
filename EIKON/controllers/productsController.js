@@ -181,10 +181,10 @@ Update METHODE
    // FINAL PRODUCT
 
    const updatedData = {
-    title: fields["product-title"],
-    description: fields["product-description"],
+    title: fields["product-title"][0],
+    description: fields["product-description"][0],
     price: parseFloat(fields["product-price"]),
-    category: fields["product-category"],
+    category: fields["product-category"][0],
     space: spaces,
     theme: themes,
     coverImage,

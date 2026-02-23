@@ -26,10 +26,15 @@
                     <div class="col form-group ">
                         Email: <%= user.email %>
                     </div>
-                    <div class="col-sm-12 form-group mb-0">
-                        <button id="submit-sign-in" class="btn btn-primary float-right"
-                            name="submit-register">Submit</button>
+                    <div class="col form-group ">
+                        Rol: <%= user.role %>
                     </div>
+                    <div class="col-sm-12 form-group mb-0">
+                        <form action="userEdit/<%= user.id %>" method="GET">
+                            <button type="submit" class="btn eikon-btn float-right">EDITAR PERFIL</button>
+                        </form>
+                    </div>
+
                     <p id="logInLink" class="pt-3"> <a href="../#products">
                             Volver a la tienda
                         </a>

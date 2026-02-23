@@ -72,13 +72,6 @@
             <div class="col-6 mb-5">
               <h1>USUARIOS</h1>
             </div>
-            <div class="col-6 mb-5">
-              <form action="/users/create" method="GET" class="text-end">
-                <button type="submit" class="btn btn-success">
-                  CREAR UN NUEVO USUARIO
-                </button>
-              </form>
-            </div>
           </div>
 
           <% users.forEach(user=> { %>
@@ -100,7 +93,7 @@
                 </form>
               </div>
               <div class="col-1">
-                <form action="/users/edit/<%= user.id %> %>" method="GET" class="text-end">
+                <form action="users/userEdit/<%= user.id %> %>" method="GET" class="text-end">
                   <button type="submit" class="btn btn-info">
                     EDIT
                   </button>

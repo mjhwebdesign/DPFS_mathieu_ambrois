@@ -3,6 +3,8 @@ let usersController = require("../controllers/usersController");
 var router = express.Router();
 const authMiddleware = require("../middlewares/authMiddleware");
 const loggedUserMiddleware = require("../middlewares/loggedUserMiddleware");
+const adminOrLoggedUserMiddleware = require("../middlewares/adminOrLoggedUserMiddleware");
+const adminMiddleware = require("../middlewares/adminMiddleware");
 
 /* GET user list */
 //router.get("/", usersController.index);
@@ -23,12 +25,12 @@ router.get("/logout", usersController.logout);
 router.get("/:id", authMiddleware, loggedUserMiddleware, usersController.show);
 
 /* GET Edit user */
-//router.get("/edit", usersController.edit);
+router.get("/userEdit/:id", adminOrLoggedUserMiddleware, usersController.edit);
 
-/* POST Update user */
-//router.post("/edit", usersController.update);
+// PUT Existing User update
+router.put("/edit/:id", adminOrLoggedUserMiddleware, usersController.update);
 
-/* GET Detail of a user*/
-//router.get("/:id", usersController.show);
+// DELETE to Delete an Existing User
+router.delete("/delete/:id", adminMiddleware, usersController.destroy);
 
 module.exports = router;

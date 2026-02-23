@@ -6,7 +6,52 @@
     <body>
         <!-- HEADER-->
         <%- include('../partials/header') %>
-            EDIT PROFILE
+            <form id="edit-profile" action="/users/edit/<%= user.id %>?_method=PUT" method="POST"
+                enctype="multipart/form-data">
+
+                <div class="row log-in-content justify-content-center">
+                    <div class="col-12 mb-5 text-center">
+                        <div class="col form-group">
+                            <img src="<%= user.avatar %>" class="img-fluid">
+                        </div>
+                        <h1>EDITAR PERFIL</h1>
+                    </div>
+                    <div class="col-12 col-md-7 form-group">
+                        <input type="text" class="form-control" name="firstName" id="name-f"
+                            value="<%= user.firstName %>" required>
+                    </div>
+                    <div class="col-12 col-md-7 form-group">
+                        <input type="text" class="form-control" name="lastName" id="name-l" value="<%= user.lastName %>"
+                            required>
+                    </div>
+                    <div class="col-12 col-md-7 form-group">
+                        <input type="email" name="email-register" class="form-control" id="email-register"
+                            value="<%= user.email %>">
+                    </div>
+
+
+
+                    <div class="col-12  col-md-7 form-group">
+
+
+
+                        <label for="avatar" class="form-label custom-file-upload">Cambiar mi avatar:</label>
+                        <span id="avatar-file-name">Ningúna imagen seleccionada</span>
+                        <input class="form-control product-images" type="file"
+                            accept="image/png, image/jpeg, image/webp" id="avatar" name="avatar">
+                    </div>
+                    <div class="col-sm-12  col-md-7 form-group mb-0">
+                        <button id="submit-sign-in" class="btn btn-primary float-right"
+                            name="submit-register">EDITAR</button>
+                    </div>
+                    <div class="col-sm-12  col-md-7 form-group mb-0">
+                        <p id="logInLink" class="pt-3"> <a href="/#products">
+                                Prefiero volver a la tienda
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </form>
             <!-- FOOTER-->
             <%- include('../partials/footer') %>
                 <!-- SCRPTS -->
