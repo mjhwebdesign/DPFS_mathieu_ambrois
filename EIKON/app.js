@@ -2,12 +2,18 @@ var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
+const session = require("express-session");
 var logger = require("morgan");
 var methodOverride = require("method-override");
 
+// Routes
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
 var usersRouter = require("./routes/users");
+
+//Middlewares
+const userToLocalsMiddleware = require("./middlewares/userToLocalsMiddleware");
+const rememberMiddleware = require("./middlewares/rememberMiddleware");
 
 var app = express();
 
@@ -24,9 +30,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
-
+// SESSIONS
+app.use(
+ session({
+  secret: "Kp9A3KlRgEyyhzSxkbYmtFl0o1JSlUak",
+  resave: false,
+  saveUninitialized: false,
+ }),
+);
+app.use(userToLocalsMiddleware);
+app.use(rememberMiddleware);
 // Make currentPath available to all views and define activeSection
-
 app.use((req, res, next) => {
  res.locals.currentPath = req.path;
  if (req.path.startsWith("/products")) {

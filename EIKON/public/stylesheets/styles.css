@@ -1498,7 +1498,8 @@ input[type="file"] {
 #logInLink,
 #signInLink,
 #back-to-shop,
-#reminderLinks {
+#reminderLinks,
+.reminderLinks {
  color: white;
  font-size: 12px;
 }

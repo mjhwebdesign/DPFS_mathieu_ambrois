@@ -79,5 +79,15 @@
     "role": "client",
     "password": "$2b$10$ZQa1Kr.xx5XRxFBa4y/1DOcNEzjQ3k0cT48nrMiPMWhu7IJDF.5uy",
     "avatar": "/images/users/jhfb1irl9k6axliry0zut5cxv.png"
+  },
+  {
+    "id": 10,
+    "firstName": "jo",
+    "lastName": "to",
+    "email": "jo@jo.com",
+    "role": "client",
+    "password": "$2b$10$LXU6M188ZD.BmjKiZOaZQuo3QLNnyzepTkX9vI86FzIPilGd3eKjS",
+    "avatar": "/images/users/v5tgz7scvahj7bxce67gmvs6f.png",
+    "rememberToken": "7c188efe28b5849601e764996fd8062bec9bb2bc2ec1c09cb5c1c4760ee1e262c8dae0ff80a1ef2a1f02f2b8ac3fa035b8e5ecaabea0f87b6238d9b8d81cad57"
   }
 ]

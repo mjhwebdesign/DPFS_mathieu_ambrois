@@ -17,21 +17,25 @@
                 </div>
                 <div id="forms" class="row forms-content align-items-center">
                     <div class="col-md-5 offset-md-1 text-center text-md-start">
-                        <form id="login">
+                        <form id="login" action="/users/login" method="POST" enctype="multipart/form-data">
                             <div class="row log-in-content">
                                 <div class="col-sm-12 form-group will_animate to-left">
-                                    <input type="email" class="form-control" name="email-login" id="email-login"
+                                    <input type="email" class="form-control" name="email" id="email-login"
                                         placeholder="Enter your email." required>
                                 </div>
                                 <div class="col-sm-12 form-group will_animate to-left">
-                                    <input type="Password" name="password-login" class="form-control"
-                                        id="password-login" placeholder="Enter your password." required>
+                                    <input type="Password" name="password" class="form-control" id="password-login"
+                                        placeholder="Enter your password." required>
                                 </div>
                                 <div class="col-sm-12 form-group invalid-feedback d-block  will_animate to-left">
                                     * No ingresaste un email valido
                                 </div>
+                                <div class="col-sm-12 form-group will_animate to-left">
+                                    <input type="checkbox" name="remember" value="true"> <span
+                                        class="reminderLinks">Recordarme</span>
+                                </div>
                                 <div class="col-sm-12 form-group mb-0 will_animate to-left">
-                                    <button id="submit-log-in" class="btn btn-primary float-right"
+                                    <button type="submit" id="submit-log-in" class="btn btn-primary float-right"
                                         name="submit-log-in">Submit</button>
                                 </div>
 

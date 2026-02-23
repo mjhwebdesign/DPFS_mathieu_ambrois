@@ -11,6 +11,12 @@ router.get("/create", usersController.create);
 /* POST a new User */
 router.post("/create", usersController.store);
 
+/* POST login form */
+router.post("/login", usersController.login);
+
+/* GET Logout Page */
+router.get("/logout", usersController.logout);
+
 /* GET Edit user */
 //router.get("/edit", usersController.edit);
 

@@ -28,19 +28,26 @@
                         <span class="visually-hidden">items in cart</span>
                     </span>
                 </a>
-                <form id="nav-login" class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0">
-                    <a href="/login" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
-                        Log-In / Register
-                    </a>
-                </form>
-                <form id="nav-login-on"
-                    class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0  d-flex align-items-lg-center flex-column flex-lg-row">
-                    <a class="nav-link me-2 mb-3 mb-lg-0 <%= activeSection === 'users' ? 'active' : '' %>"
-                        aria-label="Eikon - Mi Perfil" href="/users/{id}">John Doe</a>
-                    <a href="/logout" aria-label="Eikon - Registro Login" class="btn btn-sm eikon-btn">
-                        Logout
-                    </a>
-                </form>
+                <% if (!user) { %>
+                    <form id="nav-login" class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0">
+                        <a href="/login" class="btn btn-sm eikon-btn">
+                            Log-In / Register
+                        </a>
+                    </form>
+                    <% } else { %>
+                        <form id="nav-login-on"
+                            class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0 d-flex align-items-lg-center flex-column flex-lg-row">
+
+                            <a class="nav-link me-2 mb-3 mb-lg-0" href="/users/<%= user.id %>">
+                                <%= user.firstName %>
+                                    <%= user.lastName %>
+                            </a>
+
+                            <a href="/users/logout" class="btn btn-sm eikon-btn">
+                                Logout
+                            </a>
+                        </form>
+                        <% } %>
             </div>
         </div>
     </nav>
