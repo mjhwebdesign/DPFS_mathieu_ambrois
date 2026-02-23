@@ -73,7 +73,7 @@ login METHODE
    }
    const email = fields["email"][0];
    const password = fields["password"][0];
-   const remember = fields["remember"][0];
+   const remember = !!fields?.["remember"]?.[0]; // Make remember a boolean to avoid undefined
    const user = userModel.findByEmail(email);
 
    if (!user) {

@@ -21,7 +21,4 @@ router.get("/cart", indexController.cart);
 /*Get Login Page*/
 router.get("/login", indexController.login);
 
-/*Temporary Logout route*/
-router.get("/logout", indexController.logout);
-
 module.exports = router;
