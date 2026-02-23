@@ -73,7 +73,7 @@ login METHODE
    }
    const email = fields["email"][0];
    const password = fields["password"][0];
-   const remember = !!fields?.["remember"]?.[0]; // Make remember a boolean to avoid undefined
+   const remember = !!fields?.["remember"]?.[0]; // Formidable: ? avoid indefine if remember is not checked !! transform to boolean to avoid undefined
    const user = userModel.findByEmail(email);
 
    if (!user) {
@@ -111,7 +111,7 @@ login METHODE
   });
  },
  /*===============
-logout METHODE
+logout METHODE (destroy session)
 ===============*/
  logout: function (req, res) {
   //Remove Session Token if logout
@@ -125,6 +125,22 @@ logout METHODE
   req.session.destroy(() => {
    res.redirect("/");
   });
+ },
+
+ /*===============
+SHOW METHODE
+===============*/
+ show: function (req, res, next) {
+  //Get the id from the url
+  const id = parseInt(req.params.id);
+  // Retrieve a specific user using the method in the Model previously created
+  const user = userModel.findById(id);
+
+  if (!user) {
+   return res.status(404).send("Usuario no existe");
+  }
+  // Send specific product to the view
+  return res.render("users/userDetail", { user });
  },
 };
 

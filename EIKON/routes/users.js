@@ -17,6 +17,9 @@ router.post("/login", usersController.login);
 /* GET Logout Page */
 router.get("/logout", usersController.logout);
 
+//GET Detail of a user
+router.get("/:id", usersController.show);
+
 /* GET Edit user */
 //router.get("/edit", usersController.edit);
 

@@ -6,7 +6,36 @@
     <body>
         <!-- HEADER-->
         <%- include('../partials/header') %>
-            VIEW PROFILE
+
+            <div class="row log-in-content justify-content-center mt-5">
+                <div class="col-12 mb-5 text-center">
+                    <div class="col form-group">
+                        <img src="<%= user.avatar %>" class="img-fluid">
+                    </div>
+                    <h1>MI PERFIL</h1>
+                </div>
+
+                <div class="col-12 col-md-6 text-center">
+
+                    <div class="col form-group ">
+                        First Name: <%= user.firstName %>
+                    </div>
+                    <div class="col form-group ">
+                        Last Name: <%= user.lastName %>
+                    </div>
+                    <div class="col form-group ">
+                        Email: <%= user.email %>
+                    </div>
+                    <div class="col-sm-12 form-group mb-0">
+                        <button id="submit-sign-in" class="btn btn-primary float-right"
+                            name="submit-register">Submit</button>
+                    </div>
+                    <p id="logInLink" class="pt-3"> <a href="../#products">
+                            Volver a la tienda
+                        </a>
+                    </p>
+                </div>
+            </div>
             <!-- FOOTER-->
             <%- include('../partials/footer') %>
                 <!-- SCRPTS -->

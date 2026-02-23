@@ -88,6 +88,6 @@
     "role": "client",
     "password": "$2b$10$LXU6M188ZD.BmjKiZOaZQuo3QLNnyzepTkX9vI86FzIPilGd3eKjS",
     "avatar": "/images/users/v5tgz7scvahj7bxce67gmvs6f.png",
-    "rememberToken": "e738652d995f13af2dabc0f725a1025d3e04ebce5913a2f5bd25a0f93fb9e8f6d763e51d56a4fe89aba0c3214292c0748629a091b7af72636e13bd7c1ae02b0c"
+    "rememberToken": null
   }
 ]
