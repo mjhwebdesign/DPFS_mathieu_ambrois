@@ -153,7 +153,7 @@ function check() {
  // list of spaces filters (secondary Filters)
  var checkOffice = document.getElementById("office").checked;
  var checkHome = document.getElementById("home").checked;
- var checkProfesionals = document.getElementById("profesionals").checked;
+ var checkProfessionals = document.getElementById("professionals").checked;
  var checkMuseum = document.getElementById("museum").checked;
  let secondaryFilters = [];
  if (checkOffice) {
@@ -162,8 +162,8 @@ function check() {
  if (checkHome) {
   secondaryFilters.push("home");
  }
- if (checkProfesionals) {
-  secondaryFilters.push("profesionals");
+ if (checkProfessionals) {
+  secondaryFilters.push("professionals");
  }
  if (checkMuseum) {
   secondaryFilters.push("museum");

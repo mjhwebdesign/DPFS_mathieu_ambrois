@@ -1,67 +1,67 @@
 [
-  {
-    "id": 4,
-    "firstName": "di",
-    "lastName": "do",
-    "email": "a@hgu.com",
-    "role": "client",
-    "password": "hjk",
-    "avatar": "/images/users/a3sbrk17lns329ghpxhgzjg5y.jpeg"
-  },
-  {
-    "id": 5,
-    "firstName": "tesing",
-    "lastName": "testing",
-    "email": "testing@test.com",
-    "role": "client",
-    "password": "qwerty",
-    "avatar": "/images/users/yf6lqn08wwdna5a0xfc1u4b52.png"
-  },
-  {
-    "id": 6,
-    "firstName": "Alicia",
-    "lastName": "Wonderland",
-    "email": "alice@alice.com",
-    "role": "client",
-    "password": "$2b$10$7wNr8t.yi7oK3Q1uvdn6Fu2JGOnJqFelIOdhZco0M8VsDkzCKEkBq",
-    "avatar": "/images/users/hemf5dpeghmd1oau1typi10yq.png"
-  },
-  {
-    "id": 7,
-    "firstName": "Alicia2",
-    "lastName": "al",
-    "email": "alice2@alice.com",
-    "role": "client",
-    "password": "$2b$10$yBJ/uS6Bbzkq4OmbLamPauz8/KPlyorSx3aptKM.6e8rXxU3J5MVG",
-    "avatar": "/images/users/tyawdw6iwia5x26aqii7h9l6i.png"
-  },
-  {
-    "id": 9,
-    "firstName": "qsqw",
-    "lastName": "wqd",
-    "email": "alice@alice.com",
-    "role": "client",
-    "password": "$2b$10$ZQa1Kr.xx5XRxFBa4y/1DOcNEzjQ3k0cT48nrMiPMWhu7IJDF.5uy",
-    "avatar": "/images/users/jhfb1irl9k6axliry0zut5cxv.png"
-  },
-  {
-    "id": 10,
-    "firstName": "jo",
-    "lastName": "to",
-    "email": "jo@jo.com",
-    "role": "admin",
-    "password": "$2b$10$LXU6M188ZD.BmjKiZOaZQuo3QLNnyzepTkX9vI86FzIPilGd3eKjS",
-    "avatar": "/images/users/v5tgz7scvahj7bxce67gmvs6f.png",
-    "rememberToken": "297d3b62b3b86e6d94758c6b6ef05fb922efdea25cc029a8b73f621527d793906c65059b8b096490e08a1a0e2c67949b87ea2882482c272377747ae1e16afef3"
-  },
-  {
-    "id": 11,
-    "firstName": "client",
-    "lastName": "to",
-    "email": "to@to.com",
-    "role": "client",
-    "password": "$2b$10$F3fCrJom1z4CYhmXRtDgc.f9..IagDZI9jnnG06GyNtZr0It.FMyq",
-    "avatar": "/images/users/g9i5bwhjggde5n8ah86g8gvaf.png",
-    "rememberToken": null
-  }
+ {
+  "id": 4,
+  "firstName": "di",
+  "lastName": "do",
+  "email": "a@hgu.com",
+  "role": "client",
+  "password": "hjk",
+  "avatar": "/images/users/a3sbrk17lns329ghpxhgzjg5y.jpeg"
+ },
+ {
+  "id": 5,
+  "firstName": "tesing",
+  "lastName": "testing",
+  "email": "testing@test.com",
+  "role": "client",
+  "password": "qwerty",
+  "avatar": "/images/users/yf6lqn08wwdna5a0xfc1u4b52.png"
+ },
+ {
+  "id": 6,
+  "firstName": "Alicia",
+  "lastName": "Wonderland",
+  "email": "alice3@alice.com",
+  "role": "client",
+  "password": "$2b$10$7wNr8t.yi7oK3Q1uvdn6Fu2JGOnJqFelIOdhZco0M8VsDkzCKEkBq",
+  "avatar": "/images/users/hemf5dpeghmd1oau1typi10yq.png"
+ },
+ {
+  "id": 7,
+  "firstName": "Alicia2",
+  "lastName": "al",
+  "email": "alice2@alice.com",
+  "role": "client",
+  "password": "$2b$10$yBJ/uS6Bbzkq4OmbLamPauz8/KPlyorSx3aptKM.6e8rXxU3J5MVG",
+  "avatar": "/images/users/tyawdw6iwia5x26aqii7h9l6i.png"
+ },
+ {
+  "id": 9,
+  "firstName": "qsqw",
+  "lastName": "wqd",
+  "email": "alice4@alice.com",
+  "role": "client",
+  "password": "$2b$10$ZQa1Kr.xx5XRxFBa4y/1DOcNEzjQ3k0cT48nrMiPMWhu7IJDF.5uy",
+  "avatar": "/images/users/jhfb1irl9k6axliry0zut5cxv.png"
+ },
+ {
+  "id": 10,
+  "firstName": "jo",
+  "lastName": "to",
+  "email": "jo@jo.com",
+  "role": "admin",
+  "password": "$2b$10$LXU6M188ZD.BmjKiZOaZQuo3QLNnyzepTkX9vI86FzIPilGd3eKjS",
+  "avatar": "/images/users/v5tgz7scvahj7bxce67gmvs6f.png",
+  "rememberToken": "297d3b62b3b86e6d94758c6b6ef05fb922efdea25cc029a8b73f621527d793906c65059b8b096490e08a1a0e2c67949b87ea2882482c272377747ae1e16afef3"
+ },
+ {
+  "id": 11,
+  "firstName": "client",
+  "lastName": "to",
+  "email": "to@to.com",
+  "role": "client",
+  "password": "$2b$10$F3fCrJom1z4CYhmXRtDgc.f9..IagDZI9jnnG06GyNtZr0It.FMyq",
+  "avatar": "/images/users/g9i5bwhjggde5n8ah86g8gvaf.png",
+  "rememberToken": null
+ }
 ]

@@ -26,7 +26,7 @@ STORE METHODE
    const spaces = [];
    const themes = [];
 
-   const possibleSpaces = ["office", "home", "profesionals", "museum"];
+   const possibleSpaces = ["office", "home", "professionals", "museum"];
    possibleSpaces.forEach((space) => {
     if (fields[space]) {
      spaces.push(space);
@@ -117,7 +117,7 @@ Update METHODE
    const spaces = [];
    const themes = [];
 
-   const possibleSpaces = ["office", "home", "profesionals", "museum"];
+   const possibleSpaces = ["office", "home", "professionals", "museum"];
    possibleSpaces.forEach((space) => {
     if (fields[space]) spaces.push(space);
    });
