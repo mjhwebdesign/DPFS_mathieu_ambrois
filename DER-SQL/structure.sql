@@ -1,13 +1,13 @@
--- =========================================
+/*
 DB
--- =========================================
+*/
 
 CREATE DATABASE eikon_db;
 USE eikon_db;
 
--- =========================================
+/*
 ROLE
--- =========================================
+*/
 
 CREATE TABLE Role (
     roleID INT AUTO_INCREMENT,
@@ -16,9 +16,9 @@ CREATE TABLE Role (
     UNIQUE (role)
 );
 
--- =========================================
+/*
 USER
--- =========================================
+*/
 
 CREATE TABLE User (
     userID INT AUTO_INCREMENT,
@@ -36,9 +36,9 @@ CREATE TABLE User (
         ON UPDATE CASCADE
 );
 
--- =========================================
+/*
 CATEGORY
--- =========================================
+*/
 
 CREATE TABLE Category (
     categoryID INT AUTO_INCREMENT,
@@ -47,9 +47,9 @@ CREATE TABLE Category (
     UNIQUE (category)
 );
 
--- =========================================
+/*
  THEME
--- =========================================
+*/
 
 CREATE TABLE Theme (
     themeID INT AUTO_INCREMENT,
@@ -58,9 +58,9 @@ CREATE TABLE Theme (
     UNIQUE (theme)
 );
 
--- =========================================
+/*
 SPACE
--- =========================================
+*/
 
 CREATE TABLE Space (
     spaceID INT AUTO_INCREMENT,
@@ -69,9 +69,9 @@ CREATE TABLE Space (
     UNIQUE (space)
 );
 
--- =========================================
+/*
 PRODUCT
--- =========================================
+*/
 
 CREATE TABLE Product (
     productID INT AUTO_INCREMENT,
@@ -88,9 +88,9 @@ CREATE TABLE Product (
         ON UPDATE CASCADE
 );
 
--- =========================================
+/*
 PRODUCT_THEME
--- =========================================
+*/
 
 CREATE TABLE Product_Theme (
     productID INT NOT NULL,
@@ -106,9 +106,9 @@ CREATE TABLE Product_Theme (
         ON UPDATE CASCADE
 );
 
--- =========================================
+/*
 PRODUCT_SPACE
--- =========================================
+*/
 
 CREATE TABLE Product_Space (
     productID INT NOT NULL,
@@ -124,9 +124,9 @@ CREATE TABLE Product_Space (
         ON UPDATE CASCADE
 );
 
--- =========================================
+/*
 CART
--- =========================================
+*/
 
 CREATE TABLE Cart (
     cartID INT AUTO_INCREMENT,
@@ -139,9 +139,9 @@ CREATE TABLE Cart (
         ON UPDATE CASCADE
 );
 
--- =========================================
+/*
 CART_DETAIL
--- =========================================
+*/
 
 CREATE TABLE Cart_Detail (
     cartID INT NOT NULL,

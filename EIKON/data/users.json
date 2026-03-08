@@ -63,5 +63,14 @@
   "password": "$2b$10$F3fCrJom1z4CYhmXRtDgc.f9..IagDZI9jnnG06GyNtZr0It.FMyq",
   "avatar": "/images/users/g9i5bwhjggde5n8ah86g8gvaf.png",
   "rememberToken": null
+ },
+ {
+  "id": 12,
+  "firstName": "Mathieu",
+  "lastName": "Ambrois",
+  "email": "backupambrois.mathieu@gmail.com",
+  "role": "admin",
+  "password": "$2b$10$a6ohHQn9mfylkGqAesdWQupVKgn5EZVCXEK/rTtYMm1B7vXin8XjC",
+  "avatar": "/images/users/pjmnv0thq392lu5kw319gep3p.jpg"
  }
 ]
