@@ -131,13 +131,9 @@
   {
     "id": 10,
     "title": "Into the sky",
-    "description": [
-      "Lorem test ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
-    ],
+    "description": "Lorem test ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
     "price": 197,
-    "category": [
-      "poster"
-    ],
+    "category": "poster",
     "space": [
       "office",
       "home",
@@ -145,12 +141,7 @@
       "museum"
     ],
     "theme": [
-      "architecture",
-      "animal",
-      "vintage",
-      "bauhaus",
-      "maps",
-      "blueprints"
+      "architecture"
     ],
     "coverImage": "images/products/archi-1-photo-slide.webp",
     "secundaryImage": "images/products/archi-1-lamina-photo.webp"
