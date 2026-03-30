@@ -150,16 +150,16 @@
                 </div>
                 <% products.forEach(product=> { %>
                   <div
-                    class="col-md-12 col-lg-6 mb-4 text-center product <%= product.category %> <%= product.space.join(' ') %> <%= product.theme.join(' ') %>">
-                    <div id="<%= product.id %>" class="card">
-                      <a href="/products/<%= product.id %>">
-                        <img src="<%= product.coverImage %>" class="product-img" alt="<%= product.title %>">
+                    class="col-md-12 col-lg-6 mb-4 text-center product <%= product.category.category %> <%= product.spaces.map(s => s.space).join(` `) %> <%= product.themes.map(t => t.theme).join(` `) %>">
+                    <div id="<%= product.product_id %>" class="card">
+                      <a href="/products/<%= product.product_id %>">
+                        <img src="<%= product.cover_image %>" class="product-img" alt="<%= product.title %>">
                         <div class="product-info">
                           <span class="title">
                             <%= product.title %>
                           </span>
                           <span class="category">
-                            <%= product.category %>
+                            <%= product.category.category %>
                           </span>
                           <span class="price">$ <%= product.price %></span>
                         </div>

@@ -8,11 +8,19 @@
             <div class="col-12 col-md-6 col-xl-6">
                 <div class="row">
                     <div class="col-12 text-end">
-                        <form id="footer-login-on" class="text-center text-md-end">
-                            <a href="/login" class="btn btn-sm eikon-btn mt-0">
-                                Log-In / Register
-                            </a>
-                        </form>
+                        <% if (!user) { %>
+                            <form id="footer-login-on" class="text-center text-md-end">
+                                <a href="/login" class="btn btn-sm eikon-btn mt-0">
+                                    Log-In / Register
+                                </a>
+                            </form>
+                            <% } else { %>
+                                <form id="nav-login-on" class="text-center text-md-end">
+                                    <a href="/users/logout" class="btn btn-sm eikon-btn mt-0">
+                                        Logout
+                                    </a>
+                                </form>
+                                <% } %>
                     </div>
                 </div>
             </div>

@@ -2,11 +2,11 @@ module.exports = function (sequelize, dataTypes) {
  let alias = "ProductSpace";
 
  let cols = {
-  productID: {
+  product_id: {
    primaryKey: true,
    type: dataTypes.INTEGER,
   },
-  spaceID: {
+  space_id: {
    primaryKey: true,
    type: dataTypes.INTEGER,
   },

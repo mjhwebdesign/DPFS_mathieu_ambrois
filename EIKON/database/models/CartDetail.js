@@ -2,11 +2,11 @@ module.exports = function (sequelize, dataTypes) {
  let alias = "CartDetail";
 
  let cols = {
-  cartID: {
+  cart_id: {
    primaryKey: true,
    type: dataTypes.INTEGER,
   },
-  productID: {
+  product_id: {
    primaryKey: true,
    type: dataTypes.INTEGER,
   },
@@ -14,7 +14,7 @@ module.exports = function (sequelize, dataTypes) {
    type: dataTypes.INTEGER,
    allowNull: false,
   },
-  dateAdded: {
+  date_added: {
    type: dataTypes.DATE,
    allowNull: false,
   },

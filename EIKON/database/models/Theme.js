@@ -2,7 +2,7 @@ module.exports = function (sequelize, dataTypes) {
  let alias = "Theme";
 
  let cols = {
-  themeID: {
+  theme_id: {
    autoIncrement: true,
    primaryKey: true,
    type: dataTypes.INTEGER,
@@ -25,8 +25,8 @@ module.exports = function (sequelize, dataTypes) {
   Theme.belongsToMany(models.Product, {
    as: "products",
    through: "Product_Theme",
-   foreignKey: "themeID",
-   otherKey: "productID",
+   foreignKey: "theme_id",
+   otherKey: "product_id",
    timestamps: false,
   });
  };

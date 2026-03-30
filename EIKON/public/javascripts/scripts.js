@@ -180,7 +180,7 @@ function check() {
   tertiaryFilters.push("architecture");
  }
  if (checkAnimals) {
-  tertiaryFilters.push("animals");
+  tertiaryFilters.push("animal");
  }
  if (checkVintage) {
   tertiaryFilters.push("vintage");

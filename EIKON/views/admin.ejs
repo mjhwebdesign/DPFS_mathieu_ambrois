@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('partials/head', { pageTitle: "Eikon | Temporary Admin Page" }) %>
+<%- include('partials/head', { pageTitle: "Eikon | Admin Page" }) %>
 
   <body>
     <!-- HEADER-->
@@ -27,30 +27,30 @@
           <% products.forEach(product=> { %>
             <div class="admin-product row">
               <div class="col-1">
-                <%= product.id %>
+                <%= product.product_id %>
               </div>
-              <div class="col-1 pt-2 pb-2"><img src="<%= product.secundaryImage %>" class="img-fluid"
+              <div class="col-1 pt-2 pb-2"><img src="<%= product.secundary_image %>" class="img-fluid"
                   alt="<%= product.title %>">
               </div>
               <div class="col-7">
                 <%= product.title %>
               </div>
               <div class="col-1">
-                <form action="/products/<%= product.id %>" method="GET" class="text-end">
+                <form action="/products/<%= product.product_id %>" method="GET" class="text-end">
                   <button type="submit" class="btn btn-info">
                     VER
                   </button>
                 </form>
               </div>
               <div class="col-1">
-                <form action="/products/edit/<%= product.id %> %>" method="GET" class="text-end">
+                <form action="/products/edit/<%= product.product_id %> %>" method="GET" class="text-end">
                   <button type="submit" class="btn btn-info">
                     EDIT
                   </button>
                 </form>
               </div>
               <div class="col-1">
-                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST"
+                <form action="/products/delete/<%= product.product_id %>?_method=DELETE" method="POST"
                   onsubmit="return confirm('¿Seguro que deseas eliminar este producto?')" class="text-end">
                   <button type="submit" class="btn btn-danger">
                     BORRAR
@@ -79,28 +79,29 @@
               <div class="col-1">
                 <%= user.id %>
               </div>
-              <div class="col-1 pt-2 pb-2"><img src="<%= user.avatar %>" class="img-fluid" alt="<%= user.firstName %>">
+              <div class="col-1 pt-2 pb-2"><img src="<%= user.avatar %>" class="img-fluid" alt="<%= user.first_name %>">
               </div>
               <div class="col-7">
-                <%= user.firstName %>
-                  <%= user.lastName %> | Role: <%= user.role %> | Email: <%= user.email %> Pass: <%= user.password %>
+                <%= user.first_name %>
+                  <%= user.last_name %> | Role: <%= user.role.role %> | Email: <%= user.email %> Pass: <%= user.password
+                          %>
               </div>
               <div class="col-1">
-                <form action="/users/<%= user.id %>" method="GET" class="text-end">
+                <form action="/users/<%= user.user_id %>" method="GET" class="text-end">
                   <button type="submit" class="btn btn-info">
                     VER
                   </button>
                 </form>
               </div>
               <div class="col-1">
-                <form action="users/userEdit/<%= user.id %> %>" method="GET" class="text-end">
+                <form action="users/userEdit/<%= user.user_id %>" method="GET" class="text-end">
                   <button type="submit" class="btn btn-info">
                     EDIT
                   </button>
                 </form>
               </div>
               <div class="col-1">
-                <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST"
+                <form action="/users/delete/<%= user.user_id %>?_method=DELETE" method="POST"
                   onsubmit="return confirm('¿Seguro que deseas eliminar este Usuario?')" class="text-end">
                   <button type="submit" class="btn btn-danger">
                     BORRAR

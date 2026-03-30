@@ -2,16 +2,16 @@ module.exports = function (sequelize, dataTypes) {
  let alias = "Cart";
 
  let cols = {
-  cartID: {
+  cart_id: {
    autoIncrement: true,
    primaryKey: true,
    type: dataTypes.INTEGER,
   },
-  userID: {
+  user_id: {
    type: dataTypes.INTEGER,
    allowNull: false,
   },
-  dateCreation: {
+  date_creation: {
    type: dataTypes.DATE,
    allowNull: false,
   },
@@ -28,14 +28,14 @@ module.exports = function (sequelize, dataTypes) {
  Cart.associate = function (models) {
   Cart.belongsTo(models.User, {
    as: "user",
-   foreignKey: "userID",
+   foreignKey: "user_id",
   });
 
   Cart.belongsToMany(models.Product, {
    as: "products",
    through: "Cart_Detail",
-   foreignKey: "cartID",
-   otherKey: "productID",
+   foreignKey: "cart_id",
+   otherKey: "product_id",
    timestamps: false,
   });
  };

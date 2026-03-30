@@ -9,8 +9,10 @@
 
             <div class="row log-in-content justify-content-center mt-5">
                 <div class="col-12 mb-5 text-center">
-                    <div class="col form-group">
-                        <img src="<%= user.avatar %>" class="img-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-2 form-group">
+                            <img src="<%= user.avatar %>" class="img-fluid">
+                        </div>
                     </div>
                     <h1>MI PERFIL</h1>
                 </div>
@@ -18,19 +20,19 @@
                 <div class="col-12 col-md-6 text-center">
 
                     <div class="col form-group ">
-                        First Name: <%= user.firstName %>
+                        First Name: <%= user.first_name %>
                     </div>
                     <div class="col form-group ">
-                        Last Name: <%= user.lastName %>
+                        Last Name: <%= user.last_name %>
                     </div>
                     <div class="col form-group ">
                         Email: <%= user.email %>
                     </div>
                     <div class="col form-group ">
-                        Rol: <%= user.role %>
+                        Rol: <%= user.role.role %>
                     </div>
                     <div class="col-sm-12 form-group mb-0">
-                        <form action="userEdit/<%= user.id %>" method="GET">
+                        <form action="userEdit/<%= user.user_id %>" method="GET">
                             <button type="submit" class="btn eikon-btn float-right">EDITAR PERFIL</button>
                         </form>
                     </div>

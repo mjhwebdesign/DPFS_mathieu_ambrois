@@ -5,20 +5,23 @@ const indexController = {
  /*===============
 INDEX METHOD
 ===============*/
- index: function (req, res, next) {
+
+ index: async function (req, res, next) {
   // Retrieve products
-  const products = productModel.getAll();
-  // Send  products to the view
+  const products = await productModel.getAll();
+
+  // Send products to the view
   return res.render("index", { products });
  },
 
  /*===============
 ADMIN temporary METHOD
 ===============*/
- admin: function (req, res, next) {
+
+ admin: async function (req, res, next) {
   // Retrieve products
-  const products = productModel.getAll();
-  const users = userModel.getAll();
+  const products = await productModel.getAll();
+  const users = await userModel.getAll();
 
   // Send  products & Users to the view
   return res.render("admin", { products, users });

@@ -2,7 +2,7 @@ module.exports = function (sequelize, dataTypes) {
  let alias = "Space";
 
  let cols = {
-  spaceID: {
+  space_id: {
    autoIncrement: true,
    primaryKey: true,
    type: dataTypes.INTEGER,
@@ -25,8 +25,8 @@ module.exports = function (sequelize, dataTypes) {
   Space.belongsToMany(models.Product, {
    as: "products",
    through: "Product_Space",
-   foreignKey: "spaceID",
-   otherKey: "productID",
+   foreignKey: "space_id",
+   otherKey: "product_id",
    timestamps: false,
   });
  };

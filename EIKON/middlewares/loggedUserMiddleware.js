@@ -3,7 +3,7 @@ module.exports = function (req, res, next) {
 
  const profileId = parseInt(req.params.id);
 
- if (loggedUser.id !== profileId && loggedUser.role != "admin") {
+ if (loggedUser.id !== profileId && loggedUser.role !== 1) {
   return res.redirect("/?error=Esta cuenta no es suya");
  }
 

@@ -28,6 +28,8 @@
                         <span class="visually-hidden">items in cart</span>
                     </span>
                 </a>
+
+
                 <% if (!user) { %>
                     <form id="nav-login" class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0">
                         <a href="/login" class="btn btn-sm eikon-btn">
@@ -48,6 +50,14 @@
                             </a>
                         </form>
                         <% } %>
+                            <% if (!user) { %>
+                                <% } else if (user.role===1) { %>
+                                    <form id="nav-login" class="text-start text-lg-end ms-lg-4 mb-3 mb-lg-0">
+                                        <a href="/admin" class="btn btn-sm eikon-btn">
+                                            Admin Panel
+                                        </a>
+                                    </form>
+                                    <% } %>
             </div>
         </div>
     </nav>

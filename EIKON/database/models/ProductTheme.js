@@ -2,11 +2,11 @@ module.exports = function (sequelize, dataTypes) {
  let alias = "ProductTheme";
 
  let cols = {
-  productID: {
+  product_id: {
    primaryKey: true,
    type: dataTypes.INTEGER,
   },
-  themeID: {
+  theme_id: {
    primaryKey: true,
    type: dataTypes.INTEGER,
   },

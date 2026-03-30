@@ -6,10 +6,6 @@ const userModel = require("../models/userModel");
 const crypto = require("crypto");
 
 const usersController = {
- /*index: function (req, res, next) {
-  return res.render("users/userList");
- },*/
-
  /*===============
 CREATE METHODE
 ===============*/
@@ -27,35 +23,38 @@ STORE METHODE
   });
 
   // Formidabel parse the form
-  form.parse(req, (err, fields, files) => {
+  form.parse(req, async (err, fields, files) => {
    if (err) {
     console.error(err);
     return res.status(500).send("Error de Carga");
    }
 
+   const email = fields["email-register"][0];
+
+   if (await userModel.findByEmail(email)) {
+    return res.send("El email ya existe en la base de usuarios!");
+   }
+
    //  Files upload
 
-   const avatar = files.avatar
-    ? "/images/users/" + path.basename(files.avatar[0].filepath)
-    : "";
+   let avatar = "";
+   if (files.avatar) {
+    const file = Array.isArray(files.avatar) ? files.avatar[0] : files.avatar;
+
+    avatar = "/images/users/" + path.basename(file.filepath);
+   }
 
    const encryptPassword = bcrypt.hashSync(fields["passwordRegister"][0], 10);
 
-   const newUser = {
-    firstName: fields["firstName"][0],
-    lastName: fields["lastName"][0],
-    email: fields["email-register"][0],
-    role: "client",
+   await userModel.create({
+    first_name: fields["firstName"][0],
+    last_name: fields["lastName"][0],
+    email: email,
+    role_id: 2,
     password: encryptPassword,
     avatar,
-   };
+   });
 
-   if (userModel.findByEmail(fields["email-register"][0])) {
-    return res.send("El email ya existe!");
-   }
-   userModel.create(newUser);
-
-   // Redirect after creation
    res.redirect("/");
   });
  },
@@ -64,17 +63,18 @@ STORE METHODE
 login METHODE
 ===============*/
  login: function (req, res, next) {
+  console.log("SESSION AVANT LOGIN:", req.session);
   const form = new IncomingForm({
    multiples: true,
   });
-  form.parse(req, (err, fields) => {
+  form.parse(req, async (err, fields) => {
    if (err) {
     return res.status(500).send("Error formulario");
    }
    const email = fields["email"][0];
    const password = fields["password"][0];
    const remember = !!fields?.["remember"]?.[0]; // Formidable: ? avoid indefine if remember is not checked !! transform to boolean to avoid undefined
-   const user = userModel.findByEmail(email);
+   const user = await userModel.findByEmail(email);
 
    if (!user) {
     return res.redirect("/login?error=Usuario no existe");
@@ -87,19 +87,20 @@ login METHODE
    }
 
    req.session.user = {
-    id: user.id,
-    firstName: user.firstName,
-    lastName: user.lastName,
+    id: user.user_id,
+    firstName: user.first_name,
+    lastName: user.last_name,
     email: user.email,
     avatar: user.avatar,
-    role: user.role,
+    role: user.role_id,
    };
    // Recordarme
    if (remember) {
     // Crear un token seguro usando Crypto
     const token = crypto.randomBytes(64).toString("hex");
     // Guardar el token en el Json o db
-    userModel.update(user.id, { rememberToken: token });
+    await userModel.update(user.user_id, { rememberToken: token });
+    console.log("SESSION APRES LOGIN:", req.session);
     // Crear una cookie (7 dias)
     res.cookie("rememberToken", token, {
      maxAge: 7 * 24 * 60 * 60 * 1000,
@@ -113,10 +114,10 @@ login METHODE
  /*===============
 logout METHODE (destroy session)
 ===============*/
- logout: function (req, res) {
+ logout: async function (req, res) {
   //Remove Session Token if logout
   if (req.session.user) {
-   userModel.update(req.session.user.id, {
+   await userModel.update(req.session.user.user_id, {
     rememberToken: null,
    });
   }
@@ -130,11 +131,11 @@ logout METHODE (destroy session)
  /*===============
 SHOW METHODE
 ===============*/
- show: function (req, res, next) {
+ show: async function (req, res, next) {
   //Get the id from the url
   const id = parseInt(req.params.id);
   // Retrieve a specific user using the method in the Model previously created
-  const user = userModel.findById(id);
+  const user = await userModel.findById(id);
 
   if (!user) {
    return res.status(404).send("Usuario no existe");
@@ -146,9 +147,13 @@ SHOW METHODE
  /*===============
 EDIT METHODE
 ===============*/
- edit: function (req, res) {
+ edit: async function (req, res) {
   const id = req.params.id;
-  const user = userModel.findById(id);
+  const user = await userModel.findById(id);
+
+  if (!user) {
+   return res.status(404).send("Usuario no existe che");
+  }
   // Load Pre filled Form
   res.render("users/userEdit", { user });
  },
@@ -158,8 +163,6 @@ Update METHODE
 ===============*/
  update: function (req, res) {
   const id = req.params.id;
-  const existingUser = userModel.findById(id);
-
   const form = new IncomingForm({
    uploadDir: path.join(__dirname, "../public/images/users"),
    keepExtensions: true,
@@ -167,14 +170,15 @@ Update METHODE
    minFileSize: 0, // in case the images doesn´t change
   });
 
-  form.parse(req, (err, fields, files) => {
+  form.parse(req, async (err, fields, files) => {
    if (err) {
     console.error(err);
     return res.status(500).send("Error al Cargar");
    }
+   //  User existente (await ahora)
+   const existingUser = await userModel.findById(id);
 
    //  IMAGES
-
    let avatar = existingUser.avatar;
 
    // If new avatar image is load
@@ -192,16 +196,13 @@ Update METHODE
     }
    }
 
-   // FINAL USER
-
-   const updatedData = {
-    firstName: fields["firstName"][0],
-    lastName: fields["lastName"][0],
+   //  UPDATE User
+   await userModel.update(id, {
+    first_name: fields["firstName"][0],
+    last_name: fields["lastName"][0],
     email: fields["email-register"][0],
     avatar,
-   };
-
-   userModel.update(id, updatedData);
+   });
    //Redirect to upadted product
    res.redirect("/users/" + id);
   });
@@ -211,10 +212,10 @@ Update METHODE
 DESTROY METHODE
 ===============*/
 
- destroy: function (req, res) {
+ destroy: async function (req, res) {
   const id = req.params.id;
 
-  const user = userModel.findById(id);
+  const user = await userModel.findById(id);
 
   if (!user) {
    return res.status(404).send("Usuario no encontrado");
@@ -229,8 +230,7 @@ DESTROY METHODE
    }
   }
 
-  // Delete user from json
-  userModel.delete(id);
+  await userModel.delete(id);
   //Redirect
   res.redirect("/admin");
  },

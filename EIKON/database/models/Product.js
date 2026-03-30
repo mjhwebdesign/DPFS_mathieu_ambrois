@@ -2,7 +2,7 @@ module.exports = function (sequelize, dataTypes) {
  let alias = "Product";
 
  let cols = {
-  productID: {
+  product_id: {
    autoIncrement: true,
    primaryKey: true,
    type: dataTypes.INTEGER,
@@ -18,13 +18,13 @@ module.exports = function (sequelize, dataTypes) {
    type: dataTypes.DECIMAL,
    allowNull: false,
   },
-  coverImage: {
+  cover_image: {
    type: dataTypes.STRING,
   },
-  secundaryImage: {
+  secundary_image: {
    type: dataTypes.STRING,
   },
-  categoryID: {
+  category_id: {
    type: dataTypes.INTEGER,
    allowNull: false,
   },
@@ -41,30 +41,30 @@ module.exports = function (sequelize, dataTypes) {
  Product.associate = function (models) {
   Product.belongsTo(models.Category, {
    as: "category",
-   foreignKey: "categoryID",
+   foreignKey: "category_id",
   });
 
   Product.belongsToMany(models.Theme, {
    as: "themes",
    through: "Product_Theme",
-   foreignKey: "productID",
-   otherKey: "themeID",
+   foreignKey: "product_id",
+   otherKey: "theme_id",
    timestamps: false,
   });
 
   Product.belongsToMany(models.Space, {
    as: "spaces",
    through: "Product_Space",
-   foreignKey: "productID",
-   otherKey: "spaceID",
+   foreignKey: "product_id",
+   otherKey: "space_id",
    timestamps: false,
   });
 
   Product.belongsToMany(models.Cart, {
    as: "carts",
    through: "Cart_Detail",
-   foreignKey: "productID",
-   otherKey: "cartID",
+   foreignKey: "product_id",
+   otherKey: "cart_id",
    timestamps: false,
   });
  };

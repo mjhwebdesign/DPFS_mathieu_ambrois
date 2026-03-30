@@ -6,23 +6,25 @@
     <body>
         <!-- HEADER-->
         <%- include('../partials/header') %>
-            <form id="edit-profile" action="/users/edit/<%= user.id %>?_method=PUT" method="POST"
+            <form id="edit-profile" action="/users/edit/<%= user.user_id %> ?_method=PUT" method="POST"
                 enctype="multipart/form-data">
 
                 <div class="row log-in-content justify-content-center">
                     <div class="col-12 mb-5 text-center">
-                        <div class="col form-group">
-                            <img src="<%= user.avatar %>" class="img-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-2 form-group">
+                                <img src="<%= user.avatar %>" class="img-fluid">
+                            </div>
                         </div>
                         <h1>EDITAR PERFIL</h1>
                     </div>
                     <div class="col-12 col-md-7 form-group">
                         <input type="text" class="form-control" name="firstName" id="name-f"
-                            value="<%= user.firstName %>" required>
+                            value="<%= user.first_name %>" required>
                     </div>
                     <div class="col-12 col-md-7 form-group">
-                        <input type="text" class="form-control" name="lastName" id="name-l" value="<%= user.lastName %>"
-                            required>
+                        <input type="text" class="form-control" name="lastName" id="name-l"
+                            value="<%= user.last_name %>" required>
                     </div>
                     <div class="col-12 col-md-7 form-group">
                         <input type="email" name="email-register" class="form-control" id="email-register"

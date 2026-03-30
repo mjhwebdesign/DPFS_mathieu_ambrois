@@ -2,7 +2,7 @@ module.exports = function (sequelize, dataTypes) {
  let alias = "Role";
 
  let cols = {
-  roleID: {
+  role_id: {
    autoIncrement: true,
    primaryKey: true,
    type: dataTypes.INTEGER,
@@ -24,7 +24,7 @@ module.exports = function (sequelize, dataTypes) {
  Role.associate = function (models) {
   Role.hasMany(models.User, {
    as: "users",
-   foreignKey: "roleID",
+   foreignKey: "role_id",
   });
  };
 
