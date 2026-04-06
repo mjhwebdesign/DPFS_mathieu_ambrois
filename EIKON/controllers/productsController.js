@@ -272,6 +272,30 @@ SHOW METHODE
   // Send specific product to the view
   return res.render("products/productDetail", { product });
  },
+
+ /*===============
+SEARCH METHODE
+===============*/
+ search: async function (req, res, next) {
+  const form = new IncomingForm({
+   multiples: true,
+  });
+
+  form.parse(req, async (err, fields) => {
+   if (err) {
+    return res.status(500).send("Error formulario");
+   }
+   const searchTerm = fields["searchTerm"][0];
+   const products = await productModel.findByTerm(searchTerm);
+
+   if (!products) {
+    return res.status(404).send("Ningun producto corresponde");
+   }
+
+   // Send results to the view
+   return res.render("searchResults", { products, searchTerm });
+  });
+ },
 };
 
 module.exports = productsController;

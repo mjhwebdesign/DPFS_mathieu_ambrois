@@ -1396,7 +1396,8 @@ footer ul li:first-child a {
  right: -15000px;
 }
 
-.log-in-content .form-group {
+.log-in-content .form-group,
+.searchbox-content .form-group {
  margin-bottom: 10px;
 }
 .create-product-form .form-group {
@@ -1404,6 +1405,7 @@ footer ul li:first-child a {
 }
 
 .log-in-content .form-group input,
+.searchbox-content .form-group input,
 .create-product-form .form-group input,
 .create-product-form .form-group textarea {
  border-radius: 2px;
@@ -1415,6 +1417,7 @@ footer ul li:first-child a {
 }
 
 .log-in-content .form-group input:focus,
+.searchbox-content .form-group input:focus,
 .create-product-form .form-group input:focus,
 .create-product-form .form-group textarea:focus {
  box-shadow: var(--box-shadow__red);
@@ -1424,6 +1427,7 @@ footer ul li:first-child a {
 }
 
 .log-in-content .form-group input::placeholder,
+.searchbox-content .form-group input::placeholder,
 .create-product-form .form-group input::placeholder,
 .create-product-form .form-group textarea::placeholder,
 .create-product-form,
@@ -1657,4 +1661,14 @@ input[type="file"] {
 .admin-product div,
 .admin-user div {
  align-content: center;
+}
+
+/*==== SEARCH RESULTS ====*/
+
+#searchTerm-result {
+ text-transform: uppercase;
+}
+
+#searchTerm-result span {
+ color: var(--red);
 }

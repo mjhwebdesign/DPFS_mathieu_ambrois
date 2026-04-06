@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head', { pageTitle: "Eikon | Bienvenidos" }) %>
+
+    <body>
+        <!-- HEADER-->
+        <%- include('partials/header') %>
+            <!-- SLIDER-->
+            <section id="products">
+                <div id="filter-button-reveal">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div id="filters-collapse" class="col-md-6 col-lg-3 collapse show">
+                            <div id="shop-page-filter-aside" class="sticky-top pb-5">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <div class="collapse show" id="type-collapse">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="poster"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="poster">Afiches</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="photo"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="photo">Fotografias</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="postcard"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="postcard">Postales</label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="border-top my-3 w-50"></li>
+                                    <li class="mb-3">
+                                        <div class="collapse show" id="theme-collapse">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="office"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="office">Aesthetics
+                                                    offices</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="home"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="home">Home Sweet Home</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="professionals"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="professionals">Interioristas:
+                                                    Nuestra
+                                                    selección</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="museum"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="museum">Originales y Series
+                                                    Limitadas</label>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="border-top my-3 w-50"></li>
+                                    <li class="mb-3">
+                                        <div class="collapse show" id="theme-collapse">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="architecture"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="architecture">Architecture</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="animals"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="animals">Animals</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="vintage"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="vintage">Vintage</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="bauhaus"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="bauhaus">Bauhaus</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="maps"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="maps">Mapas</label>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="blueprints"
+                                                    onclick="check()">
+                                                <label class="form-check-label" for="blueprints">Blueprints</label>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="border-top my-3 w-50"></li>
+                                    <li class="mb-3">
+
+                                        <form id="searchbox" class="searchbox-content" action="/products/search"
+                                            method="POST" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="searchTerm"
+                                                    id="searchTerm" placeholder="Realizar otra busqueda" required>
+                                            </div>
+                                        </form>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-9">
+                            <div id="shop-page-items" class="row">
+                                <div id="searchTerm-result" class="col-12 mb-3">Resultados de busqueda para el termino:
+                                    "<span>
+                                        <%= searchTerm %>
+                                    </span>"
+                                </div>
+                                <div id="no-results" class="col-12">No hay resultados
+                                </div>
+                                <% products.forEach(product=> { %>
+                                    <div
+                                        class="col-md-12 col-lg-6 mb-4 text-center product <%= product.category.category %> <%= product.spaces.map(s => s.space).join(` `) %> <%= product.themes.map(t => t.theme).join(` `) %>">
+                                        <div id="<%= product.product_id %>" class="card">
+                                            <a href="/products/<%= product.product_id %>">
+                                                <img src="<%= product.cover_image %>" class="product-img"
+                                                    alt="<%= product.title %>">
+                                                <div class="product-info">
+                                                    <span class="title">
+                                                        <%= product.title %>
+                                                    </span>
+                                                    <span class="category">
+                                                        <%= product.category.category %>
+                                                    </span>
+                                                    <span class="price">$ <%= product.price %></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <% }) %>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- FOOTER -->
+            <%- include('partials/footer') %>
+                <!-- SCRIPTS -->
+                <%- include('partials/scripts') %>
+    </body>
+
+</html>

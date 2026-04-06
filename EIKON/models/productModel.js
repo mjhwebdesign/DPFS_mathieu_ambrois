@@ -3,6 +3,8 @@ const path = require("path");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 let db = require("../database/models");
+const { where } = require("sequelize");
+const { Op } = require("sequelize");
 
 const productModel = {
  // Get all products
@@ -17,6 +19,15 @@ const productModel = {
  findById: async function (id) {
   return await db.Product.findByPk(id, {
    include: ["themes", "spaces", "category"],
+  });
+ },
+
+ // Find a product by term
+ findByTerm: async function (searchTerm) {
+  return await db.Product.findAll({
+   where: { title: { [Op.like]: `%${searchTerm}%` } },
+   include: ["themes", "spaces", "category"], // Incluye tablas relacionadas (falta Cart)
+   order: [["title", "ASC"]],
   });
  },
 

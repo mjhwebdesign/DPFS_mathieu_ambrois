@@ -9,6 +9,8 @@ router.get("/create", adminMiddleware, productsController.create);
 router.get("/edit/:id", adminMiddleware, productsController.edit);
 //GET Detail of a product Page
 router.get("/:id", productsController.show);
+//POST search result
+router.post("/search", productsController.search);
 //POST a new product
 router.post("/create", adminMiddleware, productsController.store);
 // PUT Existing Product update
