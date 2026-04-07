@@ -23,15 +23,25 @@
                         <form id="login" action="/users/login" method="POST" enctype="multipart/form-data" novalidate>
                             <div class="row log-in-content">
                                 <div class="col-sm-12 form-group will_animate to-left">
-                                    <input type="email" class="form-control" name="email" id="email-login"
-                                        placeholder="Enter your email." required>
+                                    <input type="email"
+                                        class="form-control <%= errors?.firstName ? 'is-invalid' : '' %>" name="email"
+                                        id="email-login" placeholder="Enter your email."
+                                        value="<%= oldData?.email || '' %>">
+                                    <% if (errors?.email) { %>
+                                        <div class="invalid-feedback d-block">
+                                            <%= errors.email.msg %>
+                                        </div>
+                                        <% } %>
                                 </div>
                                 <div class="col-sm-12 form-group will_animate to-left">
-                                    <input type="Password" name="password" class="form-control" id="password-login"
-                                        placeholder="Enter your password." required>
-                                </div>
-                                <div class="col-sm-12 form-group invalid-feedback d-block  will_animate to-left">
-                                    * No ingresaste un email valido
+                                    <input type="Password" name="password"
+                                        class="form-control <%= errors?.password ? 'is-invalid' : '' %>"
+                                        id="password-login" placeholder="Enter your password.">
+                                    <% if (errors?.password) { %>
+                                        <div class="invalid-feedback d-block">
+                                            <%= errors.password.msg %>
+                                        </div>
+                                        <% } %>
                                 </div>
                                 <div class="col-sm-12 form-group will_animate to-left">
                                     <input type="checkbox" name="remember" value="true"> <span

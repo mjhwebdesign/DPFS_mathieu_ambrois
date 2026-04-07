@@ -77,30 +77,28 @@ STORE METHODE
  /*===============
 login METHODE
 ===============*/
- login: function (req, res, next) {
+ login: async function (req, res, next) {
   console.log("SESSION AVANT LOGIN:", req.session);
-  const form = new IncomingForm({
-   multiples: true,
-  });
-  form.parse(req, async (err, fields) => {
-   if (err) {
-    return res.status(500).send("Error formulario");
-   }
-   const email = fields["email"][0];
-   const password = fields["password"][0];
-   const remember = !!fields?.["remember"]?.[0]; // Formidable: ? avoid indefine if remember is not checked !! transform to boolean to avoid undefined
+
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+   return res.render("users/userLogin-userRegister", {
+    errors: errors.mapped(),
+    oldData: req.body,
+    formType: "login",
+   });
+  }
+
+  try {
+   const { email, password, remember } = req.body;
+
    const user = await userModel.findByEmail(email);
 
+   //doble check
    if (!user) {
     return res.redirect("/login?error=Usuario no existe");
    }
-
-   const isValidPassword = bcrypt.compareSync(password, user.password);
-
-   if (!isValidPassword) {
-    return res.redirect("/login?error=Clave incorrecta");
-   }
-
    req.session.user = {
     id: user.user_id,
     firstName: user.first_name,
@@ -109,22 +107,26 @@ login METHODE
     avatar: user.avatar,
     role: user.role_id,
    };
-   // Recordarme
+
+   // RECORDAR USUARIO
    if (remember) {
-    // Crear un token seguro usando Crypto
     const token = crypto.randomBytes(64).toString("hex");
-    // Guardar el token en el Json o db
+
     await userModel.update(user.user_id, { rememberToken: token });
-    console.log("SESSION APRES LOGIN:", req.session);
-    // Crear una cookie (7 dias)
+
     res.cookie("rememberToken", token, {
      maxAge: 7 * 24 * 60 * 60 * 1000,
      httpOnly: true,
     });
    }
 
+   console.log("SESSION APRES LOGIN:", req.session);
+
    return res.redirect("/");
-  });
+  } catch (error) {
+   console.error("LOGIN ERROR:", error);
+   return res.status(500).send("Error en login");
+  }
  },
  /*===============
 logout METHODE (destroy session)

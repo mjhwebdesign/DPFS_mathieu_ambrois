@@ -6,6 +6,7 @@ const loggedUserMiddleware = require("../middlewares/loggedUserMiddleware");
 const adminOrLoggedUserMiddleware = require("../middlewares/adminOrLoggedUserMiddleware");
 const adminMiddleware = require("../middlewares/adminMiddleware");
 const userValidation = require("../middlewares/validations/userValidation");
+const loginValidation = require("../middlewares/validations/loginValidation");
 const formidableMiddleware = require("../middlewares/formidableMiddleware");
 
 /* GET user list */
@@ -25,7 +26,12 @@ router.post(
 );
 
 /* POST login form */
-router.post("/login", usersController.login);
+router.post(
+ "/login",
+ formidableMiddleware(),
+ loginValidation,
+ usersController.login,
+);
 
 /* GET Logout Page */
 router.get("/logout", usersController.logout);
