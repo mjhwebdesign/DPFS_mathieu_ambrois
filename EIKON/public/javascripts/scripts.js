@@ -77,6 +77,24 @@ if (signInLink) {
  });
 }
 
+window.addEventListener("DOMContentLoaded", () => {
+ if (typeof formType !== "undefined" && formType === "register") {
+  pink_clip_div.classList.add("signInVisible");
+  pink_clip_div.classList.remove("logInVisible");
+
+  welcomeBack.classList.add("active");
+  welcome.classList.add("active");
+
+  for (let i = 0; i < toLeft.length; i++) {
+   toLeft[i].classList.add("active");
+  }
+
+  for (let i = 0; i < toRight.length; i++) {
+   toRight[i].classList.add("active");
+  }
+ }
+});
+
 /*======================================================================
 // TEMPORARY COUNTER - FOR TESTING PURPOSES ONLY
 ======================================================================*/

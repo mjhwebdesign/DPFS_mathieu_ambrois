@@ -18,10 +18,7 @@ const userModel = {
    include: ["role"],
   });
  },
- /*findByEmail: function (email) {
-  const users = this.getAll();
-  return users.find((user) => user.email === email);
- },*/
+
  findByEmail: async function (email) {
   return await db.User.findOne({
    where: { email: email },

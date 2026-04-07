@@ -5,6 +5,8 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const loggedUserMiddleware = require("../middlewares/loggedUserMiddleware");
 const adminOrLoggedUserMiddleware = require("../middlewares/adminOrLoggedUserMiddleware");
 const adminMiddleware = require("../middlewares/adminMiddleware");
+const userValidation = require("../middlewares/validations/userValidation");
+const formidableMiddleware = require("../middlewares/formidableMiddleware");
 
 /* GET user list */
 //router.get("/", usersController.index);
@@ -13,7 +15,14 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 router.get("/create", usersController.create);
 
 /* POST a new User */
-router.post("/create", usersController.store);
+router.post(
+ "/create",
+ formidableMiddleware({
+  uploadDir: "public/images/users",
+ }),
+ userValidation,
+ usersController.store,
+);
 
 /* POST login form */
 router.post("/login", usersController.login);

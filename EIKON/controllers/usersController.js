@@ -2,6 +2,7 @@ const { IncomingForm } = require("formidable");
 const bcrypt = require("bcrypt");
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require("express-validator");
 const userModel = require("../models/userModel");
 const crypto = require("crypto");
 
@@ -10,53 +11,53 @@ const usersController = {
 CREATE METHODE
 ===============*/
  create: function (req, res, next) {
-  return res.render("users/userLogin-userRegister");
+  return res.render("users/userLogin-userRegister", {
+   errors: {},
+   oldData: {},
+   formType: {},
+  });
  },
  /*===============
 STORE METHODE
 ===============*/
  store: function (req, res, next) {
-  const form = new IncomingForm({
-   uploadDir: path.join(__dirname, "../public/images/users"),
-   keepExtensions: true,
-   multiples: true,
-  });
-
-  // Formidabel parse the form
-  form.parse(req, async (err, fields, files) => {
-   if (err) {
-    console.error(err);
-    return res.status(500).send("Error de Carga");
-   }
-
-   const email = fields["email-register"][0];
-
-   if (await userModel.findByEmail(email)) {
-    return res.send("El email ya existe en la base de usuarios!");
-   }
-
-   //  Files upload
-
-   let avatar = "";
-   if (files.avatar) {
-    const file = Array.isArray(files.avatar) ? files.avatar[0] : files.avatar;
-
-    avatar = "/images/users/" + path.basename(file.filepath);
-   }
-
-   const encryptPassword = bcrypt.hashSync(fields["passwordRegister"][0], 10);
-
-   await userModel.create({
-    first_name: fields["firstName"][0],
-    last_name: fields["lastName"][0],
-    email: email,
-    role_id: 2,
-    password: encryptPassword,
-    avatar,
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+   return res.render("users/userLogin-userRegister", {
+    errors: errors.mapped(),
+    oldData: req.body,
+    formType: "register",
    });
+  }
 
-   res.redirect("/");
-  });
+  try {
+   // 🔐 HASH PASSWORD
+   const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+
+   // 🖼 AVATAR
+   const file = Array.isArray(req.files.avatar)
+    ? req.files.avatar[0]
+    : req.files.avatar;
+
+   const avatar = "/images/users/" + path.basename(file.filepath);
+
+   // 👤 CREATE USER
+   const newUser = {
+    first_name: req.body.firstName,
+    last_name: req.body.lastName,
+    email: req.body.email,
+    password: hashedPassword,
+    avatar,
+    role_id: 2,
+   };
+
+   userModel.create(newUser);
+
+   return res.redirect("/");
+  } catch (error) {
+   console.error("STORE ERROR:", error);
+   return res.status(500).send("Error al crear usuario");
+  }
  },
 
  /*===============
@@ -200,7 +201,7 @@ Update METHODE
    await userModel.update(id, {
     first_name: fields["firstName"][0],
     last_name: fields["lastName"][0],
-    email: fields["email-register"][0],
+    email: fields["email"][0],
     avatar,
    });
    //Redirect to upadted product

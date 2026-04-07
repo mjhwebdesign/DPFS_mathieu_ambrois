@@ -2,6 +2,9 @@
 <html lang="en">
 
 <%- include('../partials/head', { pageTitle: "Eikon | Login - Registro" }) %>
+    <script>
+        const formType = "<%= formType || 'login' %>";
+    </script>
 
     <body>
         <!-- Page content-->
@@ -57,36 +60,66 @@
                     <!-- -->
                     <div class="col-md-5 text-center text-md-end">
 
-                        <form id="register" action="/users/create" method="POST" enctype="multipart/form-data">
+                        <form id="register" action="/users/create" method="POST" enctype="multipart/form-data"
+                            novalidate>
                             <div class="row log-in-content">
                                 <div class="col-sm-6 form-group will_animate to-right">
-                                    <input type="text" class="form-control" name="firstName" id="name-f"
-                                        placeholder="Apellido." required>
+                                    <input type="text" class="form-control <%= errors?.firstName ? 'is-invalid' : '' %>"
+                                        name="firstName" id="name-f" placeholder="Apellido."
+                                        value="<%= oldData?.firstName || '' %>">
+                                    <% if (errors?.firstName) { %>
+                                        <div class="invalid-feedback d-block">
+                                            <%= errors.firstName.msg %>
+                                        </div>
+                                        <% } %>
                                 </div>
                                 <div class="col-sm-6 form-group will_animate to-right">
-                                    <input type="text" class="form-control" name="lastName" id="name-l"
-                                        placeholder="Nombre." required>
+                                    <input type="text" class="form-control <%= errors?.lastName ? 'is-invalid' : '' %>"
+                                        name="lastName" id="name-l" placeholder="Nombre."
+                                        value="<%= oldData?.lastName || '' %>">
+                                    <% if (errors?.lastName) { %>
+                                        <div class="invalid-feedback d-block">
+                                            <%= errors.lastName.msg %>
+                                        </div>
+                                        <% } %>
                                 </div>
+
                                 <div class="col-sm-12 form-group will_animate to-right">
-                                    <input type="email" name="email-register" class="form-control" id="email-register"
-                                        placeholder="Correo Electronico." required>
+                                    <input type="email" name="email"
+                                        class="form-control <%= errors?.email ? 'is-invalid' : '' %>" id="email"
+                                        placeholder="Correo Electronico." value="<%= oldData?.email || '' %>">
+                                    <% if (errors?.email) { %>
+                                        <div class="invalid-feedback d-block">
+                                            <%= errors.email.msg %>
+                                        </div>
+                                        <% } %>
                                 </div>
                                 <div class="col-sm-6 form-group will_animate to-right">
-                                    <input type="Password" name="passwordRegister" class="form-control"
-                                        id="passwordRegister" placeholder="Clave." required>
+                                    <input type="Password" name="password"
+                                        class="form-control <%= errors?.password ? 'is-invalid' : '' %>"
+                                        id="passwordRegister" placeholder="Clave.">
+                                    <% if (errors?.password) { %>
+                                        <div class="invalid-feedback d-block">
+                                            <%= errors.password.msg %>
+                                        </div>
+                                        <% } %>
                                 </div>
                                 <div class="col-sm-6 form-group will_animate to-right">
                                     <input type="Password" name="cnf-password" class="form-control" id="pass2"
-                                        placeholder="Confirmar la clave." required>
+                                        placeholder="Confirmar la clave.">
                                 </div>
-                                <div class="col-sm-12 form-group invalid-feedback d-block will_animate to-right">
-                                    * Las contraseñas no corresponden
-                                </div>
+
                                 <div class="col-sm-12 form-group will_animate to-right">
                                     <label for="avatar" class="form-label custom-file-upload">Avatar:</label>
                                     <span id="avatar-file-name">Ningúna imagen seleccionada</span>
-                                    <input class="form-control product-images" type="file"
-                                        accept="image/png, image/jpeg, image/webp" id="avatar" name="avatar" required>
+                                    <input class="form-control product-images <%= errors?.avatar ? 'is-invalid' : '' %>"
+                                        type="file" accept="image/png, image/jpeg, image/webp" id="avatar"
+                                        name="avatar">
+                                    <% if (errors?.avatar) { %>
+                                        <div class="invalid-feedback d-block">
+                                            <%= errors.avatar.msg %>
+                                        </div>
+                                        <% } %>
                                 </div>
                                 <div class="col-sm-12 form-group mb-0 will_animate to-right">
                                     <button id="submit-sign-in" class="btn btn-primary float-right"
