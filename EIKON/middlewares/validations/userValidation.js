@@ -49,7 +49,13 @@ module.exports = [
    throw new Error("Debes subir una imagen");
   }
 
-  const allowed = ["image/jpeg", "image/png", "image/webp"];
+  const allowed = [
+   "image/jpeg",
+   "image/jpg",
+   "image/png",
+   "image/gif",
+   "image/webp",
+  ];
 
   if (!allowed.includes(file.mimetype)) {
    throw new Error("Formato de imagen inválido");

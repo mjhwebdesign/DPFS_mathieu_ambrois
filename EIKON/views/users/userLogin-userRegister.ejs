@@ -113,8 +113,8 @@
                                     <label for="avatar" class="form-label custom-file-upload">Avatar:</label>
                                     <span id="avatar-file-name">Ningúna imagen seleccionada</span>
                                     <input class="form-control product-images <%= errors?.avatar ? 'is-invalid' : '' %>"
-                                        type="file" accept="image/png, image/jpeg, image/webp" id="avatar"
-                                        name="avatar">
+                                        type="file" accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
+                                        id="avatar" name="avatar">
                                     <% if (errors?.avatar) { %>
                                         <div class="invalid-feedback d-block">
                                             <%= errors.avatar.msg %>

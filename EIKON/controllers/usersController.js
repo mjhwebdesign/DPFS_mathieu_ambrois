@@ -22,7 +22,20 @@ STORE METHODE
 ===============*/
  store: function (req, res, next) {
   const errors = validationResult(req);
+
+  // Fn to Delete files if register failed
+  const deleteUploadedFiles = () => {
+   if (!req.files) return;
+   Object.values(req.files).forEach((file) => {
+    const f = Array.isArray(file) ? file[0] : file;
+    if (f && f.filepath && fs.existsSync(f.filepath)) {
+     fs.unlinkSync(f.filepath);
+    }
+   });
+  };
+
   if (!errors.isEmpty()) {
+   deleteUploadedFiles();
    return res.render("users/userLogin-userRegister", {
     errors: errors.mapped(),
     oldData: req.body,
@@ -31,17 +44,17 @@ STORE METHODE
   }
 
   try {
-   // 🔐 HASH PASSWORD
+   // HASH PASSWORD
    const hashedPassword = bcrypt.hashSync(req.body.password, 10);
 
-   // 🖼 AVATAR
+   // AVATAR
    const file = Array.isArray(req.files.avatar)
     ? req.files.avatar[0]
     : req.files.avatar;
 
    const avatar = "/images/users/" + path.basename(file.filepath);
 
-   // 👤 CREATE USER
+   // CREATE USER
    const newUser = {
     first_name: req.body.firstName,
     last_name: req.body.lastName,
@@ -56,6 +69,7 @@ STORE METHODE
    return res.redirect("/");
   } catch (error) {
    console.error("STORE ERROR:", error);
+   deleteUploadedFiles();
    return res.status(500).send("Error al crear usuario");
   }
  },

@@ -1438,6 +1438,22 @@ footer ul li:first-child a {
  text-align: start;
 }
 
+.log-in-content .form-group input.form-control.is-invalid {
+ border-color: transparent transparent red transparent;
+ text-align: start;
+}
+
+.invalid-feedback {
+ font-size: 9px;
+ position: absolute;
+ top: 11px;
+ right: 12px;
+ width: auto;
+}
+.product-images + .invalid-feedback {
+ top: 25px;
+}
+
 /* Hide the actual file input */
 input[type="file"] {
  width: 0.1px;
@@ -1578,6 +1594,10 @@ input[type="file"] {
  .log-in-content .form-group input::placeholder,
  .create-product-form .form-group input::placeholder {
   text-align: center;
+ }
+
+ .log-in-content .form-group input.form-control.is-invalid::placeholder {
+  text-align: start;
  }
 
  .pink-bg.signInVisible {
