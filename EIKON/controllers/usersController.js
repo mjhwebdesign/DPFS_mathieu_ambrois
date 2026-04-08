@@ -91,14 +91,21 @@ login METHODE
   }
 
   try {
-   const { email, password, remember } = req.body;
+   const { emailLogin, password, remember } = req.body;
 
-   const user = await userModel.findByEmail(email);
+   const user = await userModel.findByEmail(emailLogin);
 
-   //doble check
+   // doble check
    if (!user) {
-    return res.redirect("/login?error=Usuario no existe");
+    return res.render("users/userLogin-userRegister", {
+     errors: {
+      emailLogin: { msg: "El usuario no existe" },
+     },
+     oldData: req.body,
+     formType: "login",
+    });
    }
+
    req.session.user = {
     id: user.user_id,
     firstName: user.first_name,

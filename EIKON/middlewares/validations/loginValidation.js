@@ -22,7 +22,7 @@ module.exports = [
   .withMessage("La contraseña es obligatoria")
   .bail()
   .custom(async (value, { req }) => {
-   const user = await userModel.findByEmail(req.body.email);
+   const user = await userModel.findByEmail(req.body.emailLogin);
 
    if (!user) return true; // ya lo manejó arriba
 
