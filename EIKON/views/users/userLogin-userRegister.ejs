@@ -115,7 +115,8 @@
                                         <% } %>
                                 </div>
                                 <div class="col-sm-6 form-group will_animate to-right">
-                                    <input type="Password" name="cnf-password" class="form-control" id="pass2"
+                                    <input type="Password" name="cnf-password"
+                                        class="form-control <%= errors?.password ? 'is-invalid' : '' %>" id="pass2"
                                         placeholder="Confirmar la clave.">
                                 </div>
 
