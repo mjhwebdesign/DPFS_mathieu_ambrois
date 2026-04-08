@@ -6,6 +6,9 @@ if (year) {
  year.textContent = new Date().getFullYear();
 }
 
+/*======================================================================
+// MODAL TRIGGER
+======================================================================*/
 document.querySelectorAll(".product-detail-image").forEach((img) => {
  img.addEventListener("click", function () {
   document.getElementById("product-modal-image").src = this.dataset.src;

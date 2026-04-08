@@ -792,6 +792,10 @@ select {
  }
 }
 
+select.is-invalid {
+ border: 1px solid red;
+}
+
 /* CART*/
 #cart-detail .topbar {
  display: flex;
@@ -1402,6 +1406,7 @@ footer ul li:first-child a {
 }
 .create-product-form .form-group {
  margin-bottom: 20px;
+ position: relative;
 }
 
 .log-in-content .form-group input,
@@ -1438,7 +1443,8 @@ footer ul li:first-child a {
  text-align: start;
 }
 
-.log-in-content .form-group input.form-control.is-invalid {
+.log-in-content .form-group input.form-control.is-invalid,
+.create-product-form .form-group input.form-control.is-invalid {
  border-color: transparent transparent red transparent;
  text-align: start;
 }
@@ -1452,6 +1458,20 @@ footer ul li:first-child a {
 }
 .product-images + .invalid-feedback {
  top: 25px;
+}
+
+#productCategory + .invalid-feedback {
+ top: 2px;
+ right: 35px;
+}
+#productDescription + .invalid-feedback {
+ top: 5px;
+}
+#productPrice {
+ padding-right: 5px;
+}
+#productPrice + .invalid-feedback {
+ right: 35px;
 }
 
 /* Hide the actual file input */
@@ -1596,7 +1616,8 @@ input[type="file"] {
   text-align: center;
  }
 
- .log-in-content .form-group input.form-control.is-invalid::placeholder {
+ .log-in-content .form-group input.form-control.is-invalid::placeholder,
+ .create-product-form .form-group input.form-control.is-invalid::placeholder {
   text-align: start;
  }
 

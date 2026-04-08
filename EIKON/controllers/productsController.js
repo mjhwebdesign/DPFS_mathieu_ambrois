@@ -3,28 +3,43 @@ const fs = require("fs");
 const path = require("path");
 let db = require("../database/models");
 const productModel = require("../models/productModel");
+const { validationResult } = require("express-validator");
 
 const productsController = {
  /*===============
 STORE METHODE
 ===============*/
- store: function (req, res, next) {
-  const form = new IncomingForm({
-   uploadDir: path.join(__dirname, "../public/images/products"),
-   keepExtensions: true,
-   multiples: true,
-  });
+ store: async function (req, res, next) {
+  const errors = validationResult(req);
 
-  form.parse(req, async (err, fields, files) => {
-   if (err) {
-    console.error(err);
-    return res.status(500).send("Error de Carga");
-   }
+  // Fn to Delete files if register failed
+  const deleteUploadedFiles = () => {
+   if (!req.files) return;
+
+   Object.values(req.files).forEach((file) => {
+    const f = Array.isArray(file) ? file[0] : file;
+    if (f && f.filepath && fs.existsSync(f.filepath)) {
+     fs.unlinkSync(f.filepath);
+    }
+   });
+  };
+
+  if (!errors.isEmpty()) {
+   deleteUploadedFiles();
+   return res.render("products/productCreate", {
+    errors: errors.mapped(),
+    oldData: req.body,
+   });
+  }
+
+  try {
+   const fields = req.body;
+   const files = req.files;
 
    // THEMES
    const possibleThemes = [
     "architecture",
-    "animals",
+    "animal",
     "vintage",
     "bauhaus",
     "maps",
@@ -45,49 +60,59 @@ STORE METHODE
    });
 
    // FILES
-   const cover_image = files.portada
-    ? "/images/products/" + path.basename(files.portada[0].filepath)
-    : "";
+   const portadaFile = Array.isArray(files.portada)
+    ? files.portada[0]
+    : files.portada;
 
-   const secundary_image = files.lamina
-    ? "/images/products/" + path.basename(files.lamina[0].filepath)
-    : "";
+   const laminaFile = Array.isArray(files.lamina)
+    ? files.lamina[0]
+    : files.lamina;
+
+   const cover_image =
+    "/images/products/" + path.basename(portadaFile.filepath);
+   const secundary_image =
+    "/images/products/" + path.basename(laminaFile.filepath);
 
    // CREATE PRODUCT
    const newProduct = await productModel.create({
-    title: fields["product-title"][0],
-    description: fields["product-description"][0],
-    price: parseFloat(fields["product-price"]),
-    category_id: parseInt(fields["product-category"][0]),
+    title: fields["productTitle"],
+    description: fields["productDescription"],
+    price: parseFloat(fields["productPrice"]),
+    category_id: parseInt(fields["productCategory"]),
     cover_image,
     secundary_image,
    });
 
-   // 🔥 THEMES
+   // THEMES in Database
    const themesFromDB = await db.Theme.findAll({
-    where: {
-     theme: themes,
-    },
+    where: { theme: themes },
    });
 
    await newProduct.addThemes(themesFromDB);
 
-   // 🔥 SPACES
+   // SPACES in Database
    const spacesFromDB = await db.Space.findAll({
-    where: {
-     space: spaces,
-    },
+    where: { space: spaces },
    });
 
    await newProduct.addSpaces(spacesFromDB);
-   res.redirect("/admin");
-  });
+
+   return res.redirect("/admin");
+  } catch (error) {
+   console.error(error);
+   deleteUploadedFiles();
+   return res.status(500).send("Error creando producto");
+  }
  },
+
  /*===============
 CREATE METHODE
 ===============*/
  create: function (req, res, next) {
-  return res.render("products/productCreate");
+  return res.render("products/productCreate", {
+   errors: {},
+   oldData: {},
+  });
  },
  /*===============
 EDIT METHODE
@@ -99,27 +124,47 @@ EDIT METHODE
    return res.status(404).send("El producto no existe");
   }
   // Load Pre filled Form
-  res.render("products/productEdit", { product });
+  res.render("products/productEdit", {
+   product,
+   errors: {},
+   oldData: {},
+  });
  },
+
  /*===============
 Update METHODE
 ===============*/
- update: function (req, res) {
-  const id = req.params.id;
-  const form = new IncomingForm({
-   uploadDir: path.join(__dirname, "../public/images/products"),
-   keepExtensions: true,
-   allowEmptyFiles: true,
-   minFileSize: 0,
-  });
+ update: async function (req, res) {
+  const errors = validationResult(req);
 
-  form.parse(req, async (err, fields, files) => {
-   if (err) {
-    console.error(err);
-    return res.status(500).send("Error update");
-   }
+  const deleteUploadedFiles = () => {
+   if (!req.files) return;
 
-   // 🔥 Producto existente (await ahora)
+   Object.values(req.files).forEach((file) => {
+    const f = Array.isArray(file) ? file[0] : file;
+    if (f && f.filepath && fs.existsSync(f.filepath)) {
+     fs.unlinkSync(f.filepath);
+    }
+   });
+  };
+
+  if (!errors.isEmpty()) {
+   deleteUploadedFiles();
+
+   const product = await productModel.findById(req.params.id);
+
+   return res.render("products/productEdit", {
+    product,
+    errors: errors.mapped(),
+    oldData: req.body,
+   });
+  }
+
+  try {
+   const id = req.params.id;
+   const fields = req.body;
+   const files = req.files;
+
    const existingProduct = await productModel.findById(id);
 
    // CHECKBOXES
@@ -147,7 +192,7 @@ Update METHODE
    let cover_image = existingProduct.cover_image;
    let secundary_image = existingProduct.secundary_image;
 
-   // Cover
+   // PORTADA
    if (files.portada) {
     const file = Array.isArray(files.portada)
      ? files.portada[0]
@@ -167,7 +212,7 @@ Update METHODE
     }
    }
 
-   // Secondary
+   // LAMINA
    if (files.lamina) {
     const file = Array.isArray(files.lamina) ? files.lamina[0] : files.lamina;
 
@@ -185,35 +230,35 @@ Update METHODE
     }
    }
 
-   // UPDATE PRODUCT (sin relaciones)
    await productModel.update(id, {
-    title: fields["product-title"][0],
-    description: fields["product-description"][0],
-    price: parseFloat(fields["product-price"]),
-    category_id: parseInt(fields["product-category"][0]),
+    title: fields["productTitle"],
+    description: fields["productDescription"],
+    price: parseFloat(fields["productPrice"]),
+    category_id: parseInt(fields["productCategory"]),
     cover_image,
     secundary_image,
    });
 
-   //Traer instancia actualizada
    const updatedProduct = await productModel.findById(id);
 
-   // THEMES
    const themesFromDB = await db.Theme.findAll({
     where: { theme: themes },
    });
 
-   await updatedProduct.setThemes(themesFromDB); // Set reemplaza todo
+   await updatedProduct.setThemes(themesFromDB);
 
-   // SPACES
    const spacesFromDB = await db.Space.findAll({
     where: { space: spaces },
    });
 
    await updatedProduct.setSpaces(spacesFromDB);
 
-   res.redirect("/admin");
-  });
+   return res.redirect("/admin");
+  } catch (error) {
+   console.error(error);
+   deleteUploadedFiles();
+   return res.status(500).send("Error actualizando producto");
+  }
  },
 
  /*===============

@@ -19,25 +19,49 @@
                         <div class="col-12 col-md-6" id="product-create">
 
                             <form id="create-product" action="/products/create" method="POST"
-                                enctype="multipart/form-data">
+                                enctype="multipart/form-data" novalidate>
                                 <div class="row create-product-form">
                                     <div class="col-sm-12 form-group">
-                                        <input type="text" class="form-control" name="product-title" id="product-title"
-                                            placeholder="Titulo de la obra" required>
+                                        <input type="text"
+                                            class="form-control <%= errors?.['productTitle'] ? 'is-invalid' : '' %>"
+                                            name="productTitle" id="productTitle"
+                                            value="<%= oldData?.productTitle || '' %>" placeholder="Titulo de la obra">
+                                        <% if (errors?.productTitle) { %>
+                                            <div class="invalid-feedback d-block">
+                                                <%= errors.productTitle.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
 
 
                                     <div class="col-sm-12 form-group">
-                                        <textarea class="form-control" name="product-description"
-                                            id="product-description" rows="3" placeholder="Descripción de la obra"
-                                            required></textarea>
+                                        <textarea
+                                            class="form-control <%= errors?.['productDescription'] ? 'is-invalid' : '' %>"
+                                            name="productDescription" id="productDescription" rows="3"
+                                            placeholder="Descripción de la obra"><%= oldData?.productDescription || '' %></textarea>
+                                        <% if (errors?.productDescription) { %>
+                                            <div class="invalid-feedback d-block">
+                                                <%= errors.productDescription.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
+
                                     <div class="col-sm-12 form-group">
-                                        <input type="number" min="0" name="product-price" class="form-control"
-                                            id="product-price" placeholder="Precio ARS $" required>
+                                        <input type="number" min="0" name="productPrice"
+                                            class="form-control <%= errors?.['productPrice'] ? 'is-invalid' : '' %>"
+                                            id="productPrice" placeholder="Precio ARS $"
+                                            value="<%= oldData?.productPrice || '' %>">
+                                        <% if (errors?.productPrice) { %>
+                                            <div class="invalid-feedback d-block">
+                                                <%= errors.productPrice.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
+
+
                                     <div class="col-sm-12 form-group">
-                                        <select id="product-category" name="product-category" required>
+                                        <select id="productCategory" name="productCategory"
+                                            class="<%= errors?.['productCategory'] ? 'is-invalid' : '' %>">
                                             <button>
                                                 <selectedcontent></selectedcontent>
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -46,48 +70,57 @@
                                                         d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                                 </svg>
                                             </button>
-                                            <option disabled selected>
+                                            <option disabled <%=!oldData?.['productCategory'] ? 'selected' : '' %>>
                                                 <div class="text">
                                                     <h3>Categoría</h3>
                                                 </div>
                                             </option>
-                                            <option value="1">
+                                            <option value="1" <%=oldData?.['productCategory']=="1" ? "selected" : "" %>>
                                                 <div class="text">
                                                     <h3>Poster</h3>
                                                 </div>
                                             </option>
-                                            <option value="2">
+                                            <option value="2" <%=oldData?.['productCategory']=="2" ? "selected" : "" %>>
                                                 <div class="text">
                                                     <h3>Photo</h3>
                                                 </div>
                                             </option>
-                                            <option value="3">
+                                            <option value="3" <%=oldData?.['productCategory']=="3" ? "selected" : "" %>>
                                                 <div class="text">
                                                     <h3>Postcard</h3>
                                                 </div>
                                             </option>
                                         </select>
+                                        <% if (errors?.productCategory) { %>
+                                            <div class="invalid-feedback d-block">
+                                                <%= errors.productCategory.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
                                     <!---->
                                     <div class="col-sm-12 product-form-switch">
                                         <p>Espacio:</p>
                                         <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="office" name="office">
+                                            <input class="form-check-input" type="checkbox" id="office" name="office"
+                                                <%=oldData?.office ? "checked" : "" %>>
                                             <label class="form-check-label" for="office">Aesthetics
                                                 offices</label>
                                         </div>
                                         <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="home" name="home">
+                                            <input class="form-check-input" type="checkbox" id="home" name="home"
+                                                <%=oldData?.home ? "checked" : "" %>>
                                             <label class="form-check-label" for="home">Home Sweet Home</label>
                                         </div>
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" id="professionals"
-                                                name="professionals">
-                                            <label class="form-check-label" for="professionals">Interioristas: Nuestra
+                                                name="professionals" <%=oldData?.professionals ? "checked" : "" %>>
+                                            <label class="form-check-label" for="professionals">Interioristas:
+                                                Nuestra
                                                 selección</label>
                                         </div>
                                         <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="museum" name="museum">
+                                            <input class="form-check-input" type="checkbox" id="museum" name="museum"
+                                                <%=oldData?.museum ? "checked" : "" %>>
                                             <label class="form-check-label" for="museum">Serie Limitada</label>
                                         </div>
                                     </div>
@@ -97,47 +130,65 @@
                                         <p>Tema:</p>
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" id="architecture"
-                                                name="architecture">
+                                                name="architecture" <%=oldData?.architecture ? "checked" : "" %>>
                                             <label class="form-check-label" for="architecture">Architecture</label>
                                         </div>
                                         <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="animals" name="animals">
+                                            <input class="form-check-input" type="checkbox" id="animals" name="animals"
+                                                <%=oldData?.animals ? "checked" : "" %>>
                                             <label class="form-check-label" for="animals">Animals</label>
                                         </div>
                                         <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="vintage" name="vintage">
+                                            <input class="form-check-input" type="checkbox" id="vintage" name="vintage"
+                                                <%=oldData?.vintage ? "checked" : "" %>>
                                             <label class="form-check-label" for="vintage">Vintage</label>
                                         </div>
                                         <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="bauhaus" name="bauhaus">
+                                            <input class="form-check-input" type="checkbox" id="bauhaus" name="bauhaus"
+                                                <%=oldData?.bauhaus ? "checked" : "" %>>
                                             <label class="form-check-label" for="bauhaus">Bauhaus</label>
                                         </div>
                                         <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="maps" name="maps">
+                                            <input class="form-check-input" type="checkbox" id="maps" name="maps"
+                                                <%=oldData?.maps ? "checked" : "" %>>
                                             <label class="form-check-label" for="maps">Mapas</label>
                                         </div>
                                         <div class="form-check form-switch">
                                             <input class="form-check-input" type="checkbox" id="blueprints"
-                                                name="blueprints">
+                                                name="blueprints" <%=oldData?.blueprints ? "checked" : "" %>>
                                             <label class="form-check-label" for="blueprints">Blueprints</label>
                                         </div>
                                     </div>
                                     <!---->
                                     <div class="col-sm-12 form-group">
-                                        <label for="portada" class="form-label custom-file-upload">Imagen de portada de
+                                        <label for="portada" class="form-label custom-file-upload">Imagen de
+                                            portada de
                                             producto:</label>
                                         <span id="portada-file-name">Ningúna imagen seleccionada</span>
-                                        <input class="form-control product-images" type="file"
-                                            accept="image/png, image/jpeg, image/webp" id="portada" name="portada"
-                                            required>
+                                        <input
+                                            class="form-control product-images <%= errors?.protada ? 'is-invalid' : '' %>"
+                                            type="file" accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
+                                            id="portada" name="portada">
+                                        <% if (errors?.portada) { %>
+                                            <div class="invalid-feedback d-block">
+                                                <%= errors.portada.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
                                     <div class="col-sm-12 form-group">
-                                        <label for="lamina" class="form-label custom-file-upload">Imagen de lamina del
+                                        <label for="lamina" class="form-label custom-file-upload">Imagen de
+                                            lamina del
                                             producto:</label>
                                         <span id="lamina-file-name">Ningúna imagen seleccionada</span>
-                                        <input class="form-control product-images" type="file"
-                                            accept="image/png, image/jpeg, image/webp" id="lamina" name="lamina"
-                                            required>
+                                        <input
+                                            class="form-control product-images <%= errors?.lamina ? 'is-invalid' : '' %>"
+                                            type="file" accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
+                                            id="lamina" name="lamina">
+                                        <% if (errors?.lamina) { %>
+                                            <div class="invalid-feedback d-block">
+                                                <%= errors.lamina.msg %>
+                                            </div>
+                                            <% } %>
                                     </div>
                                     <div class="col-sm-12 form-group">
                                         <button type="submit" aria-label="Eikon - Cargar producto"

@@ -18,169 +18,224 @@
                     <div class="row justify-content-center align-content-center">
                         <div class="col-12 col-md-6" id="product-create">
                             <form action="/products/edit/<%= product.product_id %>?_method=PUT" method="POST"
-                                enctype="multipart/form-data">
+                                enctype="multipart/form-data" novalidate>
                                 <div class="row create-product-form">
+                                    <!-- Check if has old data. If not load value from db -->
+                                    <% const hasOldData=Object.keys(oldData || {}).length> 0;
+                                        %>
+                                        <!-- TITRE -->
+                                        <div class="col-sm-12 form-group">
+                                            <input type="text"
+                                                class="form-control <%= errors?.['productTitle'] ? 'is-invalid' : '' %>"
+                                                name="productTitle" id="productTitle" placeholder="Titulo de la obra"
+                                                value="<%= oldData?.['productTitle'] || product.title %>">
+                                            <% if (errors?.productTitle) { %>
+                                                <div class="invalid-feedback d-block">
+                                                    <%= errors.productTitle.msg %>
+                                                </div>
+                                                <% } %>
+                                        </div>
 
-                                    <!-- TITRE -->
-                                    <div class="col-sm-12 form-group">
-                                        <input type="text" class="form-control" name="product-title" id="product-title"
-                                            placeholder="Titulo de la obra" value="<%= product.title %>" required>
-                                    </div>
+                                        <!-- DESCRIPTION -->
+                                        <div class="col-sm-12 form-group">
+                                            <textarea
+                                                class="form-control <%= errors?.['productDescription'] ? 'is-invalid' : '' %>"
+                                                name="productDescription" id="productDescription" rows="10"
+                                                placeholder="Descripción de la obra"><%= oldData?.['productDescription'] || product.description %></textarea>
+                                            <% if (errors?.productDescription) { %>
+                                                <div class="invalid-feedback d-block">
+                                                    <%= errors.productDescription.msg %>
+                                                </div>
+                                                <% } %>
+                                        </div>
 
-                                    <!-- DESCRIPTION -->
-                                    <div class="col-sm-12 form-group">
-                                        <textarea class="form-control" name="product-description"
-                                            id="product-description" rows="10" placeholder="Descripción de la obra"
-                                            required><%= product.description %></textarea>
-                                    </div>
+                                        <!-- PRICE -->
+                                        <div class="col-sm-12 form-group">
+                                            <input type="number" min="0" name="productPrice"
+                                                class="form-control <%= errors?.['productPrice'] ? 'is-invalid' : '' %>"
+                                                id="productPrice" placeholder="Precio ARS $"
+                                                value="<%= oldData?.['productPrice'] || product.price %>">
+                                            <% if (errors?.productPrice) { %>
+                                                <div class="invalid-feedback d-block">
+                                                    <%= errors.productPrice.msg %>
+                                                </div>
+                                                <% } %>
+                                        </div>
 
-                                    <!-- PRICE -->
-                                    <div class="col-sm-12 form-group">
-                                        <input type="number" min="0" name="product-price" class="form-control"
-                                            id="product-price" placeholder="Precio ARS $" value="<%= product.price %>"
-                                            required>
-                                    </div>
+                                        <!-- CATEGORY -->
+                                        <div class="col-sm-12 form-group">
+                                            <select id="productCategory" name="productCategory">
 
-                                    <!-- CATEGORY -->
-                                    <div class="col-sm-12 form-group">
-                                        <select id="product-category" name="product-category" required>
+                                                <option disabled> Categoría </option>
 
-                                            <option disabled> Categoría </option>
+                                                <option value="1" <%=hasOldData ? (oldData['productCategory']=="1"
+                                                    ? "selected" : "" ) : (product.category_id==1 ? "selected" : "" ) %>
+                                                    >
+                                                    Poster
+                                                </option>
 
+                                                <option value="2" <%=hasOldData ? (oldData['productCategory']=="2"
+                                                    ? "selected" : "" ) : (product.category_id==2 ? "selected" : "" ) %>
+                                                    >
+                                                    Photo
+                                                </option>
 
-
-                                            <option value="1" <%=product.category.category==="poster" ? "selected" : ""
-                                                %>>
-                                                Poster
-                                            </option>
-
-                                            <option value="2" <%=product.category.category==="photo" ? "selected" : ""
-                                                %>>
-                                                Photo
-                                            </option>
-
-                                            <option value="3" <%=product.category.category==="postcard" ? "selected"
-                                                : "" %>>
-                                                Postcard
-                                            </option>
-
-                                        </select>
-                                    </div>
-
-                                    <!-- ESPACIO -->
-                                    <div class="col-sm-12 product-form-switch">
-                                        <% const spaces=product.spaces.map(s=> s.space).join(` `) %>
-
-                                            <p>Espacio:</p>
-
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="office"
-                                                    name="office" <%=spaces.includes("office") ? "checked" : "" %>>
-                                                <label class="form-check-label" for="office">Aesthetics
-                                                    offices</label>
-                                            </div>
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="home" name="home"
-                                                    <%=spaces.includes("home") ? "checked" : "" %>>
-                                                <label class="form-check-label" for="home">Home Sweet Home</label>
-                                            </div>
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="professionals"
-                                                    name="professionals" <%=spaces.includes("professionals") ? "checked"
-                                                    : "" %>>
-                                                <label class="form-check-label"
-                                                    for="professionals">Interioristas</label>
-                                            </div>
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="museum"
-                                                    name="museum" <%=spaces.includes("museum") ? "checked" : "" %>>
-                                                <label class="form-check-label" for="museum">Serie Limitada</label>
-                                            </div>
-                                    </div>
-
-                                    <!-- TEMA -->
-                                    <div class="col-sm-12 product-form-switch">
-                                        <% const themes=product.themes.map(t=> t.theme).join(` `) %>
-                                            <p>Tema:</p>
-
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="architecture"
-                                                    name="architecture" <%=themes.includes("architecture") ? "checked"
-                                                    : "" %>>
-                                                <label class="form-check-label">Architecture</label>
-                                            </div>
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="animal"
-                                                    name="animal" <%=themes.includes("animal") ? "checked" : "" %>>
-                                                <label class="form-check-label">Animals</label>
-                                            </div>
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="vintage"
-                                                    name="vintage" <%=themes.includes("vintage") ? "checked" : "" %>>
-                                                <label class="form-check-label">Vintage</label>
-                                            </div>
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="bauhaus"
-                                                    name="bauhaus" <%=themes.includes("bauhaus") ? "checked" : "" %>>
-                                                <label class="form-check-label">Bauhaus</label>
-                                            </div>
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="maps" name="maps"
-                                                    <%=themes.includes("maps") ? "checked" : "" %>>
-                                                <label class="form-check-label">Mapas</label>
-                                            </div>
-
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="blueprints"
-                                                    name="blueprints" <%=themes.includes("blueprints") ? "checked" : ""
-                                                    %>>
-                                                <label class="form-check-label">Blueprints</label>
-                                            </div>
-                                    </div>
-
-                                    <!-- IMAGE PORTADA -->
-                                    <div class="col-sm-12 form-group">
-                                        <label class="form-label">Portada Actual:</label><br>
-                                        <img src="../../<%= product.cover_image %>" width="120" class="mb-2">
-
-
-                                        <label for="portada" class="form-label custom-file-upload">Cambiar Imagen de
-                                            portada:</label>
-                                        <span id="portada-file-name">Ningúna imagen seleccionada</span>
-                                        <input class="form-control product-images" type="file"
-                                            accept="image/png, image/jpeg, image/webp" id="portada" name="portada">
+                                                <option value="3" <%=hasOldData ? (oldData['productCategory']=="3"
+                                                    ? "selected" : "" ) : (product.category_id==3 ? "selected" : "" ) %>
+                                                    >
+                                                    Postacard
+                                                </option>
 
 
 
-                                    </div>
+                                            </select>
+                                        </div>
 
-                                    <!-- IMAGE LAMINA -->
-                                    <div class="col-sm-12 form-group">
-                                        <label class="form-label">Actual Lamina:</label><br>
-                                        <img src="../../<%= product.secundary_image %>" width="120" class="mb-2">
+                                        <!-- ESPACIO -->
+                                        <div class="col-sm-12 product-form-switch">
+                                            <% const spaces=product.spaces.map(s=> s.space).join(` `) %>
 
-                                        <label for="lamina" class="form-label custom-file-upload">Cambiar
-                                            Lamina:</label>
-                                        <span id="lamina-file-name">Ningúna imagen seleccionada</span>
-                                        <input class="form-control product-images" type="file"
-                                            accept="image/png, image/jpeg, image/webp" id="lamina" name="lamina">
-                                    </div>
+                                                <p>Espacio:</p>
 
-                                    <!-- SUBMIT -->
-                                    <div class="col-sm-12 form-group">
-                                        <button type="submit" class="w-100 btn btn-sm eikon-btn">
-                                            ACTUALIZAR PRODUCTO
-                                        </button>
-                                    </div>
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="office"
+                                                        name="office" <%=hasOldData ? (oldData.office ? "checked" : "" )
+                                                        : (spaces.includes("office") ? "checked" : "" ) %>>
+
+
+
+                                                    <label class="form-check-label" for="office">Aesthetics
+                                                        offices</label>
+                                                </div>
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="home"
+                                                        name="home" <%=hasOldData ? (oldData.home ? "checked" : "" ) :
+                                                        (spaces.includes("home") ? "checked" : "" ) %>>
+                                                    <label class="form-check-label" for="home">Home Sweet
+                                                        Home</label>
+                                                </div>
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="professionals"
+                                                        name="professionals" <%=hasOldData ? (oldData.professionals
+                                                        ? "checked" : "" ) : (spaces.includes("professionals")
+                                                        ? "checked" : "" ) %>>
+                                                    <label class="form-check-label"
+                                                        for="professionals">Interioristas</label>
+                                                </div>
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="museum"
+                                                        name="museum" <%=hasOldData ? (oldData.museum ? "checked" : "" )
+                                                        : (spaces.includes("museum") ? "checked" : "" ) %>>
+                                                    <label class="form-check-label" for="museum">Serie
+                                                        Limitada</label>
+                                                </div>
+                                        </div>
+
+                                        <!-- TEMA -->
+                                        <div class="col-sm-12 product-form-switch">
+                                            <% const themes=product.themes.map(t=> t.theme).join(` `) %>
+                                                <p>Tema:</p>
+
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="architecture"
+                                                        name="architecture" <%=hasOldData ? (oldData.architecture
+                                                        ? "checked" : "" ) : (themes.includes("architecture")
+                                                        ? "checked" : "" ) %>>
+                                                    <label class="form-check-label">Architecture</label>
+                                                </div>
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="animal"
+                                                        name="animal" <%=hasOldData ? (oldData.animal ? "checked" : "" )
+                                                        : (themes.includes("animal") ? "checked" : "" ) %>>
+                                                    <label class="form-check-label">Animals</label>
+                                                </div>
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="vintage"
+                                                        name="vintage" <%=hasOldData ? (oldData.vintage ? "checked" : ""
+                                                        ) : (themes.includes("vintage") ? "checked" : "" ) %>>
+                                                    <label class="form-check-label">Vintage</label>
+                                                </div>
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="bauhaus"
+                                                        name="bauhaus" <%=hasOldData ? (oldData.bauhaus ? "checked" : ""
+                                                        ) : (themes.includes("bauhaus") ? "checked" : "" ) %>>
+                                                    <label class="form-check-label">Bauhaus</label>
+                                                </div>
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="maps"
+                                                        name="maps" <%=hasOldData ? (oldData.maps ? "checked" : "" ) :
+                                                        (themes.includes("maps") ? "checked" : "" ) %>>
+                                                    <label class="form-check-label">Mapas</label>
+                                                </div>
+
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="blueprints"
+                                                        name="blueprints" <%=hasOldData ? (oldData.blueprints
+                                                        ? "checked" : "" ) : (themes.includes("blueprints") ? "checked"
+                                                        : "" ) %>>
+                                                    <label class="form-check-label">Blueprints</label>
+                                                </div>
+                                        </div>
+
+                                        <!-- IMAGE PORTADA -->
+                                        <div class="col-sm-12 form-group">
+                                            <label class="form-label">Portada Actual:</label><br>
+                                            <img src="../../<%= product.cover_image %>" width="120" class="mb-2">
+
+
+                                            <label for="portada" class="form-label custom-file-upload">Cambiar
+                                                Imagen de
+                                                portada:</label>
+                                            <span id="portada-file-name">Ningúna imagen seleccionada</span>
+                                            <input
+                                                class="form-control product-images <%= errors?.protada ? 'is-invalid' : '' %>"
+                                                type="file"
+                                                accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
+                                                id="portada" name="portada">
+                                            <% if (errors?.portada) { %>
+                                                <div class="invalid-feedback d-block">
+                                                    <%= errors.portada.msg %>
+                                                </div>
+                                                <% } %>
+
+
+                                        </div>
+
+                                        <!-- IMAGE LAMINA -->
+                                        <div class="col-sm-12 form-group">
+                                            <label class="form-label">Actual Lamina:</label><br>
+                                            <img src="../../<%= product.secundary_image %>" width="120" class="mb-2">
+
+                                            <label for="lamina" class="form-label custom-file-upload">Cambiar
+                                                Lamina:</label>
+                                            <span id="lamina-file-name">Ningúna imagen seleccionada</span>
+                                            <input
+                                                class="form-control product-images <%= errors?.lamina ? 'is-invalid' : '' %>"
+                                                type="file"
+                                                accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
+                                                id="lamina" name="lamina">
+                                            <% if (errors?.lamina) { %>
+                                                <div class="invalid-feedback d-block">
+                                                    <%= errors.lamina.msg %>
+                                                </div>
+                                                <% } %>
+                                        </div>
+
+                                        <!-- SUBMIT -->
+                                        <div class="col-sm-12 form-group">
+                                            <button type="submit" class="w-100 btn btn-sm eikon-btn">
+                                                ACTUALIZAR PRODUCTO
+                                            </button>
+                                        </div>
 
                                 </div>
                             </form>

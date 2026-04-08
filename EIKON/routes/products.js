@@ -1,4 +1,7 @@
 var express = require("express");
+const formidableMiddleware = require("../middlewares/formidableMiddleware");
+const productValidation = require("../middlewares/validations/productValidation");
+const productUpdateValidation = require("../middlewares/validations/productUpdateValidation");
 let productsController = require("../controllers/productsController");
 var router = express.Router();
 const adminMiddleware = require("../middlewares/adminMiddleware");
@@ -12,9 +15,21 @@ router.get("/:id", productsController.show);
 //POST search result
 router.post("/search", productsController.search);
 //POST a new product
-router.post("/create", adminMiddleware, productsController.store);
+router.post(
+ "/create",
+ adminMiddleware,
+ formidableMiddleware({ uploadDir: "public/images/products" }),
+ productValidation,
+ productsController.store,
+);
 // PUT Existing Product update
-router.put("/edit/:id", adminMiddleware, productsController.update);
+router.put(
+ "/edit/:id",
+ adminMiddleware,
+ formidableMiddleware({ uploadDir: "public/images/products" }),
+ productUpdateValidation,
+ productsController.update,
+);
 // DELETE to Delete an Existing Product
 router.delete("/delete/:id", adminMiddleware, productsController.destroy);
 
