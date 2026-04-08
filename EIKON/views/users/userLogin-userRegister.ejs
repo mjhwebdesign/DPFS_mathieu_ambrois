@@ -24,12 +24,12 @@
                             <div class="row log-in-content">
                                 <div class="col-sm-12 form-group will_animate to-left">
                                     <input type="email"
-                                        class="form-control <%= errors?.firstName ? 'is-invalid' : '' %>" name="email"
-                                        id="email-login" placeholder="Enter your email."
-                                        value="<%= oldData?.email || '' %>">
-                                    <% if (errors?.email) { %>
+                                        class="form-control <%= errors?.emailLogin ? 'is-invalid' : '' %>"
+                                        name="emailLogin" id="email-login" placeholder="Enter your email."
+                                        value="<%= oldData?.emailLogin || '' %>">
+                                    <% if (errors?.emailLogin) { %>
                                         <div class="invalid-feedback d-block">
-                                            <%= errors.email.msg %>
+                                            <%= errors.emailLogin.msg %>
                                         </div>
                                         <% } %>
                                 </div>

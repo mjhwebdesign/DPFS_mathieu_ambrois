@@ -3,7 +3,7 @@ const userModel = require("../../models/userModel");
 const bcrypt = require("bcrypt");
 
 module.exports = [
- body("email")
+ body("emailLogin")
   .notEmpty()
   .withMessage("El email es obligatorio")
   .isEmail()
