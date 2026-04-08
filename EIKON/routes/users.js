@@ -7,6 +7,7 @@ const adminOrLoggedUserMiddleware = require("../middlewares/adminOrLoggedUserMid
 const adminMiddleware = require("../middlewares/adminMiddleware");
 const userValidation = require("../middlewares/validations/userValidation");
 const loginValidation = require("../middlewares/validations/loginValidation");
+const userUpdateValidation = require("../middlewares/validations/userUpdateValidations");
 const formidableMiddleware = require("../middlewares/formidableMiddleware");
 
 /* GET user list */
@@ -43,7 +44,13 @@ router.get("/:id", authMiddleware, loggedUserMiddleware, usersController.show);
 router.get("/userEdit/:id", adminOrLoggedUserMiddleware, usersController.edit);
 
 // PUT Existing User update
-router.put("/edit/:id", adminOrLoggedUserMiddleware, usersController.update);
+router.put(
+ "/edit/:id",
+ adminOrLoggedUserMiddleware,
+ formidableMiddleware({ uploadDir: "public/images/users" }),
+ userUpdateValidation,
+ usersController.update,
+);
 
 // DELETE to Delete an Existing User
 router.delete("/delete/:id", adminMiddleware, usersController.destroy);

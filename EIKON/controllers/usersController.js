@@ -169,30 +169,47 @@ EDIT METHODE
   const user = await userModel.findById(id);
 
   if (!user) {
-   return res.status(404).send("Usuario no existe che");
+   return res.status(404).send("Usuario no existe");
   }
   // Load Pre filled Form
-  res.render("users/userEdit", { user });
+  res.render("users/userEdit", { user, errors: {}, oldData: {} });
  },
 
  /*===============
 Update METHODE
 ===============*/
- update: function (req, res) {
-  const id = req.params.id;
-  const form = new IncomingForm({
-   uploadDir: path.join(__dirname, "../public/images/users"),
-   keepExtensions: true,
-   allowEmptyFiles: true,
-   minFileSize: 0, // in case the images doesn´t change
-  });
+ update: async function (req, res) {
+  const errors = validationResult(req);
 
-  form.parse(req, async (err, fields, files) => {
-   if (err) {
-    console.error(err);
-    return res.status(500).send("Error al Cargar");
-   }
+  const deleteUploadedFiles = () => {
+   if (!req.files) return;
+
+   Object.values(req.files).forEach((file) => {
+    const f = Array.isArray(file) ? file[0] : file;
+    if (f && f.filepath && fs.existsSync(f.filepath)) {
+     fs.unlinkSync(f.filepath);
+    }
+   });
+  };
+
+  if (!errors.isEmpty()) {
+   deleteUploadedFiles();
+
    //  User existente (await ahora)
+   const user = await userModel.findById(req.params.id);
+
+   return res.render("users/userEdit", {
+    user,
+    errors: errors.mapped(),
+    oldData: req.body,
+   });
+  }
+
+  try {
+   const id = req.params.id;
+   const fields = req.body;
+   const files = req.files;
+
    const existingUser = await userModel.findById(id);
 
    //  IMAGES
@@ -215,14 +232,20 @@ Update METHODE
 
    //  UPDATE User
    await userModel.update(id, {
-    first_name: fields["firstName"][0],
-    last_name: fields["lastName"][0],
-    email: fields["email"][0],
+    first_name: fields["firstName"],
+    last_name: fields["lastName"],
+    email: fields["email"],
     avatar,
    });
-   //Redirect to upadted product
-   res.redirect("/users/" + id);
-  });
+
+   const updatedUser = await userModel.findById(id);
+
+   return res.redirect("/users/" + id);
+  } catch (error) {
+   console.error(error);
+   deleteUploadedFiles();
+   return res.status(500).send("Error actualizando Usuario");
+  }
  },
 
  /*===============

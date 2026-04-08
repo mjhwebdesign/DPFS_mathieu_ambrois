@@ -1403,6 +1403,7 @@ footer ul li:first-child a {
 .log-in-content .form-group,
 .searchbox-content .form-group {
  margin-bottom: 10px;
+ position: relative;
 }
 .create-product-form .form-group {
  margin-bottom: 20px;

@@ -6,53 +6,75 @@
     <body>
         <!-- HEADER-->
         <%- include('../partials/header') %>
-            <form id="edit-profile" action="/users/edit/<%= user.user_id %> ?_method=PUT" method="POST"
-                enctype="multipart/form-data">
-
-                <div class="row log-in-content justify-content-center">
-                    <div class="col-12 mb-5 text-center">
-                        <div class="row justify-content-center">
-                            <div class="col-2 form-group">
-                                <img src="<%= user.avatar %>" class="img-fluid">
+            <form id="edit-profile" action="/users/edit/<%= user.user_id %>?_method=PUT" method="POST"
+                enctype="multipart/form-data" novalidate>
+                <% const hasOldData=Object.keys(oldData || {}).length> 0; %>
+                    <div class="row log-in-content justify-content-center">
+                        <div class="col-12 mb-5 text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-2 form-group">
+                                    <img src="<%= user.avatar %>" class="img-fluid">
+                                </div>
                             </div>
+                            <h1>EDITAR PERFIL</h1>
                         </div>
-                        <h1>EDITAR PERFIL</h1>
-                    </div>
-                    <div class="col-12 col-md-7 form-group">
-                        <input type="text" class="form-control" name="firstName" id="name-f"
-                            value="<%= user.first_name %>" required>
-                    </div>
-                    <div class="col-12 col-md-7 form-group">
-                        <input type="text" class="form-control" name="lastName" id="name-l"
-                            value="<%= user.last_name %>" required>
-                    </div>
-                    <div class="col-12 col-md-7 form-group">
-                        <input type="email" name="email-register" class="form-control" id="email-register"
-                            value="<%= user.email %>">
-                    </div>
+                        <div class="col-12 col-md-7 form-group">
+                            <input type="text" class="form-control <%= errors?.['firstName'] ? 'is-invalid' : '' %>"
+                                name="firstName" id="name-f" value="<%= oldData?.['firstName'] || user.first_name %>">
+                            <% if (errors?.firstName) { %>
+                                <div class="invalid-feedback d-block">
+                                    <%= errors.firstName.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class="col-12 col-md-7 form-group">
+                            <input type="text" class="form-control <%= errors?.['lastName'] ? 'is-invalid' : '' %>"
+                                name="lastName" id="name-l" value="<%= oldData?.['lastName'] || user.last_name %>">
+                            <% if (errors?.lastName) { %>
+                                <div class="invalid-feedback d-block">
+                                    <%= errors.lastName.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class="col-12 col-md-7 form-group">
+                            <input type="email" name="email"
+                                class="form-control <%= errors?.['email'] ? 'is-invalid' : '' %>" id="email-register"
+                                value="<%= oldData?.['email'] || user.email %>">
+                            <% if (errors?.email) { %>
+                                <div class="invalid-feedback d-block">
+                                    <%= errors.email.msg %>
+                                </div>
+                                <% } %>
+                        </div>
 
 
 
-                    <div class="col-12  col-md-7 form-group">
+                        <div class="col-12  col-md-7 form-group">
 
 
 
-                        <label for="avatar" class="form-label custom-file-upload">Cambiar mi avatar:</label>
-                        <span id="avatar-file-name">Ningúna imagen seleccionada</span>
-                        <input class="form-control product-images" type="file"
-                            accept="image/png, image/jpeg, image/webp" id="avatar" name="avatar">
+                            <label for="avatar" class="form-label custom-file-upload">Cambiar mi avatar:</label>
+                            <span id="avatar-file-name">Ningúna imagen seleccionada</span>
+                            <input class="form-control product-images <%= errors?.avatar ? 'is-invalid' : '' %>"
+                                type="file" accept="image/png, image/jpeg, image/jpg, image/gif, image/webp" id="avatar"
+                                name="avatar">
+                            <% if (errors?.avatar) { %>
+                                <div class="invalid-feedback d-block">
+                                    <%= errors.avatar.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+                        <div class="col-sm-12  col-md-7 form-group mb-0">
+                            <button id="submit-sign-in" class="btn btn-primary float-right"
+                                name="submit-register">EDITAR</button>
+                        </div>
+                        <div class="col-sm-12  col-md-7 form-group mb-0">
+                            <p id="logInLink" class="pt-3"> <a href="/#products">
+                                    Prefiero volver a la tienda
+                                </a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-sm-12  col-md-7 form-group mb-0">
-                        <button id="submit-sign-in" class="btn btn-primary float-right"
-                            name="submit-register">EDITAR</button>
-                    </div>
-                    <div class="col-sm-12  col-md-7 form-group mb-0">
-                        <p id="logInLink" class="pt-3"> <a href="/#products">
-                                Prefiero volver a la tienda
-                            </a>
-                        </p>
-                    </div>
-                </div>
             </form>
             <!-- FOOTER-->
             <%- include('../partials/footer') %>
