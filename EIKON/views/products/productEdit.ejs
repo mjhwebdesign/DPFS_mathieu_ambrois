@@ -17,8 +17,8 @@
                     </div>
                     <div class="row justify-content-center align-content-center">
                         <div class="col-12 col-md-6" id="product-create">
-                            <form action="/products/edit/<%= product.product_id %>?_method=PUT" method="POST"
-                                enctype="multipart/form-data" novalidate>
+                            <form id="edit-product" action="/products/edit/<%= product.product_id %>?_method=PUT"
+                                method="POST" enctype="multipart/form-data" novalidate>
                                 <div class="row create-product-form">
                                     <!-- Check if has old data. If not load value from db -->
                                     <% const hasOldData=Object.keys(oldData || {}).length> 0; %>
