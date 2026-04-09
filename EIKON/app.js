@@ -10,6 +10,8 @@ var methodOverride = require("method-override");
 var indexRouter = require("./routes/index");
 var productsRouter = require("./routes/products");
 var usersRouter = require("./routes/users");
+const usersApiRouter = require("./routes/api/users");
+const productsApiRouter = require("./routes/api/products");
 
 //Middlewares
 const userToLocalsMiddleware = require("./middlewares/userToLocalsMiddleware");
@@ -58,6 +60,8 @@ app.use((req, res, next) => {
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
+app.use("/api/users", usersApiRouter);
+app.use("/api/products", productsApiRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
