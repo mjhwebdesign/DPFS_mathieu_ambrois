@@ -3,8 +3,7 @@ const userModel = require("../models/userModel");
 
 const indexController = {
  /*===============
-INDEX METHOD
-===============*/
+INDEX METHOD*/
 
  index: async function (req, res, next) {
   // Retrieve products
@@ -15,8 +14,7 @@ INDEX METHOD
  },
 
  /*===============
-ADMIN temporary METHOD
-===============*/
+ADMIN temporary METHOD*/
 
  admin: async function (req, res, next) {
   // Retrieve products
@@ -28,8 +26,7 @@ ADMIN temporary METHOD
  },
 
  /*===============
-CART METHOD
-===============*/
+CART METHOD*/
  cart: function (req, res, next) {
   return res.render("products/productCart");
  },

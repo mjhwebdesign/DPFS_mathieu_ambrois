@@ -49,7 +49,7 @@ const productModel = {
  // Delete a Product
  delete: async function (id) {
   return await db.Product.destroy({
-   // Dependencias se borran tambien pq ON DELETE CASCADE en la DB
+   // Dependencies also deleted because ON DELETE CASCADE on DB
    where: { product_id: id },
   });
  },

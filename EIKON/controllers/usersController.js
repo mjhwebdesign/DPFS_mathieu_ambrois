@@ -8,8 +8,8 @@ const crypto = require("crypto");
 
 const usersController = {
  /*===============
-CREATE METHODE
-===============*/
+CREATE METHODE*/
+
  create: function (req, res, next) {
   return res.render("users/userLogin-userRegister", {
    errors: {},
@@ -18,8 +18,8 @@ CREATE METHODE
   });
  },
  /*===============
-STORE METHODE
-===============*/
+STORE METHODE*/
+
  store: function (req, res, next) {
   const errors = validationResult(req);
 
@@ -75,8 +75,8 @@ STORE METHODE
  },
 
  /*===============
-login METHODE
-===============*/
+login METHODE*/
+
  login: async function (req, res, next) {
   console.log("SESSION AVANT LOGIN:", req.session);
 
@@ -136,8 +136,8 @@ login METHODE
   }
  },
  /*===============
-logout METHODE (destroy session)
-===============*/
+logout METHODE & (destroy session)*/
+
  logout: async function (req, res) {
   //Remove Session Token if logout
   if (req.session.user) {
@@ -153,8 +153,8 @@ logout METHODE (destroy session)
  },
 
  /*===============
-SHOW METHODE
-===============*/
+SHOW METHODE*/
+
  show: async function (req, res, next) {
   //Get the id from the url
   const id = parseInt(req.params.id);
@@ -169,8 +169,8 @@ SHOW METHODE
  },
 
  /*===============
-EDIT METHODE
-===============*/
+EDIT METHODE*/
+
  edit: async function (req, res) {
   const id = req.params.id;
   const user = await userModel.findById(id);
@@ -183,8 +183,8 @@ EDIT METHODE
  },
 
  /*===============
-Update METHODE
-===============*/
+Update METHODE*/
+
  update: async function (req, res) {
   const errors = validationResult(req);
 
@@ -202,7 +202,7 @@ Update METHODE
   if (!errors.isEmpty()) {
    deleteUploadedFiles();
 
-   //  User existente (await ahora)
+   //  User existente (await)
    const user = await userModel.findById(req.params.id);
 
    return res.render("users/userEdit", {
@@ -256,8 +256,7 @@ Update METHODE
  },
 
  /*===============
-DESTROY METHODE
-===============*/
+DESTROY METHODE*/
 
  destroy: async function (req, res) {
   const id = req.params.id;

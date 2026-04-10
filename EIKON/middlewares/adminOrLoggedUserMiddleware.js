@@ -7,7 +7,7 @@ module.exports = function (req, res, next) {
 
  const profileId = parseInt(req.params.id);
 
- // Permitir si es el dueño O si es admin
+ // Allow owner of account OR Admin
  if (loggedUser.id === profileId || loggedUser.role === 1) {
   return next();
  }

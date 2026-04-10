@@ -19,6 +19,10 @@ const rememberMiddleware = require("./middlewares/rememberMiddleware");
 
 var app = express();
 
+// CORS => Allow express back (port 3000 )to comunicates with Vite React Front (port 5173)
+const cors = require("cors");
+app.use(cors());
+
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));
 

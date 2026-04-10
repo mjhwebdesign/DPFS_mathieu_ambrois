@@ -3,10 +3,10 @@ const router = express.Router();
 
 const userApiController = require("../../controllers/api/userApiController");
 
-// Listado
+// User list
 router.get("/", userApiController.list);
 
-// Detalle
+// User Detail
 router.get("/:id", userApiController.detail);
 
 module.exports = router;

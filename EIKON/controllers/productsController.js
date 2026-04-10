@@ -7,8 +7,7 @@ const { validationResult } = require("express-validator");
 
 const productsController = {
  /*===============
-STORE METHODE
-===============*/
+STORE METHODE*/
  store: async function (req, res, next) {
   const errors = validationResult(req);
 
@@ -106,8 +105,8 @@ STORE METHODE
  },
 
  /*===============
-CREATE METHODE
-===============*/
+CREATE METHODE*/
+
  create: function (req, res, next) {
   return res.render("products/productCreate", {
    errors: {},
@@ -115,8 +114,8 @@ CREATE METHODE
   });
  },
  /*===============
-EDIT METHODE
-===============*/
+EDIT METHODE*/
+
  edit: async function (req, res) {
   const id = req.params.id;
   const product = await productModel.findById(id);
@@ -132,8 +131,8 @@ EDIT METHODE
  },
 
  /*===============
-Update METHODE
-===============*/
+Update METHODE*/
+
  update: async function (req, res) {
   const errors = validationResult(req);
 
@@ -262,8 +261,7 @@ Update METHODE
  },
 
  /*===============
-DESTROY METHODE
-===============*/
+DESTROY METHODE*/
 
  destroy: async function (req, res) {
   const id = req.params.id;
@@ -296,15 +294,15 @@ DESTROY METHODE
    }
   }
 
-  // 🔥 DELETE en DB
+  // DELETE on DB
   await productModel.delete(id);
 
   res.redirect("/admin");
  },
 
  /*===============
-SHOW METHODE
-===============*/
+SHOW METHODE*/
+
  show: async function (req, res, next) {
   //Get the id from the url
   const id = parseInt(req.params.id);
@@ -319,8 +317,8 @@ SHOW METHODE
  },
 
  /*===============
-SEARCH METHODE
-===============*/
+SEARCH METHODE*/
+
  search: async function (req, res, next) {
   const form = new IncomingForm({
    multiples: true,
