@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import { getProducts, getUsers } from "../services/api";
 
-import SmallCard from "../components/SmallCard";
-import LastProduct from "../components/LastProduct";
-import Categories from "../components/Categories";
-import ProductsTable from "../components/ProductsTable";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
+import SmallCard from "../components/SmallCard/SmallCard";
+import LastProduct from "../components/LastProduct/LastProduct";
+import Categories from "../components/Categories/Categories";
+import ProductsTable from "../components/ProductsTable/ProductsTable";
+import Pagination from "../components/Pagination/Pagination";
 
 function Home() {
  // Total Products
@@ -15,6 +21,9 @@ function Home() {
  const [totalUsers, setTotalUsers] = useState(0);
  //Users per page
  const [users, setUsers] = useState([]);
+ //Last product
+ const [lastProduct, setLastProduct] = useState(null);
+ // Product Per category
  const [countByCategory, setCountByCategory] = useState({});
  //Pagination
  const [page, setPage] = useState(1);
@@ -26,6 +35,7 @@ function Home() {
    try {
     const productsData = await getProducts(page);
     setProducts(productsData.products);
+    setLastProduct(productsData.lastProduct);
     setCountByCategory(productsData.countByCategory);
     setTotalProducts(productsData.count);
     setNext(productsData.next);
@@ -42,33 +52,50 @@ function Home() {
   fetchData();
  }, [page]); // Re-render only when page change. Avoid loop (setProducts, setUsers to rerender on each fetch)
  return (
-  <div>
-   <h1>Dashboard Eikon</h1>
+  <>
+   <Navbar>
+    <Container fluid>
+     <Navbar.Brand
+      href="http://localhost:3000/"
+      target="_blank"
+      className="logo-eikon"
+     >
+      EIK<span className="iso">[Ө]</span>N
+     </Navbar.Brand>{" "}
+     DASHBOARD
+    </Container>
+   </Navbar>
 
-   <div style={{ display: "flex", gap: "20px" }}>
-    <SmallCard title="Total de Productos" value={totalProducts} />
-    <SmallCard title="Total de Usuarios" value={totalUsers} />
-    <SmallCard
-     title="Total de Categorías"
-     value={Object.keys(countByCategory).length}
-    />
-   </div>
+   <Container>
+    <Row>
+     <Col md={6}>
+      <SmallCard title="Total de Productos" value={totalProducts} />
 
-   <LastProduct products={products} />
-   <Categories data={countByCategory} />
-   <ProductsTable products={products} />
-   <div style={{ marginTop: "20px" }}>
-    <button onClick={() => setPage(page - 1)} disabled={!previous}>
-     Anterior
-    </button>
+      <SmallCard title="Total de Usuarios" value={totalUsers} />
 
-    <span style={{ margin: "0 10px" }}>Página {page}</span>
+      <SmallCard
+       title="Total de Categorías"
+       value={Object.keys(countByCategory).length}
+      />
+      <Categories data={countByCategory} />
+     </Col>
 
-    <button onClick={() => setPage(page + 1)} disabled={!next}>
-     Siguiente
-    </button>
-   </div>
-  </div>
+     <Col md={6}>
+      <LastProduct lastProduct={lastProduct} />
+     </Col>
+
+     <Col>
+      <ProductsTable products={products} />
+      <Pagination
+       page={page}
+       next={next}
+       previous={previous}
+       setPage={setPage}
+      />
+     </Col>
+    </Row>
+   </Container>
+  </>
  );
 }
 

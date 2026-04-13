@@ -1,0 +1,43 @@
+.border-table {
+ border-radius: 16px;
+ border: 1px solid var(--red);
+ margin-bottom: 1.5rem;
+ padding: 12px;
+}
+
+table {
+ padding: 12px;
+
+ background: rgba(255, 255, 255, 0.02);
+ transition: var(--transition);
+}
+
+table tbody {
+ padding: 12px;
+}
+
+thead {
+ border-bottom: solid 2px var(--red);
+ margin-bottom: 1.2rem;
+ text-transform: uppercase;
+}
+tr {
+ display: flex;
+ margin: 10px 0;
+}
+tr:nth-child(even) {
+ background-color: var(--bg-dark__transparent);
+}
+
+tr td,
+tr th {
+ padding: 0 10px;
+}
+
+tr td:nth-child(1) {
+ color: var(--red);
+}
+tr td:nth-child(2),
+tr th:nth-child(2) {
+ min-width: 100px;
+}

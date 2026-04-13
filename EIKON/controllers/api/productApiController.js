@@ -45,12 +45,19 @@ LIST METHOD : GET /api/products*/
     }
    });
 
+   // Last product
+
+   const lastProduct = await db.Product.findOne({
+    order: [["createdAt", "DESC"]],
+   });
+
    // Formated products
    const productsFormatted = products.map((product) => ({
     id: product.product_id,
     name: product.title,
     description: product.description,
     category: product.category ? product.category.category : "Sin categoría", // Avoid break if no category
+    image: product.cover_image,
     detail: `/api/products/${product.product_id}`,
    }));
 
@@ -66,6 +73,7 @@ LIST METHOD : GET /api/products*/
    return res.json({
     count,
     countByCategory,
+    lastProduct,
     page,
     totalPages,
     next,
