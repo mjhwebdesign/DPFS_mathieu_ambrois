@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProducts, getUsers } from "../services/api";
+import { getProducts, getUsers, deleteProduct } from "../services/api";
 
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
@@ -51,6 +51,17 @@ function Home() {
 
   fetchData();
  }, [page]); // Re-render only when page change. Avoid loop (setProducts, setUsers to rerender on each fetch)
+
+ const handleDelete = async (id) => {
+  try {
+   await deleteProduct(id);
+   setProducts(products.filter((p) => p.id !== id));
+   alert("Producto Borrado");
+  } catch (error) {
+   alert(error.message);
+  }
+ };
+
  return (
   <>
    <Navbar>
@@ -85,7 +96,7 @@ function Home() {
      </Col>
 
      <Col>
-      <ProductsTable products={products} />
+      <ProductsTable products={products} onDelete={handleDelete} />
       <Pagination
        page={page}
        next={next}

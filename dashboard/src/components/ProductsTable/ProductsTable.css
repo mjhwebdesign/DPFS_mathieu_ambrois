@@ -7,7 +7,6 @@
 
 table {
  padding: 12px;
-
  background: rgba(255, 255, 255, 0.02);
  transition: var(--transition);
 }
@@ -31,7 +30,7 @@ tr:nth-child(even) {
 
 tr td,
 tr th {
- padding: 0 10px;
+ padding: 10px 10px;
 }
 
 tr td:nth-child(1) {

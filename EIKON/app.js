@@ -21,7 +21,12 @@ var app = express();
 
 // CORS => Allow express back (port 3000 )to comunicates with Vite React Front (port 5173)
 const cors = require("cors");
-app.use(cors());
+app.use(
+ cors({
+  origin: "http://localhost:5173", // tu frontend
+  credentials: true,
+ }),
+);
 
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));
@@ -37,11 +42,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 // SESSIONS
+app.set("trust proxy", 1);
 app.use(
  session({
   secret: "Kp9A3KlRgEyyhzSxkbYmtFl0o1JSlUak",
   resave: false,
   saveUninitialized: false,
+  saveUninitialized: false,
+  cookie: {
+   httpOnly: true,
+   sameSite: "lax",
+   secure: false,
+  },
  }),
 );
 app.use(userToLocalsMiddleware);

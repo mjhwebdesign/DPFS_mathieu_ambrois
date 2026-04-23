@@ -82,7 +82,7 @@ window.addEventListener("load", function () {
  function validateImage(input, errors, isEdit) {
   if (!input) return;
 
-  const allowedExtensions = ["jpg", "jpeg", "png", "gif"];
+  const allowedExtensions = ["jpg", "jpeg", "png", "gif", "webp"];
 
   // CREATE → Mandatory
   if (!isEdit && input.files.length === 0) {
@@ -101,7 +101,7 @@ window.addEventListener("load", function () {
    if (!allowedExtensions.includes(extension)) {
     errors.push({
      field: input,
-     msg: "Formatos permitidos: JPG, JPEG, PNG, GIF",
+     msg: "Formatos permitidos: JPG, JPEG, PNG, GIF, WEBP",
     });
    }
   }
