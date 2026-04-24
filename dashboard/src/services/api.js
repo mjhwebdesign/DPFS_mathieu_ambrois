@@ -5,19 +5,8 @@ const fetchWithAuth = async (url, options = {}) => {
   credentials: "include",
   ...options,
  });
- // If guest
- if (res.status === 401) {
-  alert("Error: Asegurese de ser admin");
-  window.location.href = "/";
-  throw new Error("NOT_ADMIN");
- }
 
  return res;
-};
-
-// Used to checkAdmin and return 401 if needed (used in create product)
-export const checkAdminAccess = async () => {
- await fetchWithAuth(`${API_URL}/products/1/edit`);
 };
 
 // productos GET
@@ -30,18 +19,15 @@ export const getProducts = async (page = 1) => {
 };
 
 export const createProduct = async (formData) => {
- const res = await fetch(`${API_URL}/products`, {
+ const res = await fetchWithAuth(`${API_URL}/products`, {
   method: "POST",
   credentials: "include",
   body: formData,
  });
-
  const data = await res.json();
-
  if (!res.ok) {
   throw new Error(data.error || "Error creando producto");
  }
-
  return data;
 };
 
@@ -54,7 +40,12 @@ export const getProductById = async (id) => {
 
 // Producto Load detail for edit
 export const getProductForEdit = async (id) => {
- return await fetchWithAuth(`${API_URL}/products/${id}/edit`);
+ const res = await fetchWithAuth(`${API_URL}/products/${id}/edit`);
+ if (!res.ok) {
+  throw new Error("Error al cargar producto");
+ }
+
+ return res;
 };
 //  producto UPDATE
 export const updateProduct = async (id, formData) => {
@@ -77,7 +68,9 @@ export const deleteProduct = async (id) => {
   method: "DELETE",
  });
  if (!res.ok) {
-  throw new Error("Error: Asegurese de ser admin");
+  throw new Error(
+   "No es Administrador. No tiene permiso para realizar esta acción",
+  );
  }
  return await res.json();
 };

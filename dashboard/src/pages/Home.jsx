@@ -50,7 +50,8 @@ function Home() {
   };
 
   fetchData();
- }, [page]); // Re-render only when page change. Avoid loop (setProducts, setUsers to rerender on each fetch)
+ }, [page]); // Re-render only when page change.
+ //  Avoid loop (setProducts, setUsers to rerender on each fetch)
 
  const handleDelete = async (id) => {
   try {

@@ -12,6 +12,7 @@ var productsRouter = require("./routes/products");
 var usersRouter = require("./routes/users");
 const usersApiRouter = require("./routes/api/users");
 const productsApiRouter = require("./routes/api/products");
+const authRoutes = require("./routes/api/auth");
 
 //Middlewares
 const userToLocalsMiddleware = require("./middlewares/userToLocalsMiddleware");
@@ -78,6 +79,7 @@ app.use("/products", productsRouter);
 app.use("/users", usersRouter);
 app.use("/api/users", usersApiRouter);
 app.use("/api/products", productsApiRouter);
+app.use("/api/auth", authRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

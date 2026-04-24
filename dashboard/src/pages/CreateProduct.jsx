@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
-import { createProduct, checkAdminAccess } from "../services/api";
+import { createProduct } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { validateProduct } from "../validations/productsValidationsReact";
 
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function CreateProduct() {
  const navigate = useNavigate();
- // check if admin first
- useEffect(() => {
-  checkAdminAccess();
- }, []);
 
  const [form, setForm] = useState({
   productTitle: "",
@@ -21,9 +19,24 @@ function CreateProduct() {
  });
 
  const [errors, setErrors] = useState({});
-
  const [portada, setPortada] = useState(null);
+ const [portadaFileName, setPortadaFileName] = useState(
+  "Ninguna imagen seleccionada",
+ );
+ const handlePortadaChange = (e) => {
+  const file = e.target.files[0];
+  setPortada(file);
+  setPortadaFileName(file ? file.name : "Ninguna imagen seleccionada");
+ };
  const [lamina, setLamina] = useState(null);
+ const [laminaFileName, setLaminaFileName] = useState(
+  "Ninguna imagen seleccionada",
+ );
+ const handleLaminaChange = (e) => {
+  const file = e.target.files[0];
+  setLamina(file);
+  setLaminaFileName(file ? file.name : "Ninguna imagen seleccionada");
+ };
 
  const [themes, setThemes] = useState([]);
  const [spaces, setSpaces] = useState([]);
@@ -69,7 +82,7 @@ function CreateProduct() {
   formData.append("portada", portada);
   formData.append("lamina", lamina);
 
-  // 🔥 CLAVE: enviar checkboxes igual que Express
+  // enviar checkboxes mismo formato que en Express
   themes.forEach((t) => formData.append(t, "on"));
   spaces.forEach((s) => formData.append(s, "on"));
 
@@ -97,64 +110,141 @@ function CreateProduct() {
     </Container>
    </Navbar>
 
-   <div>
-    <h2>Crear Producto</h2>
+   <Container>
+    <Row>
+     <Col className="text-center mb-3">
+      <h1 className="glow-white">Crear Producto</h1>
+     </Col>
+    </Row>
+    <Row className="justify-content-center align-content-center">
+     <Col md={6}>
+      <form onSubmit={handleSubmit}>
+       <Row className="create-product-form">
+        <Col sm={12} className="form-group">
+         <input
+          name="productTitle"
+          placeholder="Título"
+          className="form-control"
+          onChange={handleChange}
+         />
+         {errors.productTitle && <p className="error">{errors.productTitle}</p>}
+        </Col>
+        <Col sm={12} className="form-group">
+         <textarea
+          name="productDescription"
+          placeholder="Descripción"
+          className="form-control"
+          onChange={handleChange}
+         />
+         {errors.productDescription && (
+          <p className="error">{errors.productDescription}</p>
+         )}
+        </Col>
+        <Col sm={12} className="form-group">
+         <input
+          name="productPrice"
+          type="number"
+          className="form-control"
+          placeholder="Precio ARS $"
+          onChange={handleChange}
+         />
+         {errors.productPrice && <p className="error">{errors.productPrice}</p>}
+        </Col>
+        <Col sm={12} className="form-group">
+         <select
+          name="productCategory"
+          className="form-control"
+          value={form.productCategory}
+          onChange={handleChange}
+         >
+          <option value="">Categoría</option>
+          <option value="1">Poster</option>
+          <option value="2">Photo</option>
+          <option value="3">Postcard</option>
+         </select>
+         {errors.productCategory && (
+          <p className="error">{errors.productCategory}</p>
+         )}
+        </Col>
+        <Col sm={12} className="product-form-switch">
+         <p>Themes</p>
 
-    <form onSubmit={handleSubmit}>
-     <input name="productTitle" placeholder="Título" onChange={handleChange} />
-     {errors.productTitle && <p className="error">{errors.productTitle}</p>}
-     <textarea
-      name="productDescription"
-      placeholder="Descripción"
-      onChange={handleChange}
-     />
-     {errors.productDescription && (
-      <p className="error">{errors.productDescription}</p>
-     )}
-     <input name="productPrice" type="number" onChange={handleChange} />
-     {errors.productPrice && <p className="error">{errors.productPrice}</p>}
-     <input
-      name="productCategory"
-      placeholder="Category ID"
-      onChange={handleChange}
-     />
-     {errors.productCategory && (
-      <p className="error">{errors.productCategory}</p>
-     )}
+         {themesList.map((t) => (
+          <div key={t} className="form-check form-switch">
+           <label className="form-check-label">
+            <input
+             type="checkbox"
+             className="form-check-input"
+             onChange={() => handleCheckbox(t, themes, setThemes)}
+            />
+            {t}
+           </label>
+          </div>
+         ))}
+        </Col>
+        <Col sm={12} className="product-form-switch">
+         <p>Spaces</p>
 
-     <h3>Themes</h3>
-     {themesList.map((t) => (
-      <label key={t}>
-       <input
-        type="checkbox"
-        onChange={() => handleCheckbox(t, themes, setThemes)}
-       />
-       {t}
-      </label>
-     ))}
+         {spacesList.map((s) => (
+          <div key={s} className="form-check form-switch">
+           <label className="form-check-label">
+            <input
+             type="checkbox"
+             className="form-check-input"
+             onChange={() => handleCheckbox(s, spaces, setSpaces)}
+            />
+            {s}
+           </label>
+          </div>
+         ))}
+        </Col>
 
-     <h3>Spaces</h3>
-     {spacesList.map((s) => (
-      <label key={s}>
-       <input
-        type="checkbox"
-        onChange={() => handleCheckbox(s, spaces, setSpaces)}
-       />
-       {s}
-      </label>
-     ))}
+        <Col sm={12} className="form-group">
+         <p>Portada</p>
 
-     <p>Portada</p>
-     <input type="file" onChange={(e) => setPortada(e.target.files[0])} />
-     {errors.portada && <p className="error">{errors.portada}</p>}
+         <label htmlFor="portada" className="form-label custom-file-upload">
+          Imagen de portada de producto:
+         </label>
+         <span id="portada-file-name">{portadaFileName}</span>
 
-     <p>Imagen secundaria</p>
-     <input type="file" onChange={(e) => setLamina(e.target.files[0])} />
-     {errors.lamina && <p className="error">{errors.lamina}</p>}
+         <input
+          type="file"
+          onChange={handlePortadaChange}
+          className="form-control product-images"
+          name="portada"
+          id="portada"
+          accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
+         />
+         {errors.portada && <p className="error">{errors.portada}</p>}
+        </Col>
 
-     <button type="submit">Crear</button>
-    </form>
-   </div>
+        <Col sm={12} className="form-group">
+         <p>Imagen secundaria</p>
+         <label htmlFor="lamina" className="form-label custom-file-upload">
+          Imagen de lamina del producto:
+         </label>
+         <span id="lamina-file-name">{laminaFileName}</span>
+         <input
+          type="file"
+          onChange={handleLaminaChange}
+          className="form-control product-images "
+          name="lamina"
+          id="lamina"
+          accept="image/png, image/jpeg, image/jpg, image/gif, image/webp"
+         />
+         {errors.lamina && <p className="error">{errors.lamina}</p>}
+        </Col>
+
+        <Col xs={12} className="form-group">
+         <button type="submit" className="w-100 btn btn-sm eikon-btn">
+          Crear
+         </button>
+        </Col>
+       </Row>
+      </form>
+     </Col>
+    </Row>
+   </Container>
   </>
  );
 }
