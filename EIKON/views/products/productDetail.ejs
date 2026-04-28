@@ -81,7 +81,7 @@
                                                         d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                                 </svg>
                                             </button>
-                                            <option value="no-frame" selected>
+                                            <option value="no-frame">
                                                 <img src="/images/content/no-frame.webp" alt="No Frame">
                                                 <div class="text">
                                                     <h3>No Frame</h3>
@@ -113,8 +113,12 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button id="add-to-cart" class="w-100 mt-5 mb-4 btn btn-sm eikon-btn" type="submit">
-                                        Agregar al Carrito <span>$</span><span>Total Price</span>
+                                    <button id="add-to-cart" class="w-100 mt-5 mb-4 btn btn-sm eikon-btn" type="button"
+                                        data-id="<%= product.product_id %>" data-price="<%= product.price %>"
+                                        data-image="<%= product.cover_image %>" data-title="<%= product.title %>">
+                                        Agregar al Carrito $ <span id="totalPrice">
+                                            <%= product.price %>
+                                        </span>
                                     </button>
                                     <div id="back-to-shop" class="text-center">
                                         <a href="/#products">

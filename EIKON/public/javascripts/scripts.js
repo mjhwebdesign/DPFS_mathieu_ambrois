@@ -99,27 +99,134 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 /*======================================================================
-// TEMPORARY COUNTER - FOR TESTING PURPOSES ONLY
+// PRODUCT DETAIL - QUANTITY & CART LOGIC
 ======================================================================*/
-/*let counter = 0;
-const value = document.querySelector("#qtyVal");
-const buttons = document.getElementsByClassName("counter-btn");
-if (value) {
- Array.from(buttons).forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-   const estilos = e.currentTarget.classList;
-   if (e.target.id === "qtyInc") {
-    counter++;
-   } else if (e.target.id === "qtyDec") {
-    counter--;
-   } else {
-    counter = 0;
-   }
-   value.textContent = counter;
+document.addEventListener("DOMContentLoaded", () => {
+ // 👉 Scope de página
+ const container = document.querySelector("#product-detail");
+
+ // 👉 Si no estamos en product detail → salir
+ if (!container) return;
+
+ let qty = 1;
+
+ // Elementos (scoped)
+ const qtyVal = container.querySelector("#qtyVal");
+ const totalPrice = container.querySelector("#totalPrice");
+ const addBtn = container.querySelector("#add-to-cart");
+ const qtyInc = container.querySelector("#qtyInc");
+ const qtyDec = container.querySelector("#qtyDec");
+
+ // Validación mínima
+ if (!addBtn || !qtyVal || !totalPrice) return;
+
+ const price = parseFloat(addBtn.dataset.price) || 0;
+
+ // Incrementar
+ if (qtyInc) {
+  qtyInc.addEventListener("click", () => {
+   qty++;
+   update();
+  });
+ }
+
+ // Decrementar
+ if (qtyDec) {
+  qtyDec.addEventListener("click", () => {
+   if (qty > 1) qty--;
+   update();
+  });
+ }
+
+ // Actualizar UI
+ function update() {
+  qtyVal.innerText = qty;
+  totalPrice.innerText = (price * qty).toFixed(2);
+ }
+
+ // Agregar al carrito
+ addBtn.addEventListener("click", async function () {
+  const product = {
+   id: this.dataset.id,
+   title: this.dataset.title,
+   price: parseFloat(this.dataset.price),
+   quantity: qty,
+   image: this.dataset.image,
+  };
+
+  try {
+   await fetch("/cart/add", {
+    method: "POST",
+    headers: {
+     "Content-Type": "application/json",
+    },
+    body: JSON.stringify(product),
+   });
+
+   window.location.href = "/cart";
+  } catch (error) {
+   console.error("Error al agregar al carrito:", error);
+  }
+ });
+});
+
+/*======================================================================
+// CART PAGE 
+======================================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+ const cartContainer = document.querySelector("#cart-detail");
+ if (!cartContainer) return;
+ // Mofificar cantidades y actualizar precios
+ const incButtons = cartContainer.querySelectorAll(".qtyInc");
+ const decButtons = cartContainer.querySelectorAll(".qtyDec");
+
+ incButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+   updateQty(btn.dataset.id, "inc");
   });
  });
-}
- */
+
+ decButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+   updateQty(btn.dataset.id, "dec");
+  });
+ });
+
+ async function updateQty(id, action) {
+  await fetch("/cart/update", {
+   method: "POST",
+   headers: {
+    "Content-Type": "application/json",
+   },
+   body: JSON.stringify({ id, action }),
+  });
+
+  window.location.reload();
+ }
+
+ // Eliminar producto del carrito
+ const removeButtons = cartContainer.querySelectorAll(".remove-btn");
+
+ removeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+   removeItem(btn.dataset.id);
+  });
+ });
+
+ async function removeItem(id) {
+  await fetch("/cart/remove", {
+   method: "POST",
+   headers: {
+    "Content-Type": "application/json",
+   },
+   body: JSON.stringify({ id }),
+  });
+
+  // 🔁 recargar para actualizar todo
+  window.location.reload();
+ }
+});
 
 /*======================================================================
 // SHOW FILE NAME WHEN USING INPUT TYPE FILE

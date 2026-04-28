@@ -31,325 +31,149 @@
                                     </div>
                                     <div class="pill" id="itemsCountPill" aria-live="polite">
                                         <i class="fa-solid fa-cart-shopping"></i>
-                                        <span><span id="itemsCount">5</span> articulos</span>
+                                        <span><span id="itemsCount">
+                                                <%= cartCount %>
+                                            </span> articulos</span>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <a href="products/{id}" class="cart-item-img">
-                                        <div class="item__img">
-                                            <img src="/images/products/animals-crane-2-photo-animal-slide.webp"
-                                                alt="Midnight Hoodie">
+                                <% let subtotal=0; %>
+
+                                    <% cart.forEach(product=> {
+                                        subtotal += product.price * product.quantity;
+                                        %>
+
+                                        <div class="item">
+                                            <a href="products/<%= product.id %>" class="cart-item-img">
+                                                <div class="item__img">
+                                                    <img src="<%= product.image %>" alt=" <%= product.title %>">
+                                                </div>
+                                            </a>
+                                            <div class="item__title">
+                                                <div>
+                                                    <p class="item__name">
+                                                        <%= product.title %>
+                                                    </p>
+                                                </div>
+                                                <span class="badge" title="Unit price">
+                                                    <i class="fa-solid fa-tag"></i>
+                                                    <span>$ <%= product.price %></span>
+                                                </span>
+                                            </div>
+
+                                            <div class="item__controls">
+                                                <div class="price">$<%= (product.price * product.quantity).toFixed(2) %>
+                                                </div>
+
+                                                <div class="col-12 col-md-10 justify-content-start">
+                                                    <div class="qty">
+
+                                                        <button type="button" class="counter-btn qtyDec"
+                                                            data-id="<%= product.id %>">-</button>
+
+                                                        <div class="qtyVal">
+                                                            <%= product.quantity %>
+                                                        </div>
+
+                                                        <button type="button" class="counter-btn qtyInc"
+                                                            data-id="<%= product.id %>">+</button>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="badge remove remove-btn"
+                                                    data-id="<%= product.id %>">
+                                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                                    <span>Suprimir</span>
+                                                </button>
+
+                                            </div>
                                         </div>
-                                    </a>
-                                    <div>
-                                        <div class="item__title">
-                                            <div>
-                                                <p class="item__name">L´ envol</p>
-                                                <p class="item__meta muted">Size: 30 x 40 cm</p>
-                                                <select id="customisable-select">
-                                                    <button>
-                                                        <selectedcontent></selectedcontent>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                            aria-hidden="true">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                                        </svg>
+
+                                        <% }) %>
+                                            <!--<div class="item">
+                                                <a href="products/{id}" class="cart-item-img">
+                                                    <div class="item__img">
+                                                        <img src="/images/products/animals-crane-2-photo-animal-slide.webp"
+                                                            alt="Midnight Hoodie">
+                                                    </div>
+                                                </a>
+                                                <div>
+                                                    <div class="item__title">
+                                                        <div>
+                                                            <p class="item__name">L´ envol</p>
+                                                            <p class="item__meta muted">Size: 30 x 40 cm</p>
+                                                            <select id="customisable-select">
+                                                                <button>
+                                                                    <selectedcontent></selectedcontent>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                        viewBox="0 0 24 24" stroke-width="1.5"
+                                                                        stroke="currentColor" aria-hidden="true">
+                                                                        <path stroke-linecap="round"
+                                                                            stroke-linejoin="round"
+                                                                            d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                                                    </svg>
+                                                                </button>
+                                                                <option value="no-frame">
+                                                                    <img src="/images/content/no-frame.webp"
+                                                                        alt="No Frame">
+                                                                    <div class="text">
+                                                                        <h3>No Frame</h3>
+                                                                        <p>Afiche solo</p>
+                                                                    </div>
+                                                                </option>
+                                                                <option value="wood" selected>
+                                                                    <img src="/images/content/cadre-bois-naturel.webp"
+                                                                        alt="Wood">
+                                                                    <div class="text">
+                                                                        <h3>Wood</h3>
+                                                                        <p>Marco de madera Natural</p>
+                                                                    </div>
+                                                                </option>
+                                                                <option value="white-frame">
+                                                                    <img src="/images/content/cadre-bois-blanc.webp"
+                                                                        alt="White">
+                                                                    <div class="text">
+                                                                        <h3>White</h3>
+                                                                        <p>Marco de madera Natural pintada de Blanco</p>
+                                                                    </div>
+                                                                </option>
+                                                                <option value="black-frame">
+                                                                    <img src="/images/content/HfGUlmPublication.webp"
+                                                                        alt="Black">
+                                                                    <div class="text">
+                                                                        <h3>Black</h3>
+                                                                        <p>Marco de madera Natural pintada de Negro</p>
+                                                                    </div>
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <span class="badge" title="Unit price">
+                                                            <i class="fa-solid fa-tag"></i>
+                                                            <span>$49.00</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="item__controls">
+                                                    <div class="price" title="Line total">$49.00</div>
+                                                    <div class="col-12 col-md-10 justify-content-start">
+                                                        <div class="qty"
+                                                            aria-label="Quantity controls for Midnight Hoodie">
+                                                            <button type="button" id="qtyDec" class="counter-btn qtyDec"
+                                                                aria-label="Decrease quantity">
+                                                                -
+                                                            </button>
+                                                            <div id="qtyVal" class="qtyVal" aria-live="polite">1</div>
+                                                            <button type="button" id="qtyInc" class="counter-btn qtyInc"
+                                                                aria-label="Increase quantity">
+                                                                +
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <button type="button" class="badge remove" aria-label="Remove item">
+                                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                                        <span>Suprimir</span>
                                                     </button>
-                                                    <option value="no-frame">
-                                                        <img src="/images/content/no-frame.webp" alt="No Frame">
-                                                        <div class="text">
-                                                            <h3>No Frame</h3>
-                                                            <p>Afiche solo</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="wood" selected>
-                                                        <img src="/images/content/cadre-bois-naturel.webp" alt="Wood">
-                                                        <div class="text">
-                                                            <h3>Wood</h3>
-                                                            <p>Marco de madera Natural</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="white-frame">
-                                                        <img src="/images/content/cadre-bois-blanc.webp" alt="White">
-                                                        <div class="text">
-                                                            <h3>White</h3>
-                                                            <p>Marco de madera Natural pintada de Blanco</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="black-frame">
-                                                        <img src="/images/content/HfGUlmPublication.webp" alt="Black">
-                                                        <div class="text">
-                                                            <h3>Black</h3>
-                                                            <p>Marco de madera Natural pintada de Negro</p>
-                                                        </div>
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <span class="badge" title="Unit price">
-                                                <i class="fa-solid fa-tag"></i>
-                                                <span>$49.00</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="item__controls">
-                                        <div class="price" title="Line total">$49.00</div>
-                                        <div class="col-12 col-md-10 justify-content-start">
-                                            <div class="qty" aria-label="Quantity controls for Midnight Hoodie">
-                                                <button type="button" id="qtyDec" class="counter-btn qtyDec"
-                                                    aria-label="Decrease quantity">
-                                                    -
-                                                </button>
-                                                <div id="qtyVal" class="qtyVal" aria-live="polite">1</div>
-                                                <button type="button" id="qtyInc" class="counter-btn qtyInc"
-                                                    aria-label="Increase quantity">
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="badge remove" aria-label="Remove item">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                            <span>Suprimir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <a href="products/{id}" class="cart-item-img">
-                                        <div class="item__img">
-                                            <img src="/images/products/animals-crane-2-photo-animal-slide.webp"
-                                                alt="Midnight Hoodie">
-                                        </div>
-                                    </a>
-                                    <div>
-                                        <div class="item__title">
-                                            <div>
-                                                <p class="item__name">L´ envol</p>
-                                                <p class="item__meta muted">Size: 30 x 40 cm</p>
-                                                <select id="customisable-select">
-                                                    <button>
-                                                        <selectedcontent></selectedcontent>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                            aria-hidden="true">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                                        </svg>
-                                                    </button>
-                                                    <option value="no-frame">
-                                                        <img src="/images/content/no-frame.webp" alt="No Frame">
-                                                        <div class="text">
-                                                            <h3>No Frame</h3>
-                                                            <p>Afiche solo</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="wood">
-                                                        <img src="/images/content/cadre-bois-naturel.webp" alt="Wood">
-                                                        <div class="text">
-                                                            <h3>Wood</h3>
-                                                            <p>Marco de madera Natural</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="white-frame">
-                                                        <img src="/images/content/cadre-bois-blanc.webp" alt="White">
-                                                        <div class="text">
-                                                            <h3>White</h3>
-                                                            <p>Marco de madera Natural pintada de Blanco</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="black-frame" selected>
-                                                        <img src="/images/content/HfGUlmPublication.webp" alt="Black">
-                                                        <div class="text">
-                                                            <h3>Black</h3>
-                                                            <p>Marco de madera Natural pintada de Negro</p>
-                                                        </div>
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <span class="badge" title="Unit price">
-                                                <i class="fa-solid fa-tag"></i>
-                                                <span>$49.00</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="item__controls">
-                                        <div class="price" title="Line total">$98.00</div>
-                                        <div class="col-12 col-md-10 justify-content-start">
-                                            <div class="qty" aria-label="Quantity controls for Midnight Hoodie">
-                                                <button type="button" id="qtyDec" class="counter-btn qtyDec"
-                                                    aria-label="Decrease quantity">
-                                                    -
-                                                </button>
-                                                <div id="qtyVal" class="qtyVal" aria-live="polite">1</div>
-                                                <button type="button" id="qtyInc" class="counter-btn qtyInc"
-                                                    aria-label="Increase quantity">
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="badge remove" aria-label="Remove item">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                            <span>Suprimir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <a href="products/{id}" class="cart-item-img">
-                                        <div class="item__img">
-                                            <img src="/images/products/blueprints-typing-machine-afiche-blueprint-slide.webp"
-                                                alt="Midnight Hoodie">
-                                        </div>
-                                    </a>
-                                    <div>
-                                        <div class="item__title">
-                                            <div>
-                                                <p class="item__name">Remington s56 Blueprint</p>
-                                                <p class="item__meta muted">Size: 30 x 40 cm</p>
-                                                <select id="customisable-select">
-                                                    <button>
-                                                        <selectedcontent></selectedcontent>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                            aria-hidden="true">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                                        </svg>
-                                                    </button>
-                                                    <option value="no-frame" selected>
-                                                        <img src="/images/content/no-frame.webp" alt="No Frame">
-                                                        <div class="text">
-                                                            <h3>No Frame</h3>
-                                                            <p>Afiche solo</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="wood">
-                                                        <img src="/images/content/cadre-bois-naturel.webp" alt="Wood">
-                                                        <div class="text">
-                                                            <h3>Wood</h3>
-                                                            <p>Marco de madera Natural</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="white-frame">
-                                                        <img src="/images/content/cadre-bois-blanc.webp" alt="White">
-                                                        <div class="text">
-                                                            <h3>White</h3>
-                                                            <p>Marco de madera Natural pintada de Blanco</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="black-frame">
-                                                        <img src="/images/content/HfGUlmPublication.webp" alt="Black">
-                                                        <div class="text">
-                                                            <h3>Black</h3>
-                                                            <p>Marco de madera Natural pintada de Negro</p>
-                                                        </div>
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <span class="badge" title="Unit price">
-                                                <i class="fa-solid fa-tag"></i>
-                                                <span>$49.00</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="item__controls">
-                                        <div class="price" title="Line total">$49.00</div>
-                                        <div class="col-12 col-md-10 justify-content-start">
-                                            <div class="qty" aria-label="Quantity controls for Midnight Hoodie">
-                                                <button type="button" id="qtyDec" class="counter-btn qtyDec"
-                                                    aria-label="Decrease quantity">
-                                                    -
-                                                </button>
-                                                <div id="qtyVal" class="qtyVal" aria-live="polite">1</div>
-                                                <button type="button" id="qtyInc" class="counter-btn qtyInc"
-                                                    aria-label="Increase quantity">
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="badge remove" aria-label="Remove item">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                            <span>Suprimir</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <a href="products/{id}" class="cart-item-img">
-                                        <div class="item__img">
-                                            <img src="/images/products/bauhaus-3-afiche-bauhaus-slide.webp"
-                                                alt="Midnight Hoodie">
-                                        </div>
-                                    </a>
-                                    <div>
-                                        <div class="item__title">
-                                            <div>
-                                                <p class="item__name">Bauhaus Collection: Chair 2</p>
-                                                <p class="item__meta muted">Size: 30 x 40 cm</p>
-                                                <select id="customisable-select">
-                                                    <button>
-                                                        <selectedcontent></selectedcontent>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                            aria-hidden="true">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                                        </svg>
-                                                    </button>
-                                                    <option value="no-frame" selected>
-                                                        <img src="/images/content/no-frame.webp" alt="No Frame">
-                                                        <div class="text">
-                                                            <h3>No Frame</h3>
-                                                            <p>Afiche solo</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="wood">
-                                                        <img src="/images/content/cadre-bois-naturel.webp" alt="Wood">
-                                                        <div class="text">
-                                                            <h3>Wood</h3>
-                                                            <p>Marco de madera Natural</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="white-frame">
-                                                        <img src="/images/content/cadre-bois-blanc.webp" alt="White">
-                                                        <div class="text">
-                                                            <h3>White</h3>
-                                                            <p>Marco de madera Natural pintada de Blanco</p>
-                                                        </div>
-                                                    </option>
-                                                    <option value="black-frame">
-                                                        <img src="/images/content/HfGUlmPublication.webp" alt="Black">
-                                                        <div class="text">
-                                                            <h3>Black</h3>
-                                                            <p>Marco de madera Natural pintada de Negro</p>
-                                                        </div>
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <span class="badge" title="Unit price">
-                                                <i class="fa-solid fa-tag"></i>
-                                                <span>$49.00</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="item__controls">
-                                        <div class="price" title="Line total">$49.00</div>
-                                        <div class="col-12 col-md-10 justify-content-start">
-                                            <div class="qty" aria-label="Quantity controls for Midnight Hoodie">
-                                                <button type="button" id="qtyDec" class="counter-btn qtyDec"
-                                                    aria-label="Decrease quantity">
-                                                    -
-                                                </button>
-                                                <div id="qtyVal" class="qtyVal" aria-live="polite">1</div>
-                                                <button type="button" id="qtyInc" class="counter-btn qtyInc"
-                                                    aria-label="Increase quantity">
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="badge remove" aria-label="Remove item">
-                                            <i class="fa fa-trash" aria-hidden="true"></i>
-                                            <span>Suprimir</span>
-                                        </button>
-                                    </div>
-                                </div>
+                                                </div>
+                                            </div>-->
+
                             </div>
                         </div>
                         <div id="cart-resume-price" class="col-lg-4 mb-3">
@@ -363,16 +187,17 @@
                                 <div class="summaryRows">
                                     <div class="row">
                                         <span class="muted">Subtotal</span>
-                                        <strong id="subtotalText">$668.00</strong>
+                                        <strong id="subtotalText">$ <%= subtotal.toFixed(2) %></strong>
                                     </div>
                                     <div class="row">
                                         <span class="muted">Envio</span>
-                                        <strong id="taxText">$43.42</strong>
+                                        <% let shipping=subtotal * 0.05; let total=subtotal + shipping; %>
+                                            <strong id="taxText">$ <%= shipping.toFixed(2) %></strong>
                                     </div>
                                     <hr>
                                     <div class="row row--total">
                                         <span>Total</span>
-                                        <strong id="totalText">$717.42</strong>
+                                        <strong id="totalText">$ <%= total.toFixed(2) %></strong>
                                     </div>
                                 </div>
                                 <form class="text-end ms-4">

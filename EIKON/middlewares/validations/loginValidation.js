@@ -8,7 +8,7 @@ module.exports = [
   .withMessage("El email es obligatorio")
   .isEmail()
   .withMessage("Formato inválido")
-  .bail() // stop execution if errors
+  .bail()
   .custom(async (value) => {
    const user = await userModel.findByEmail(value);
    if (!user) {
@@ -24,7 +24,7 @@ module.exports = [
   .custom(async (value, { req }) => {
    const user = await userModel.findByEmail(req.body.emailLogin);
 
-   if (!user) return true; // ya lo manejó arriba
+   if (!user) return true;
 
    const isValid = bcrypt.compareSync(value, user.password);
 

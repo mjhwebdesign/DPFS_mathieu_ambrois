@@ -26,10 +26,8 @@ ADMIN temporary METHOD*/
  },
 
  /*===============
-CART METHOD*/
- cart: function (req, res, next) {
-  return res.render("products/productCart");
- },
+LOGIN METHOD*/
+
  login: function (req, res, next) {
   return res.render("users/userlogin-userRegister");
  },

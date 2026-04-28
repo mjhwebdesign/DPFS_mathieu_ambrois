@@ -32,7 +32,6 @@ const productModel = {
  },
 
  // Create a new Product
-
  create: async function (newProduct) {
   return await db.Product.create(newProduct);
  },

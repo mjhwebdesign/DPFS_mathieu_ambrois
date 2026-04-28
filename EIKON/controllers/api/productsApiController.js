@@ -138,6 +138,7 @@ DETAIL METHOD : GET /api/products/:id*/
 
  // ADMIN
  /*===============*/
+
  /*===============
 CREATE METHOD */
  create: async (req, res) => {
@@ -281,9 +282,7 @@ Update
     return res.status(404).json({ message: "Producto no encontrado" });
    }
 
-   // =============================
-   // 📸 IMÁGENES
-   // =============================
+   // Images
    let cover_image = existingProduct.cover_image;
    let secundary_image = existingProduct.secundary_image;
 
@@ -306,9 +305,7 @@ Update
     secundary_image = moveFile(files.lamina[0]);
    }
 
-   // =============================
-   // 📝 UPDATE PRODUCT DATA
-   // =============================
+   // Update ProductData
    await existingProduct.update({
     title: fields.productTitle,
     description: fields.productDescription,
@@ -318,9 +315,7 @@ Update
     secundary_image,
    });
 
-   // =============================
-   // 🎨 THEMES (IGUAL QUE CREATE)
-   // =============================
+   // Theme
    const possibleThemes = [
     "architecture",
     "animal",
@@ -341,11 +336,8 @@ Update
 
    await existingProduct.setThemes(themesFromDB);
 
-   // =============================
-   // 🏠 SPACES (IGUAL QUE CREATE)
-   // =============================
+   // Spaces
    const possibleSpaces = ["office", "home", "professionals", "museum"];
-
    const spacesSelected = [];
    possibleSpaces.forEach((space) => {
     if (toBoolean(fields[space])) spacesSelected.push(space);
@@ -369,6 +361,7 @@ Update
 
  /*===============
 DELETE METHOD : GET /api/products/:id*/
+
  remove: async (req, res) => {
   try {
    await db.Product.destroy({

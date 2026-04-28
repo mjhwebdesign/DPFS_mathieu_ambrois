@@ -8,6 +8,7 @@ const { validationResult } = require("express-validator");
 const productsController = {
  /*===============
 STORE METHODE*/
+
  store: async function (req, res, next) {
   const errors = validationResult(req);
 
@@ -113,6 +114,7 @@ CREATE METHODE*/
    oldData: {},
   });
  },
+
  /*===============
 EDIT METHODE*/
 

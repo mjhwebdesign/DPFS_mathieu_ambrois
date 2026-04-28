@@ -1,7 +1,8 @@
 var express = require("express");
+var router = express.Router();
 let indexController = require("../controllers/indexController");
 const usersController = require("../controllers/usersController");
-var router = express.Router();
+const cartController = require("../controllers/cartController");
 const adminMiddleware = require("../middlewares/adminMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 
@@ -17,7 +18,16 @@ router.get("/login", guestMiddleware, usersController.create);
 /* GET home page and product list. */
 router.get("/products", indexController.index);
 
-/*Get cart page*/
-router.get("/cart", indexController.cart);
+/*GET cart page*/
+router.get("/cart", cartController.getCart);
+
+/* POST items to Cart */
+router.post("/cart/add", cartController.add);
+
+/* UPDATE items directly in cart */
+router.post("/cart/update", cartController.update);
+
+/* DELETE item from cart */
+router.post("/cart/remove", cartController.remove);
 
 module.exports = router;

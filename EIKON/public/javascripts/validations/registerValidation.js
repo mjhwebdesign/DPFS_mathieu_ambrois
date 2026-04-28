@@ -1,5 +1,6 @@
 window.addEventListener("load", function () {
  const form = document.querySelector("#register");
+ if (!form) return;
 
  const firstName = document.querySelector("#name-f");
  const lastName = document.querySelector("#name-l");

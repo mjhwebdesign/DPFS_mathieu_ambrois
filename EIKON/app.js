@@ -17,14 +17,15 @@ const authRoutes = require("./routes/api/auth");
 //Middlewares
 const userToLocalsMiddleware = require("./middlewares/userToLocalsMiddleware");
 const rememberMiddleware = require("./middlewares/rememberMiddleware");
+const cartCount = require("./middlewares/cart/cartCount");
 
 var app = express();
 
-// CORS => Allow express back (port 3000 )to comunicates with Vite React Front (port 5173)
+// CORS : express back (port 3000 )comunicates  React Front (port 5173)
 const cors = require("cors");
 app.use(
  cors({
-  origin: "http://localhost:5173", // tu frontend
+  origin: "http://localhost:5173",
   credentials: true,
  }),
 );
@@ -42,6 +43,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
+
 // SESSIONS
 app.set("trust proxy", 1);
 app.use(
@@ -59,6 +61,8 @@ app.use(
 );
 app.use(userToLocalsMiddleware);
 app.use(rememberMiddleware);
+app.use(cartCount);
+
 // Make currentPath available to all views and define activeSection
 app.use((req, res, next) => {
  res.locals.currentPath = req.path;
@@ -88,7 +92,7 @@ app.use(function (req, res, next) {
 
 // error handler
 app.use(function (err, req, res, next) {
- // set locals, only providing error in development
+ // set locals, for development only
  res.locals.message = err.message;
  res.locals.error = req.app.get("env") === "development" ? err : {};
 
