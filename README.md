@@ -4,6 +4,20 @@
 
 =========================================================================================
 
+## TESTING
+
+For Local setup, view README.md files at:
+
+```bash
+path/to/EIKON
+```
+
+```bash
+path/to/dashboard
+```
+
+=========================================================================================
+
 ## GITHUB
 
 Enlace al repositorio de GitHub:

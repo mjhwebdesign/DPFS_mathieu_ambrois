@@ -259,7 +259,9 @@ INSERT INTO User (user_id, first_name, last_name, email, password, avatar, role_
 (7,'Alicia267','alice_in_chains','alice2@alice.com','$2b$10$yBJ/uS6Bbzkq4OmbLamPauz8/KPlyorSx3aptKM.6e8rXxU3J5MVG','/images/users/tyawdw6iwia5x26aqii7h9l6i.png',2,'2026-03-08 23:57:06','2026-03-28 00:24:28'),
 (10,'jo','to','jo@jo.com','$2b$10$LXU6M188ZD.BmjKiZOaZQuo3QLNnyzepTkX9vI86FzIPilGd3eKjS','/images/users/v5tgz7scvahj7bxce67gmvs6f.png',1,'2026-03-08 23:57:06','2026-03-08 23:57:06'),
 (11,'client','to','to@to.com','$2b$10$F3fCrJom1z4CYhmXRtDgc.f9..IagDZI9jnnG06GyNtZr0It.FMyq','/images/users/g9i5bwhjggde5n8ah86g8gvaf.png',2,'2026-03-08 23:57:06','2026-03-08 23:57:06'),
-(12,'mathieu','ambrois','ambrois.mathieu@gmail.com','$2b$10$J1Ccyy9Z9ulLhoMuy1rFB.3nSWZEZPfSymcdVQFDWTW4Xui2I5lzW','/images/users/k816p35drpxroq6r35xgob802.png',1,'2026-03-27 21:29:53','2026-03-27 21:29:53');
+(12,'mathieu','ambrois','ambrois.mathieu@gmail.com','$2b$10$J1Ccyy9Z9ulLhoMuy1rFB.3nSWZEZPfSymcdVQFDWTW4Xui2I5lzW','/images/users/k816p35drpxroq6r35xgob802.png',1,'2026-03-27 21:29:53','2026-03-27 21:29:53'),
+(19,'Guest','Guest','guest@guest.com','$2b$10$w1ikqa6glcKEuLjlKPzb4eeM0lb4dE5mag8Geae6V4aNky4R.dn9W','/images/users/jnsb4fcfmrs9alg76nuu6ejuq.webp',2,'2026-04-25 18:26:56','2026-04-25 18:26:56'),
+(20,'Admin','Admin','admin@admin.com','$2b$10$KoqDrPDus0rTFlWRibIWPOZxg8dtWoL..J3BA6uzfS9CRpqyxyEHe','/images/users/wz8rha59xge8s2opci3a25msj.png',1,'2026-04-25 18:32:15','2026-04-25 15:36:20');
 UNLOCK TABLES;
 
 

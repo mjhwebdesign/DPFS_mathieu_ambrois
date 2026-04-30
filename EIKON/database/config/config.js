@@ -1,7 +1,7 @@
 module.exports = {
  development: {
   username: "root",
-  password: "S1lv4g3r13n!",
+  password: null,
   database: "eikon_db",
   host: "127.0.0.1",
   dialect: "mysql",

@@ -1,4 +1,49 @@
-# React + Vite
+=========================================================================================
+
+# EIKON - IMAGE MANIAC DASHBOARD (React + Vite) - LOCAL SETUP
+
+=========================================================================================
+
+## 1. INSTALL DEPENDENCIES
+
+Open a new terminal and navigate to the dashboard folder:
+
+```bash
+cd path/to/dashboard
+npm install
+```
+
+## 2. RUN THE APP
+
+From project Folder run:
+
+```bash
+npm run dev
+```
+
+React.js Dashboard will be available at:
+http://localhost:5173/
+
+⚠️ The EIKON Express app must be running at http://localhost:3000 in order to retrieve data.
+
+## 3. USERS
+
+An admin logged into the Express app ( http://localhost:3000 ) will be able to access product CRUD operations via the dashboard:
+http://localhost:5173/
+
+## 4. EXPRESS.JS APP
+
+For the EIKON Express.js App, see the README file in:
+
+```bash
+path/to/EIKON
+```
+
+=========================================================================================
+
+# React + Vite Notes
+
+=========================================================================================
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -7,7 +52,11 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+=========================================================================================
+
+## React Compiler Notes
+
+=========================================================================================
 
 The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
